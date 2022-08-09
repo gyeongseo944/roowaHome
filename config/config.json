@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": "roowa123",
+    "database": "roowaHomeDB",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
