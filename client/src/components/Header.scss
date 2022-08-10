@@ -1,0 +1,30 @@
+
+.headerContainer {
+    width: 100%;
+    height: 227px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    .headerLogo {
+        margin-top: 66px;
+        width: 177px;
+        height: 34px;
+        text-indent: -10000px;
+        background-image: url(../assets/x2022new.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .headerNav {
+        margin-top: 52px;
+        font-size: 20px;
+        width: 813px;
+        display: flex;
+        justify-content: space-between;
+        
+        .headerNavBtn {
+            padding: 0 10px
+        }
+    }
+}

@@ -1,15 +1,17 @@
+import "./Header.scss";
+
 function Header() {
   return (
-    <nav className="headerContainer">
+    <header className="headerContainer">
       <div className="headerLogo">ROOWA</div>
       <ul className="headerNav">
-        <li className="headerNavBtn">roowa</li>
-        <li className="headerNavBtn">original contents</li>
-        <li className="headerNavBtn">contents marketing</li>
-        <li className="headerNavBtn">metaverse</li>
-        <li className="headerNavBtn">contact</li>
+        <li className="headerNavBtn">ABOUT</li>
+        <li className="headerNavBtn">ORIGINAL CONTENTS</li>
+        <li className="headerNavBtn">CONTENTS MARKETING</li>
+        <li className="headerNavBtn">METAVERSE</li>
+        <li className="headerNavBtn">CONTACT</li>
       </ul>
-    </nav>
+    </header>
   );
 }
 
