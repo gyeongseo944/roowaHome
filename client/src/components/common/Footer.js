@@ -38,22 +38,22 @@ function Footer() {
       <div className="snsBtns">
         <img
           className="snsBtn"
-          src={require("../assets/snsBtns/x7.png")}
+          src={require("../../assets/snsBtns/x7.png")}
           alt=""
         />
         <img
           className="snsBtn"
-          src={require("../assets/snsBtns/x15.png")}
+          src={require("../../assets/snsBtns/x15.png")}
           alt=""
         />
         <img
           className="snsBtn"
-          src={require("../assets/snsBtns/x11.png")}
+          src={require("../../assets/snsBtns/x11.png")}
           alt=""
         />
         <img
           className="snsBtn"
-          src={require("../assets/snsBtns/x13.png")}
+          src={require("../../assets/snsBtns/x13.png")}
           alt=""
         />
       </div>
