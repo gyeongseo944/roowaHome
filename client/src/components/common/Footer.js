@@ -4,7 +4,9 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footerContainer">
-        <div className="footerLogo">ROOWA</div>
+        <div className="footerLogoBox">
+          <div className="footerLogo">ROOWA</div>
+        </div>
         <div className="footerInfoBox">
           <ul className="footerInfoBoxColumn">
             <li className="footerInfo">
