@@ -3,11 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 const Article = () => {
-  const [Article, setArticle] = useState(Object);
+  const [Article, setArticle] = useState([]);
   useEffect(() => {
-    axios.get("/api/test").then((res) => {
-      console.log(res);
-      setArticle(res);
+    axios.get("/api/getArticle").then((res) => {
+      console.log(res.data);
+      setArticle(res.data);
     });
   }, []);
 

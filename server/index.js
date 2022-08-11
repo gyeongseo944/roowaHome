@@ -15,20 +15,20 @@ models.sequelize.sync().then(()=>{
     console.log('DB 연결 에러')
     console.log(err)
 })
-const test = async(e)=>{
-    let test1 = new Object;
-    test1.title = await notion.pages.properties.retrieve({page_id:e,property_id:'title'});
-    test1.img = await notion.pages.properties.retrieve({page_id:e,property_id:'UDr%3F'});
-    test1.date = await notion.pages.properties.retrieve({page_id:e,property_id:'JiHn'});
-    return test1
+const getInfo = async(e)=>{
+    let article = new Object;
+    article.title = await notion.pages.properties.retrieve({page_id:e,property_id:'title'});
+    article.img = await notion.pages.properties.retrieve({page_id:e,property_id:'UDr%3F'});
+    article.date = await notion.pages.properties.retrieve({page_id:e,property_id:'JiHn'});
+    return article
 }
-app.get('/test',async(req,res)=>{
+app.get('/getArticle',async(req,res)=>{
     let idArr = await notion.databases.query({
         database_id:process.env.NOTION_DB_ID
     }).then((result)=>{
        return result.results.map(id => id.id)
     })
-    const result = await Promise.all(idArr.map(id=>test(id)))
+    const result = await Promise.all(idArr.map(id=>getInfo(id)))
     res.send(result)
     
 })
