@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap");
+@import url(./reset.scss);
+@import "~antd/dist/antd.css";
+
+@font-face {
+  font-family: "KoPubWorldDotum";
+  font-weight: light;
+  src: url("./assets/fonts/KoPubWorld-Dotum_Pro-Light.otf") format("otf");
+}
+@font-face {
+  font-family: "KoPubWorldDotum";
+  font-weight: normal;
+  src: url("./assets/fonts/KoPubWorld-Dotum_Pro-Medium.otf") format("otf");
+}
+@font-face {
+  font-family: "KoPubWorldDotum";
+  font-weight: bold;
+  src: url("./assets/fonts/KoPubWorld-Dotum_Pro-Bold.otf") format("otf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", Arial;
+  position: relative;
+  margin: 0;
+  display: block;
+  padding-top: 227px;
+}

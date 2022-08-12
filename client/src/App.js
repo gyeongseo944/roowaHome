@@ -3,10 +3,11 @@ import Header from "./components/common/Header";
 import Article from "./components/Article/Article";
 import Home from "./components/Home/Home";
 import Footer from "./components/common/Footer";
-import "./sample.scss";
+import "./App.scss";
 import Contact from "./components/Contact/Contact";
 import Pay from "./components/Pay/Pay";
 import PayDetail from "./components/Pay/PayDetail/PayDetail";
+import Recruit from "./components/Recruit/Recruit";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/pay" element={<Pay />} />
         <Route path="/pay/:id" element={<PayDetail />} />
+        <Route path="/recruit" element={<Recruit />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -1,0 +1,116 @@
+.recruitMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #070707;
+}
+.recruitContainer {
+  margin-top: 119px;
+  min-width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px 42px;
+
+  .recruitCard {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    height: 440px;
+    background-color: #ffffff;
+    color: #070707;
+    position: relative;
+    padding: 40px 25px 0 25px;
+
+    .recruitDDay {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      background-color: #ff0080;
+      color: #fff;
+      width: 77px;
+      height: 76px;
+      font-size: 20px;
+      line-height: 76px;
+      text-align: center;
+      letter-spacing: -0.8px;
+      font-weight: bold;
+      font-family: "KoPubWorldDotum";
+      &.end {
+        background-color: #808080;
+      }
+    }
+
+    .recruitTeam {
+      font-size: 22px;
+      line-height: 32px;
+      font-weight: bold;
+      letter-spacing: -1.32px;
+      margin-bottom: 4px;
+    }
+
+    .recruitTitle {
+      font-size: 48px;
+      font-weight: bold;
+      line-height: 62px;
+      letter-spacing: -2.88px;
+      width: 250px;
+      margin-bottom: 25px;
+    }
+
+    .recruitTask {
+      white-space: pre-wrap;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.96px;
+      margin-bottom: 27px;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .recruitTagBox {
+      margin-bottom: 31px;
+      .recruitTag {
+        display: inline-block;
+        padding: 0 19px;
+        height: 31px;
+        border: 1px solid #707070;
+        border-radius: 24px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 6px;
+      }
+    }
+
+    .recruitPeriod {
+      padding-top: 15px;
+      border-top: 1px solid #707070;
+      font-size: 20px;
+      letter-spacing: -0.8px;
+      color: #808080;
+      font-family: "KoPubWorldDotum";
+    }
+  }
+}
+
+.readMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 136px;
+  width: 100%;
+
+  .readMore {
+    width: 183px;
+    height: 55px;
+    background-color: #fff;
+    color: #808080;
+    border: 1px solid #808080;
+    border-radius: 55px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
