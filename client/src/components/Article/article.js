@@ -2,7 +2,6 @@ import "./Article.scss";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Row } from "antd";
-import card from "./card/card";
 
 const Article = () => {
   const [Article, setArticle] = useState([]);
