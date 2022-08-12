@@ -10,11 +10,13 @@ const GridCard = (props) => {
   return (
     <Col span={8}>
       <div className="gridContainer">
-        <div className="dimmedImg">
-          <img className="cardImg" src={props.image.url} />
-        </div>
-        <p className="gridTitle">{props.title}</p>
-        <p className="gridDate">{props.date}</p>
+        <a href={`/article/${props.page_id}`}>
+          <div className="dimmedImg">
+            <img className="cardImg" src={props.image.url} />
+          </div>
+          <p className="gridTitle">{props.title}</p>
+          <p className="gridDate">{props.date}</p>
+        </a>
       </div>
     </Col>
   );
