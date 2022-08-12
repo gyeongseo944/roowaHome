@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  //
 }
 
 .bannerContainer {
@@ -26,6 +25,7 @@
     margin-top: 20px;
     font: normal normal bold 55px/80px Noto Sans KR;
     letter-spacing: -2.2px;
+    white-space: pre-wrap;
   }
 
   .naviBox {

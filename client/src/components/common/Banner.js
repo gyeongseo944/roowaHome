@@ -1,21 +1,36 @@
+import { Link } from "react-router-dom";
 import "./Banner.scss";
 
-function Banner({ src }) {
-  console.log(src);
+function Banner({ title, subtitle, src }) {
   return (
-    <section className="banner">
+    <section
+      className="banner"
+      style={
+        src
+          ? {
+              backgroundImage: `url(${src})`,
+              backgroundPosition: "center center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }
+          : null
+      }
+    >
       <div className="bannerContainer">
-        <h2 className="bannerRoowa">루와 상담문의</h2>
+        <h2 className="bannerRoowa">{title}</h2>
         <h1 className="bannerRoowaTitle">
-          상담 원하시는 내용은 빠르게 답변 <br />
-          답변 드리겠습니다.
+          {subtitle}
+          {/* 상담 원하시는 내용은 빠르게 답변 <br />
+          답변 드리겠습니다. */}
         </h1>
         <div className="naviBox">
-          <img
-            src={require("../../assets/navBtns/x54f07279ca.png")}
-            alt="home button"
-            className="homeBtn"
-          />
+          <Link to="/">
+            <img
+              src={require("../../assets/navBtns/x54f07279ca.png")}
+              alt="home button"
+              className="homeBtn"
+            />
+          </Link>
           <img
             className="chev"
             src={require("../../assets/navBtns/x59.png")}
@@ -33,5 +48,10 @@ function Banner({ src }) {
     </section>
   );
 }
+
+Banner.defaultProps = {
+  title: "루와 상담문의",
+  subtitle: "상담 원하시는 내용은 빠르게 답변\n답변 드리겠습니다.",
+};
 
 export default Banner;

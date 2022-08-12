@@ -19,7 +19,7 @@ function Contact() {
   return (
     <>
       <Banner />
-      <main className="main">
+      <main className="contacMain">
         <div className="contactContainer">
           <div className="box1">
             <div className="box1Img">이미지 영역</div>

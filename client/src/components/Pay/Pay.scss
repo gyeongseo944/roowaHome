@@ -1,0 +1,58 @@
+.payMain {
+  display: flex;
+  justify-content: center;
+  background-color: #070707;
+}
+.payContainer {
+  margin-top: 119px;
+  min-width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px 42px;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    color: #fff;
+
+    .cardImage {
+      overflow: hidden;
+      background-color: #ffffff;
+      width: 100%;
+      height: 440px;
+    }
+
+    .cardTitle {
+      width: 100%;
+      padding-top: 32px;
+
+      .cardSmallTitle {
+        font-size: 22px;
+        line-height: 32px;
+        letter-spacing: -0.88px;
+      }
+
+      .cardBigTitle {
+        margin-top: 4px;
+        font-size: 40px;
+        line-height: 62px;
+        letter-spacing: -2.4px;
+        font-weight: bold;
+      }
+
+      .cardPrice {
+        width: 121px;
+        height: 44px;
+        border-radius: 27px;
+        text-align: center;
+        line-height: 44px;
+        font-weight: bold;
+        letter-spacing: -1.32px;
+        font-size: 22px;
+        margin-top: 16px;
+        background-color: #ff0080;
+      }
+    }
+  }
+}
