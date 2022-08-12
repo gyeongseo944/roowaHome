@@ -12,6 +12,9 @@
       transition: 1s;
     }
   }
+  a {
+    color: black;
+  }
   .gridTitle {
     margin: 5% 0;
     font-size: 1.5rem;
@@ -41,6 +44,9 @@
 
 .gridContainer:hover {
   cursor: pointer;
+  a {
+    color: black;
+  }
   .dimmedImg {
     .cardImg {
       transform: scale(1.3);
