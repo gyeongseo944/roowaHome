@@ -38,30 +38,29 @@ router.post("/getDetail", async (req, res) => {
   for (const i in propertyId) {
     detail[i] = await notion.pages.properties.retrieve({ page_id: req.body.pageId, property_id: propertyId[i] });
   }
-  console.log(req.body);
-  if (req.body.bfId != undefined) {
-    console.log("ghghgfjfhfhh");
+  if (req.body.thisIndex != 0) {
+    detail.bfId = req.body.idArr[req.body.thisIndex - 1];
+    detail.bfTitle = await notion.pages.properties
+      .retrieve({
+        page_id: detail.bfId,
+        property_id: propertyId.title,
+      })
+      .then((res) => {
+        return res.results[0].title.plain_text;
+      });
   }
-  // detail.bfId = req.body.bfId;
-  // detail.afId = req.body.afId;
-  // detail.bfTitle = await notion.pages.properties
-  //   .retrieve({
-  //     page_id: req.body.bfId,
-  //     property_id: propertyId.title,
-  //   })
-  //   .then((res) => {
-  //     return res.results[0].title.plain_text;
-  //   });
-  // detail.afTitle = await notion.pages.properties
-  //   .retrieve({
-  //     page_id: req.body.afId,
-  //     property_id: propertyId.title,
-  //   })
-  //   .then((res) => {
-  //     return res.results[0].title.plain_text;
-  //   });
-  // console.log(detail);
-  // res.send(detail);
+  if (req.body.thisIndex < req.body.idArr.length - 1) {
+    detail.afId = req.body.idArr[req.body.thisIndex + 1];
+    detail.afTitle = await notion.pages.properties
+      .retrieve({
+        page_id: detail.afId,
+        property_id: propertyId.title,
+      })
+      .then((res) => {
+        return res.results[0].title.plain_text;
+      });
+  }
+  res.send(detail);
 });
 
 module.exports = router;

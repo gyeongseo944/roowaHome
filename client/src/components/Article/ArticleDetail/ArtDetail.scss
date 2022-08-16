@@ -1,0 +1,44 @@
+.article_detail {
+  margin-top: 50px;
+  .detail_title_article {
+    width: 100%;
+    height: 10vh;
+    border-bottom: 1px solid black;
+    position: relative;
+    h1 {
+      width: 90%;
+      font-size: 2.2rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    span {
+      font-size: 1.3rem;
+      color: #888888;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin-bottom: 15px;
+    }
+    margin-bottom: 50px;
+  }
+  .detail_contents_article {
+    width: 100%;
+    img {
+      display: block;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    .detail_contents_textzone {
+      width: 90%;
+      margin: 50px auto 80px auto;
+      .article_contents {
+        font-size: 1.3rem;
+      }
+      .article_source {
+        font-size: 1.1rem;
+        color: black;
+      }
+    }
+  }
+}

@@ -9,9 +9,8 @@ const GridCard = (props) => {
         <Link
           to={`/article/${props.page_id}`}
           state={{
-            bfId: props.bfId ? `${props.bfId}` : null,
-            afId: props.afId ? `${props.afId}` : null,
-            test: props.test,
+            idArr: props.idArr,
+            thisIndex: props.thisIndex,
           }}
         >
           <div className="dimmedImg">
