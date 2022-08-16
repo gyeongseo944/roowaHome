@@ -9,9 +9,12 @@ import naviArrow from "../../assets/navBtns/articleBtns/x59.png";
 
 const Article = () => {
   const [Article, setArticle] = useState([]);
+  const [IdArr, setIdArr] = useState([]);
   useEffect(() => {
     axios.get("/api/article/getList").then((res) => {
-      setArticle(res.data);
+      setArticle(res.data.result);
+      setIdArr(res.data.idArr);
+      console.log(res.data.result);
     });
   }, []);
 
@@ -34,13 +37,16 @@ const Article = () => {
           <Row gutter={[32, 40]}>
             {Article &&
               Article.map((article, index) => (
-                <React.Fragment key={index}>
+                <React.Fragment key={index + article.id}>
                   <GridCard
                     page={"article"}
                     page_id={article.id}
+                    bfId={(index = 0 ? null : IdArr[index - 1])}
+                    afId={(index = IdArr.length - 1 ? null : IdArr[index + 1])}
                     image={article.img.files[0].file}
                     title={article.title.results[0].title.plain_text}
                     date={article.date.date.start}
+                    test={`index num : ${index}`}
                   />
                 </React.Fragment>
               ))}

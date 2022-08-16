@@ -30,15 +30,38 @@ router.get("/getList", async (req, res) => {
       return result.results.map((id) => id.id);
     });
   const result = await Promise.all(idArr.map((id) => getInfo(id)));
-  res.send(result);
+  res.send({ result: result, idArr: idArr });
 });
 
-router.get("/getDetail", async (req, res) => {
+router.post("/getDetail", async (req, res) => {
   const detail = new Object();
   for (const i in propertyId) {
-    detail[i] = await notion.pages.properties.retrieve({ page_id: req.query.pageId, property_id: propertyId[i] });
+    detail[i] = await notion.pages.properties.retrieve({ page_id: req.body.pageId, property_id: propertyId[i] });
   }
-  res.send(detail);
+  console.log(req.body);
+  if (req.body.bfId != undefined) {
+    console.log("ghghgfjfhfhh");
+  }
+  // detail.bfId = req.body.bfId;
+  // detail.afId = req.body.afId;
+  // detail.bfTitle = await notion.pages.properties
+  //   .retrieve({
+  //     page_id: req.body.bfId,
+  //     property_id: propertyId.title,
+  //   })
+  //   .then((res) => {
+  //     return res.results[0].title.plain_text;
+  //   });
+  // detail.afTitle = await notion.pages.properties
+  //   .retrieve({
+  //     page_id: req.body.afId,
+  //     property_id: propertyId.title,
+  //   })
+  //   .then((res) => {
+  //     return res.results[0].title.plain_text;
+  //   });
+  // console.log(detail);
+  // res.send(detail);
 });
 
 module.exports = router;
