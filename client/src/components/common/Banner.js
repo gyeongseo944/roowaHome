@@ -1,7 +1,24 @@
+import { useAnimation, motion } from "framer-motion";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Banner.scss";
 
 function Banner({ title, subtitle, src }) {
+  const titleAnimation = useAnimation();
+  const subtitleAnimation = useAnimation();
+  useEffect(() => {
+    titleAnimation.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    });
+    subtitleAnimation.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delay: 0.3 },
+    });
+  }, []);
+
   return (
     <section
       className="banner"
@@ -17,12 +34,20 @@ function Banner({ title, subtitle, src }) {
       }
     >
       <div className="bannerContainer">
-        <h2 className="bannerRoowa">{title}</h2>
-        <h1 className="bannerRoowaTitle">
+        <motion.h2
+          className="bannerRoowa"
+          animate={titleAnimation}
+          initial={{ opacity: 0, y: 20 }}
+        >
+          {title}
+        </motion.h2>
+        <motion.h1
+          className="bannerRoowaTitle"
+          animate={subtitleAnimation}
+          initial={{ opacity: 0, y: 20 }}
+        >
           {subtitle}
-          {/* 상담 원하시는 내용은 빠르게 답변 <br />
-          답변 드리겠습니다. */}
-        </h1>
+        </motion.h1>
         <div className="naviBox">
           <Link to="/">
             <img

@@ -1,8 +1,10 @@
+@import "~/src/config";
+
 .contacMain {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: $white;
 
   .contactContainer {
     width: 100%;
@@ -11,7 +13,7 @@
     .box1 {
       height: 333px;
       width: 100%;
-      border-bottom: 1px solid #707070;
+      border-bottom: 1px solid $lightGray;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -19,7 +21,7 @@
       .box1Img {
         width: 502px;
         height: 137px;
-        border: 1px solid #707070;
+        border: 1px solid $lightGray;
         margin-top: 70px;
         margin-bottom: 21px;
         text-align: center;
@@ -34,7 +36,7 @@
         text-align: center;
         font: normal normal normal 20px/29px Noto Sans KR;
         letter-spacing: -0.8px;
-        color: #707070;
+        color: $lightGray;
       }
     }
 
@@ -56,14 +58,14 @@
           .label {
             font: normal normal bold 26px/37px Noto Sans KR;
             letter-spacing: -1.56px;
-            color: #070707;
+            color: $dark;
           }
 
           .labelSub {
             margin-left: 10px;
             font: normal normal 300 14px/20px Noto Sans KR;
             letter-spacing: -0.84px;
-            color: #070707;
+            color: $dark;
           }
         }
 
@@ -79,13 +81,13 @@
           .phoneDash {
             height: 26px;
             width: 18px;
-            border-bottom: 1px solid #b5b5b5;
+            border-bottom: 1px solid $borderGray;
           }
         }
 
         .inputBox {
           width: 100%;
-          border: 1px solid #b5b5b5;
+          border: 1px solid $borderGray;
           min-height: 52px;
           display: flex;
           align-items: center;
@@ -97,7 +99,7 @@
             border: none;
             font: normal normal normal 24px/35px Noto Sans KR;
             letter-spacing: -0.96px;
-            color: #808080;
+            color: $darkGray;
             outline: none;
           }
 
@@ -114,7 +116,7 @@
               border: none;
               font: normal normal normal 24px/35px Noto Sans KR;
               letter-spacing: -0.96px;
-              color: #808080;
+              color: $darkGray;
               outline: none;
             }
           }
@@ -131,11 +133,11 @@
             line-height: 16px;
             display: flex;
             align-items: center;
-            color: #808080;
+            color: $darkGray;
 
             &.active {
               font-weight: bold;
-              color: #070707;
+              color: $dark;
             }
           }
           input {
@@ -156,17 +158,17 @@
         .submitBtn {
           width: 219px;
           height: 55px;
-          border: 1px solid #808080;
+          border: 1px solid $darkGray;
           border-radius: 55px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background-color: #ffffff;
+          background-color: $white;
           cursor: pointer;
 
           span {
             font-size: 24px;
-            color: #808080;
+            color: $darkGray;
           }
         }
       }
@@ -179,14 +181,14 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #070707;
+  background-color: $dark;
   opacity: 0.7;
   z-index: 1000;
 }
 .popupBox {
   width: 502px;
   height: 345px;
-  background-color: #ffffff;
+  background-color: $white;
   border-radius: 10px;
   overflow: hidden;
   position: fixed;
@@ -218,7 +220,7 @@
       font-size: 20px;
       line-height: 34px;
       letter-spacing: -0.8px;
-      color: #808080;
+      color: $darkGray;
     }
   }
 
@@ -226,8 +228,8 @@
     height: 74px;
     width: 100%;
     border: none;
-    background-color: #070707;
-    color: #ffffff;
+    background-color: $dark;
+    color: $white;
     font-size: 22px;
     letter-spacing: -0.88px;
     cursor: pointer;

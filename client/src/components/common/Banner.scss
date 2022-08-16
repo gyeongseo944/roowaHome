@@ -1,7 +1,9 @@
+@import "~/src/config";
+
 .banner {
   width: 100%;
   height: 580px;
-  background: #070707;
+  background: $dark;
   opacity: 0.8;
   display: flex;
   align-items: center;
@@ -11,15 +13,16 @@
 .bannerContainer {
   width: 100%;
   height: 100%;
-  max-width: 1404px;
-  color: #ffffff;
+  max-width: 1444px;
+  color: $white;
   position: relative;
+  padding: 0 20px;
 
   .bannerRoowa {
     margin-top: 110px;
     font: normal normal bold 30px/44px Noto Sans KR;
     letter-spacing: -1.2px;
-    color: #ffffff;
+    color: $white;
   }
 
   .bannerRoowaTitle {
@@ -27,13 +30,13 @@
     font: normal normal bold 55px/80px Noto Sans KR;
     letter-spacing: -2.2px;
     white-space: pre-wrap;
-    color: #ffffff;
+    color: $white;
   }
 
   .naviBox {
     position: absolute;
     bottom: 26px;
-    right: 0;
+    right: 20px;
     height: 26px;
     display: flex;
     align-items: center;

@@ -1,3 +1,5 @@
+@import "~/src/config";
+
 .payDetailMain {
   display: flex;
   justify-content: center;
@@ -15,31 +17,31 @@
         font-size: 48px;
         line-height: 70px;
         letter-spacing: -1.92px;
-        color: #070707;
+        color: $dark;
       }
       .payDetailPrice {
-        color: #808080;
+        color: $darkGray;
         font-size: 22px;
         line-height: 32px;
         letter-spacing: -0.88px;
       }
     }
     .payDetailContentsBox {
-      border-top: 1px solid #707070;
-      border-bottom: 1px solid #707070;
+      border-top: 1px solid $lightGray;
+      border-bottom: 1px solid $lightGray;
       padding: 94px 0;
       margin-bottom: 32px;
       .payDetailContent {
         width: 100%;
         height: 1191px;
-        background: #e4e4e4;
+        background: $fontGray;
       }
     }
     .contentsNav {
       font-size: 22px;
       line-height: 32px;
       letter-spacing: -0.88px;
-      color: #070707;
+      color: $dark;
       margin-bottom: 106px;
 
       .contentsNavPrev {
@@ -56,10 +58,10 @@
       .payDetailListBtn {
         width: 183px;
         height: 55px;
-        background-color: #fff;
-        border: 1px solid #808080;
+        background-color: $white;
+        border: 1px solid $darkGray;
         border-radius: 55px;
-        color: #808080;
+        color: $darkGray;
         font-size: 24px;
       }
     }
