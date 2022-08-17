@@ -35,10 +35,10 @@ const getInfo = async (id) => {
     page_id: id,
     property_id: propertyId.date,
   });
-  //   recruit.img = await notion.pages.properties.retrieve({
-  //     page_id: id,
-  //     property_id: propertyId.img,
-  //   });
+  recruit.img = await notion.pages.properties.retrieve({
+    page_id: id,
+    property_id: propertyId.img,
+  });
   return recruit;
 };
 
