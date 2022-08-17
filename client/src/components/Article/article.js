@@ -13,6 +13,10 @@ const Article = () => {
   const [IdArr, setIdArr] = useState([]);
   const [Loading, setLoading] = useState(true);
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     setLoading(true);
     axios.get("/api/article/getList").then((res) => {
       setArticle(res.data.result);

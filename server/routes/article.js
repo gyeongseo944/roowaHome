@@ -24,7 +24,7 @@ const getInfo = async (e) => {
 router.get("/getList", async (req, res) => {
   const idArr = await notion.databases
     .query({
-      database_id: process.env.NOTION_DB_ID,
+      database_id: process.env.NOTION_ARTICLE_ID,
     })
     .then((result) => {
       return result.results.map((id) => id.id);

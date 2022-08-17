@@ -80,6 +80,9 @@ const ArticleDetail = () => {
                     </Link>
                   </div>
                 )}
+                <Link>
+                  <div>목록</div>
+                </Link>
               </div>
             </div>
           )}
