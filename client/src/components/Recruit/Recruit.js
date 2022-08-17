@@ -1,9 +1,32 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Banner from "../common/Banner";
 import "./Recruit.scss";
 
 function Recruit() {
   const subtitle = "루와에서 함께 발을 맞추어 갈 인재를\n채용하고 있습니다";
+  const [Article, setArticle] = useState([]);
+  const [IdArr, setIdArr] = useState([]);
+  const [Loading, setLoading] = useState(true);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    setLoading(true);
+    (async () => {
+      try {
+        const res = await axios.get("/api/recruit/getList");
+        // setArticle(res.data.result);
+        // setIdArr(res.data.idArr);
+        // setLoading(false);
+        console.log(res);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
   return (
     <>
       <Banner
