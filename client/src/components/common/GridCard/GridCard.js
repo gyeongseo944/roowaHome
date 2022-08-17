@@ -7,7 +7,7 @@ const GridCard = (props) => {
     <Col span={8}>
       <div className="gridContainer">
         <Link
-          to={`/article/${props.page_id}`}
+          to={`/${props.page}/${props.page_id}`}
           state={{
             idArr: props.idArr,
             thisIndex: props.thisIndex,

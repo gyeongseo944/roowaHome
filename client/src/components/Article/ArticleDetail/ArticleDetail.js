@@ -80,8 +80,8 @@ const ArticleDetail = () => {
                     </Link>
                   </div>
                 )}
-                <Link>
-                  <div>목록</div>
+                <Link to="/article">
+                  <div className="toList">목록</div>
                 </Link>
               </div>
             </div>

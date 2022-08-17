@@ -5,26 +5,24 @@ const { Client } = require("@notionhq/client");
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 const propertyId = {
-  link: "%3Fm%7B%3C",
-  date: "JiHn",
-  image: "UDr%3F",
-  source: "qSoM",
-  contents: "yViY",
+  date: "mCUM",
+  image: "bUV%3C",
+  contents: "TXKg",
   title: "title",
 };
 const getInfo = async (e) => {
-  let article = new Object();
-  article.id = e;
-  article.title = await notion.pages.properties.retrieve({ page_id: e, property_id: propertyId.title });
-  article.img = await notion.pages.properties.retrieve({ page_id: e, property_id: propertyId.image });
-  article.date = await notion.pages.properties.retrieve({ page_id: e, property_id: propertyId.date });
-  return article;
+  let notice = new Object();
+  notice.id = e;
+  notice.title = await notion.pages.properties.retrieve({ page_id: e, property_id: propertyId.title });
+  notice.img = await notion.pages.properties.retrieve({ page_id: e, property_id: propertyId.image });
+  notice.date = await notion.pages.properties.retrieve({ page_id: e, property_id: propertyId.date });
+  return notice;
 };
 
 router.get("/getList", async (req, res) => {
   const idArr = await notion.databases
     .query({
-      database_id: process.env.NOTION_ARTICLE_ID,
+      database_id: process.env.NOTION_NOTICE_ID,
     })
     .then((result) => {
       return result.results.map((id) => id.id);

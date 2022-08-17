@@ -19,5 +19,6 @@ models.sequelize
 app.use(bodyParser.json());
 
 app.use("/article", require("./routes/article"));
+app.use("/notice", require("./routes/notice"));
 
 app.listen(6000);
