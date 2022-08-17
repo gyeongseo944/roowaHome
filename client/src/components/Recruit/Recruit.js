@@ -1,32 +1,31 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
+import { useEffect } from "react";
 import Banner from "../common/Banner";
 import "./Recruit.scss";
+import { getRecruit } from "../../api";
+import RecruitCard from "./RecruitCard/RecruitCard";
 
 function Recruit() {
   const subtitle = "루와에서 함께 발을 맞추어 갈 인재를\n채용하고 있습니다";
-  const [Article, setArticle] = useState([]);
-  const [IdArr, setIdArr] = useState([]);
-  const [Loading, setLoading] = useState(true);
+  const { data } = useQuery(["recruit", "getAllList"], getRecruit);
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-    setLoading(true);
-    (async () => {
-      try {
-        const res = await axios.get("/api/recruit/getList");
-        // setArticle(res.data.result);
-        // setIdArr(res.data.idArr);
-        // setLoading(false);
-        console.log(res);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
   }, []);
+  function sortedData(data) {
+    const sample = data?.data?.result?.filter(
+      (v) => v.date.date.end > new Date()
+    );
+    // .sort(
+    //   // 채용마감 날짜 기준 정렬
+    //   (a, b) => new Date(a.date.date.end) - new Date(b.date.date.end)
+    // );
+    console.log(sample);
+  }
+
+  data && sortedData(data);
   return (
     <>
       <Banner
@@ -36,74 +35,10 @@ function Recruit() {
       />
       <main className="recruitMain">
         <div className="recruitContainer">
-          <Link to={`/recruit/${1}`} className="recruitCard">
-            <div className="recruitDDay">D-10</div>
-            <div className="recruitTeam">New MediaProduction Team</div>
-            <div className="recruitTitle">영상 콘텐츠 제작 PD 채용</div>
-            <div className="recruitTask">
-              <p>{"영상 콘텐츠 기획 및 제작\n영상 콘텐츠 촬영 및 연출"}</p>
-            </div>
-            <div className="recruitTagBox">
-              <div className="recruitTag">
-                <span>경력</span>
-              </div>
-              <div className="recruitTag">
-                <span>학력무관</span>
-              </div>
-            </div>
-            <div className="recruitPeriod">2022.08.08 ~ 2022.08.08</div>
-          </Link>
-          <Link to={`/recruit/${1}`} className="recruitCard">
-            <div className="recruitDDay">D-10</div>
-            <div className="recruitTeam">New MediaProduction Team</div>
-            <div className="recruitTitle">영상 콘텐츠 제작 PD 채용</div>
-            <div className="recruitTask">
-              <p>{"영상 콘텐츠 기획 및 제작\n영상 콘텐츠 촬영 및 연출"}</p>
-            </div>
-            <div className="recruitTagBox">
-              <div className="recruitTag">
-                <span>경력</span>
-              </div>
-              <div className="recruitTag">
-                <span>학력무관</span>
-              </div>
-            </div>
-            <div className="recruitPeriod">2022.08.08 ~ 2022.08.08</div>
-          </Link>
-          <Link to={`/recruit/${1}`} className="recruitCard">
-            <div className="recruitDDay end">마감</div>
-            <div className="recruitTeam">New MediaProduction Team</div>
-            <div className="recruitTitle">영상 콘텐츠 제작 PD 채용</div>
-            <div className="recruitTask">
-              <p>{"영상 콘텐츠 기획 및 제작\n영상 콘텐츠 촬영 및 연출"}</p>
-            </div>
-            <div className="recruitTagBox">
-              <div className="recruitTag">
-                <span>경력</span>
-              </div>
-              <div className="recruitTag">
-                <span>학력무관</span>
-              </div>
-            </div>
-            <div className="recruitPeriod">2022.08.08 ~ 2022.08.08</div>
-          </Link>
-          <Link to={`/recruit/${1}`} className="recruitCard">
-            <div className="recruitDDay">D-10</div>
-            <div className="recruitTeam">New MediaProduction Team</div>
-            <div className="recruitTitle">영상 콘텐츠 제작 PD 채용</div>
-            <div className="recruitTask">
-              <p>{"영상 콘텐츠 기획 및 제작\n영상 콘텐츠 촬영 및 연출"}</p>
-            </div>
-            <div className="recruitTagBox">
-              <div className="recruitTag">
-                <span>경력</span>
-              </div>
-              <div className="recruitTag">
-                <span>학력무관</span>
-              </div>
-            </div>
-            <div className="recruitPeriod">2022.08.08 ~ 2022.08.08</div>
-          </Link>
+          {/* {data &&
+            sortedData(data).map((data) => {
+              return <RecruitCard key={data.id} {...data} />;
+            })} */}
         </div>
         <div className="readMoreContainer">
           <button className="readMore">더보기 +</button>

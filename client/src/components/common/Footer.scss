@@ -10,6 +10,7 @@
   flex-direction: column;
   background-color: $dark;
   color: $white;
+  position: relative;
 
   .footerContainer {
     display: flex;
@@ -75,6 +76,26 @@
       margin-left: 25px;
       width: 37.1px;
       height: 37.1px;
+    }
+  }
+
+  .toTop {
+    width: 70px;
+    height: 68px;
+    background-color: $white;
+    box-shadow: 1px 3px 8px #00000029;
+    position: absolute;
+    right: 33px;
+    top: -90px;
+    border-radius: 50%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    img {
+      width: 20px;
+      height: 42px;
     }
   }
 }

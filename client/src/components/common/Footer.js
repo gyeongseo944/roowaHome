@@ -59,6 +59,18 @@ function Footer() {
           alt=""
         />
       </div>
+      <div className="toTop">
+        <img
+          src={require("../../assets/x70.png")}
+          alt="상단으로"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
+        />
+      </div>
     </footer>
   );
 }

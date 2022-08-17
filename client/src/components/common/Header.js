@@ -164,7 +164,7 @@ function Header() {
       <motion.div
         id="navBlurWrapper"
         animate={blurAnimation}
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, display: "none" }}
       ></motion.div>
     </>
   );
