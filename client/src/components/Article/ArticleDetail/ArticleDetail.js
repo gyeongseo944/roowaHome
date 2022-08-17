@@ -23,7 +23,7 @@ const ArticleDetail = () => {
       behavior: "smooth",
     });
     setLoading(true);
-    axios.post("/api/article/getDetail", variables).then((res) => {
+    axios.post(`/api/article/get${location.state.pageType}`, variables).then((res) => {
       setDetail(res.data);
       setLoading(false);
     });
@@ -35,7 +35,7 @@ const ArticleDetail = () => {
         <Loader />
       ) : (
         <div className="article_detail_container">
-          {Detail.title && (
+          {/* {Detail.title && (
             <div>
               <ArtDetail
                 title={Detail.title.results[0].title.plain_text}
@@ -85,7 +85,7 @@ const ArticleDetail = () => {
                 </Link>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       )}
     </>

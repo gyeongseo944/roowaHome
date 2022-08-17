@@ -1,12 +1,12 @@
 .article_title {
   width: 100%;
-  height: 20vh;
+  height: 18vh;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  margin: 2vh 0;
+  margin-top: 2vh;
   h1 {
     font-size: 3rem;
     font-weight: bold;
@@ -31,6 +31,36 @@
       font-size: 16px;
       font-weight: 300;
     }
+  }
+}
+.tapMenu {
+  width: 60%;
+  height: 70px;
+  margin: 0 auto 50px auto;
+  position: relative;
+  .articleTap {
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 70px;
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    cursor: pointer;
+  }
+  .noticeTap {
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 70px;
+    position: absolute;
+    left: 20%;
+    bottom: 0;
+    cursor: pointer;
+  }
+  .active {
+    color: #ff0080;
+    font-weight: bold;
+    border-bottom: 4px solid #ff0080;
+    cursor: default;
   }
 }
 .article_container {

@@ -52,7 +52,39 @@ router.get("/getList", async (req, res) => {
 });
 
 //get Detail - article
-router.post("/getDetail", async (req, res) => {
+router.post("/getArticle", async (req, res) => {
+  const detail = new Object();
+  for (const i in articlePropertyId) {
+    detail[i] = await notion.pages.properties.retrieve({ page_id: req.body.pageId, property_id: articlePropertyId[i] });
+  }
+  if (req.body.thisIndex != 0) {
+    detail.bfId = req.body.idArr[req.body.thisIndex - 1];
+    detail.bfTitle = await notion.pages.properties
+      .retrieve({
+        page_id: detail.bfId,
+        property_id: articlePropertyId.title,
+      })
+      .then((res) => {
+        return res.results[0].title.plain_text;
+      });
+  }
+  if (req.body.thisIndex < req.body.idArr.length - 1) {
+    detail.afId = req.body.idArr[req.body.thisIndex + 1];
+    detail.afTitle = await notion.pages.properties
+      .retrieve({
+        page_id: detail.afId,
+        property_id: articlePropertyId.title,
+      })
+      .then((res) => {
+        return res.results[0].title.plain_text;
+      });
+  }
+  console.log(detail);
+  res.send(detail);
+});
+
+//get Detail - notice
+router.post("/getNotice", async (req, res) => {
   const detail = new Object();
   for (const i in articlePropertyId) {
     detail[i] = await notion.pages.properties.retrieve({ page_id: req.body.pageId, property_id: articlePropertyId[i] });

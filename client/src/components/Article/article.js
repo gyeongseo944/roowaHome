@@ -13,7 +13,8 @@ const Article = () => {
   const [Notice, setNotice] = useState([]);
   const [ArtIdArr, setArtIdArr] = useState([]);
   const [NotIdArr, setNotIdArr] = useState([]);
-  const [Loading, setLoading] = useState(true);
+  const [TapArticle, setTapArticle] = useState(true);
+  const [Loading, setLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo({
@@ -39,7 +40,7 @@ const Article = () => {
       ) : (
         <div>
           <div className="article_title">
-            <h1>언론보도</h1>
+            <h1>뉴스 &middot; 알림</h1>
             <div className="naviArticle">
               <Link to="/">
                 <img src={naviHome} alt="home button" className="naviHome" />
@@ -47,46 +48,65 @@ const Article = () => {
               <img className="naviArrow" src={naviArrow} alt="Chevron" />
               <span className="naviBtn">ABOUT</span>
               <img className="naviArrow" src={naviArrow} alt="Chevron" />
-              <span className="naviBtn">언론보도</span>
+              <span className="naviBtn">뉴스 &middot; 알림</span>
+            </div>
+          </div>
+          <div className="tapMenu">
+            <div
+              className={TapArticle ? "articleTap active" : "articleTap"}
+              onClick={() => {
+                setTapArticle(true);
+              }}
+            >
+              언론보도
+            </div>
+            <div
+              className={TapArticle ? "noticeTap" : "noticeTap active"}
+              onClick={() => {
+                setTapArticle(false);
+              }}
+            >
+              공지사항
             </div>
           </div>
           <div className="article_container">
-            <div className="grid_container" style={{ borderBottom: "1px solid black", paddingBottom: "80px" }}>
-              <Row gutter={[32, 40]}>
-                {Article &&
-                  Article.map((article, index) => (
-                    <React.Fragment key={index + article.id}>
-                      <GridCard
-                        page={"article"}
-                        page_id={article.id}
-                        idArr={ArtIdArr}
-                        thisIndex={index}
-                        image={article.image.files[0].file}
-                        title={article.title.results[0].title.plain_text}
-                        date={article.date.date.start}
-                      />
-                    </React.Fragment>
-                  ))}
-              </Row>
+            <div className="grid_container">
+              {TapArticle ? (
+                <Row gutter={[32, 40]}>
+                  {Article &&
+                    Article.map((article, index) => (
+                      <React.Fragment key={index + article.id}>
+                        <GridCard
+                          page={"Article"}
+                          page_id={article.id}
+                          idArr={ArtIdArr}
+                          thisIndex={index}
+                          image={article.image.files[0].file}
+                          title={article.title.results[0].title.plain_text}
+                          date={article.date.date.start}
+                        />
+                      </React.Fragment>
+                    ))}
+                </Row>
+              ) : (
+                <Row gutter={[32, 40]}>
+                  {Notice &&
+                    Notice.map((notice, index) => (
+                      <React.Fragment key={index + notice.id}>
+                        <GridCard
+                          page={"Notice"}
+                          page_id={notice.id}
+                          idArr={NotIdArr}
+                          thisIndex={index}
+                          image={notice.image.files[0].file}
+                          title={notice.title.results[0].title.plain_text}
+                          date={notice.date.date.start}
+                        />
+                      </React.Fragment>
+                    ))}
+                </Row>
+              )}
             </div>
-            {/* <div className="grid_container" style={{ borderBottom: "1px solid black", paddingBottom: "80px" }}>
-              <Row gutter={[32, 40]}>
-                {Notice &&
-                  Notice.map((notice, index) => (
-                    <React.Fragment key={index + notice.id}>
-                      <GridCard
-                        page={"notice"}
-                        page_id={notice.id}
-                        idArr={NotIdArr}
-                        thisIndex={index}
-                        image={notice.image.files[0].file}
-                        title={notice.title.results[0].title.plain_text}
-                        date={notice.date.date.start}
-                      />
-                    </React.Fragment>
-                  ))}
-              </Row>
-            </div> */}
           </div>
         </div>
       )}
