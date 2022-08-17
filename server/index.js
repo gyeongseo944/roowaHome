@@ -3,8 +3,6 @@ const express = require("express");
 const app = express();
 const models = require("./models/index");
 const bodyParser = require("body-parser");
-const { Client } = require("@notionhq/client");
-const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 models.sequelize
   .sync()
@@ -19,7 +17,6 @@ models.sequelize
 app.use(bodyParser.json());
 
 app.use("/article", require("./routes/article"));
-app.use("/notice", require("./routes/notice"));
 app.use("/recruit", require("./routes/recruit"));
 
 app.listen(6000);

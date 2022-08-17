@@ -3,25 +3,31 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Row } from "antd";
-import GridCard from "../common/GridCard/GridCard";
+import GridCard from "./GridCard/GridCard";
 import Loader from "../common/Loader/Loader";
 import naviHome from "../../assets/navBtns/articleBtns/x547c81c586.png";
 import naviArrow from "../../assets/navBtns/articleBtns/x59.png";
 
 const Article = () => {
   const [Article, setArticle] = useState([]);
-  const [IdArr, setIdArr] = useState([]);
+  const [Notice, setNotice] = useState([]);
+  const [ArtIdArr, setArtIdArr] = useState([]);
+  const [NotIdArr, setNotIdArr] = useState([]);
   const [Loading, setLoading] = useState(true);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
     setLoading(true);
+
     axios.get("/api/article/getList").then((res) => {
-      setArticle(res.data.result);
-      setIdArr(res.data.idArr);
-      // console.log(res.data.result);
+      console.log(res.data);
+      setArtIdArr(res.data.articleIdArr);
+      setArticle(res.data.articleResult);
+      setNotIdArr(res.data.noticeIdArr);
+      setNotice(res.data.noticeResult);
       setLoading(false);
     });
   }, []);
@@ -45,7 +51,7 @@ const Article = () => {
             </div>
           </div>
           <div className="article_container">
-            <div className="grid_container">
+            <div className="grid_container" style={{ borderBottom: "1px solid black", paddingBottom: "80px" }}>
               <Row gutter={[32, 40]}>
                 {Article &&
                   Article.map((article, index) => (
@@ -53,9 +59,9 @@ const Article = () => {
                       <GridCard
                         page={"article"}
                         page_id={article.id}
-                        idArr={IdArr}
+                        idArr={ArtIdArr}
                         thisIndex={index}
-                        image={article.img.files[0].file}
+                        image={article.image.files[0].file}
                         title={article.title.results[0].title.plain_text}
                         date={article.date.date.start}
                       />
@@ -63,6 +69,24 @@ const Article = () => {
                   ))}
               </Row>
             </div>
+            {/* <div className="grid_container" style={{ borderBottom: "1px solid black", paddingBottom: "80px" }}>
+              <Row gutter={[32, 40]}>
+                {Notice &&
+                  Notice.map((notice, index) => (
+                    <React.Fragment key={index + notice.id}>
+                      <GridCard
+                        page={"notice"}
+                        page_id={notice.id}
+                        idArr={NotIdArr}
+                        thisIndex={index}
+                        image={notice.image.files[0].file}
+                        title={notice.title.results[0].title.plain_text}
+                        date={notice.date.date.start}
+                      />
+                    </React.Fragment>
+                  ))}
+              </Row>
+            </div> */}
           </div>
         </div>
       )}
