@@ -9,6 +9,7 @@ import Contact from "./components/Contact/Contact";
 import Pay from "./components/Pay/Pay";
 import PayDetail from "./components/Pay/PayDetail/PayDetail";
 import Recruit from "./components/Recruit/Recruit";
+import RecruitDetail from "./components/Recruit/RecruitDetail/RecruitDetail";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/pay" element={<Pay />} />
         <Route path="/pay/:id" element={<PayDetail />} />
         <Route path="/recruit" element={<Recruit />} />
+        <Route path="/recruit/:id" element={<RecruitDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>
