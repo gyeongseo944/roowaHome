@@ -58,6 +58,7 @@ const ArticleDetail = () => {
                       state={{
                         idArr: location.state.idArr,
                         thisIndex: location.state.thisIndex - 1,
+                        pageType: location.state.pageType,
                       }}
                     >
                       <span className="nextArticle">{Detail.bfTitle}</span>
@@ -75,6 +76,7 @@ const ArticleDetail = () => {
                       state={{
                         idArr: location.state.idArr,
                         thisIndex: location.state.thisIndex + 1,
+                        pageType: location.state.pageType,
                       }}
                     >
                       <span className="nextArticle">{Detail.afTitle}</span>
