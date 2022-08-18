@@ -1,0 +1,46 @@
+@import "~/src/config";
+
+#portfolioSwiper {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 350px;
+
+  .portfolioSwiperSlide {
+    width: 400px;
+
+    .portfolioSwiperSlideImg {
+      width: 100%;
+      height: 400px;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .portfolioSlideTitle {
+      font-weight: bold;
+      font-size: 40px;
+      letter-spacing: -1.6px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .portfolioSlideSub {
+      font-size: 22px;
+      letter-spacing: -0.88px;
+      width: 290px;
+      word-break: keep-all;
+    }
+  }
+  .swiper-scrollbar {
+    background-color: rgba(255, 255, 255, 0.2);
+    bottom: 272px;
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+
+    .swiper-scrollbar-drag {
+      background-color: $white;
+    }
+  }
+}

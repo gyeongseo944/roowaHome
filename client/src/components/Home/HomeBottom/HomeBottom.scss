@@ -1,0 +1,62 @@
+@import "~/src/config";
+
+.homeBottomSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark;
+
+  .toorWith {
+    margin: 300px 0;
+    text-align: center;
+    word-break: keep-all;
+    width: 866px;
+    -webkit-text-stroke: 2px $white;
+    font-size: 95px;
+    font-family: LeferiBase;
+    font-weight: 900;
+
+    .toorWithWhite {
+      color: $white;
+      -webkit-text-stroke: 0;
+    }
+  }
+
+  .goToMetaverse {
+    position: relative;
+    height: fit-content;
+    margin-bottom: 76px;
+    .goToMetaverseBtn {
+      width: 415px;
+      height: 55px;
+      border: 1px solid $white;
+      border-radius: 55px;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      img {
+        width: 20px;
+        height: 20px;
+        margin-left: 35px;
+      }
+    }
+    .goToMetaverseImage {
+      width: 620px;
+      height: 620px;
+      background: url("../../../assets/home/homeBottom/x9477f6cfc.png")
+        no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.35;
+    }
+  }
+}

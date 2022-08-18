@@ -1,5 +1,8 @@
 import "./Home.scss";
+import HomeBottom from "./HomeBottom/HomeBottom";
 import MainVideo from "./MainVideo/MainVideo";
+import OurPortfolio from "./OurPortfolio/OurPortfolio";
+import WideImage from "./WideImage/WideImage";
 
 function Home() {
   return (
@@ -16,6 +19,9 @@ function Home() {
           Content
         </h1>
       </div>
+      <OurPortfolio />
+      <WideImage />
+      <HomeBottom />
     </main>
   );
 }

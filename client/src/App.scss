@@ -18,6 +18,32 @@
   src: url("./assets/fonts/KoPubWorld-Dotum_Pro-Bold.otf") format("otf");
 }
 
+@font-face {
+  font-family: "LeferiBase";
+  font-weight: bold;
+  src: url("./assets/fonts/LeferiBaseBold.otf") format("otf");
+}
+@font-face {
+  font-family: "LeferiBase";
+  font-weight: normal;
+  src: url("./assets/fonts/LeferiBaseRegular.otf") format("otf");
+}
+@font-face {
+  font-family: "LeferiBase";
+  font-weight: 700;
+  src: url("./assets/fonts/LeferiPointBlack.otf") format("otf");
+}
+@font-face {
+  font-family: "LeferiBase";
+  font-weight: 800;
+  src: url("./assets/fonts/LeferiPointBlackOblique.otf") format("otf");
+}
+@font-face {
+  font-family: "LeferiBase";
+  font-weight: 900;
+  src: url("./assets/fonts/LeferiPointWhite.otf") format("otf");
+}
+
 * {
   box-sizing: border-box;
 }
