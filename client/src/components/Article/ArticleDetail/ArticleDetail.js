@@ -24,6 +24,7 @@ const ArticleDetail = () => {
     });
     setLoading(true);
     axios.post(`/api/article/get${location.state.pageType}`, variables).then((res) => {
+      console.log(res.data);
       setDetail(res.data);
       setLoading(false);
     });
@@ -35,15 +36,15 @@ const ArticleDetail = () => {
         <Loader />
       ) : (
         <div className="article_detail_container">
-          {/* {Detail.title && (
+          {Detail.title && (
             <div>
               <ArtDetail
                 title={Detail.title.results[0].title.plain_text}
                 image={Detail.image.files[0].file}
                 date={Detail.date.date.start}
-                contents={Detail.contents.results[0].rich_text.text.content}
-                source={Detail.source.url ? Detail.source.url : null}
-                link={Detail.link.url ? Detail.link.url : null}
+                contents={Detail.contents.results.length < 1 ? null : Detail.contents.results[0].rich_text.text.content}
+                source={Detail.source ? Detail.source : null}
+                link={Detail.link ? Detail.link : null}
               />
               <div className="article_list">
                 {Detail.bfId && (
@@ -85,7 +86,7 @@ const ArticleDetail = () => {
                 </Link>
               </div>
             </div>
-          )} */}
+          )}
         </div>
       )}
     </>

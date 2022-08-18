@@ -86,15 +86,15 @@ router.post("/getArticle", async (req, res) => {
 //get Detail - notice
 router.post("/getNotice", async (req, res) => {
   const detail = new Object();
-  for (const i in articlePropertyId) {
-    detail[i] = await notion.pages.properties.retrieve({ page_id: req.body.pageId, property_id: articlePropertyId[i] });
+  for (const i in noticePropertyId) {
+    detail[i] = await notion.pages.properties.retrieve({ page_id: req.body.pageId, property_id: noticePropertyId[i] });
   }
   if (req.body.thisIndex != 0) {
     detail.bfId = req.body.idArr[req.body.thisIndex - 1];
     detail.bfTitle = await notion.pages.properties
       .retrieve({
         page_id: detail.bfId,
-        property_id: articlePropertyId.title,
+        property_id: noticePropertyId.title,
       })
       .then((res) => {
         return res.results[0].title.plain_text;
@@ -105,7 +105,7 @@ router.post("/getNotice", async (req, res) => {
     detail.afTitle = await notion.pages.properties
       .retrieve({
         page_id: detail.afId,
-        property_id: articlePropertyId.title,
+        property_id: noticePropertyId.title,
       })
       .then((res) => {
         return res.results[0].title.plain_text;

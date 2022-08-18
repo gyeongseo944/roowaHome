@@ -1,6 +1,6 @@
 import "./Article.scss";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { Row } from "antd";
 import GridCard from "./GridCard/GridCard";
@@ -15,14 +15,13 @@ const Article = () => {
   const [NotIdArr, setNotIdArr] = useState([]);
   const [TapArticle, setTapArticle] = useState(true);
   const [Loading, setLoading] = useState(false);
-
+  const location = useLocation();
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
     setLoading(true);
-
     axios.get("/api/article/getList").then((res) => {
       console.log(res.data);
       setArtIdArr(res.data.articleIdArr);
