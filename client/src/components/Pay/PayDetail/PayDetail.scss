@@ -34,8 +34,9 @@
       margin-bottom: 32px;
       .payDetailContent {
         width: 100%;
-        height: 1191px;
-        background: $fontGray;
+        img {
+          width: 100%;
+        }
       }
     }
     .contentsNav {
@@ -45,10 +46,26 @@
       color: $dark;
       margin-bottom: 106px;
 
+      .contentsNavNext {
+        cursor: pointer;
+      }
       .contentsNavPrev {
         margin-bottom: 22px;
+        cursor: pointer;
+        img {
+          rotate: -90deg;
+        }
       }
-      .contentsNavNext {
+      img {
+        rotate: 90deg;
+        margin-left: 18px;
+        margin-right: 32px;
+        margin-bottom: 4px;
+        width: 10px;
+        height: 18px;
+      }
+      .contentNavTitle {
+        color: $darkGray;
       }
     }
     .payDetailListBtnBox {
@@ -64,6 +81,7 @@
         border-radius: 55px;
         color: $darkGray;
         font-size: 24px;
+        cursor: pointer;
       }
     }
   }

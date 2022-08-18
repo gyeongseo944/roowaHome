@@ -14,7 +14,6 @@ function Recruit() {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
     });
     (async () => {
       if (!recruitData) {
@@ -33,7 +32,12 @@ function Recruit() {
             // 채용마감 날짜 기준 정렬
             (a, b) => new Date(a.date.date.end) - new Date(b.date.date.end)
           );
-        setRecruitDataAtom([...remainData, ...endData]);
+        setRecruitDataAtom([
+          ...remainData,
+          ...endData.sort(
+            (a, b) => new Date(a.date.date.end) - new Date(b.date.date.end)
+          ),
+        ]);
       }
     })();
   }, []);
