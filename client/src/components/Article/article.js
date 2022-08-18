@@ -7,8 +7,11 @@ import GridCard from "./GridCard/GridCard";
 import Loader from "../common/Loader/Loader";
 import naviHome from "../../assets/navBtns/articleBtns/x547c81c586.png";
 import naviArrow from "../../assets/navBtns/articleBtns/x59.png";
+import { useRecoilState } from "recoil";
+import { articleListAtom } from "../../atom";
 
 const Article = () => {
+  const [ListData, setListData] = useRecoilState(articleListAtom);
   const [Article, setArticle] = useState([]);
   const [Notice, setNotice] = useState([]);
   const [ArtIdArr, setArtIdArr] = useState([]);
@@ -16,20 +19,29 @@ const Article = () => {
   const [TapArticle, setTapArticle] = useState(true);
   const [Loading, setLoading] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
     setLoading(true);
-    axios.get("/api/article/getList").then((res) => {
-      console.log(res.data);
-      setArtIdArr(res.data.articleIdArr);
-      setArticle(res.data.articleResult);
-      setNotIdArr(res.data.noticeIdArr);
-      setNotice(res.data.noticeResult);
+    if (!ListData) {
+      axios.get("/api/article/getList").then((res) => {
+        setListData(res.data);
+        setArtIdArr(res.data.articleIdArr);
+        setArticle(res.data.articleResult);
+        setNotIdArr(res.data.noticeIdArr);
+        setNotice(res.data.noticeResult);
+        setLoading(false);
+      });
+    } else {
+      setArtIdArr(ListData.articleIdArr);
+      setArticle(ListData.articleResult);
+      setNotIdArr(ListData.noticeIdArr);
+      setNotice(ListData.noticeResult);
       setLoading(false);
-    });
+    }
   }, []);
 
   return (

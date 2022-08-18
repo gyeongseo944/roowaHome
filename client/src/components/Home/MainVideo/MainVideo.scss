@@ -1,0 +1,12 @@
+.videoContainer {
+  width: 100%;
+  height: 80vh;
+  background-color: brown;
+  display: flex;
+  align-items: center;
+  .videoTextContainer {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+}

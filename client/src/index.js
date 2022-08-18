@@ -7,11 +7,9 @@ import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const client = new QueryClient();
 root.render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <QueryClientProvider client={client}>
-        <App />
-      </QueryClientProvider>
-    </RecoilRoot>
-  </React.StrictMode>
+  <RecoilRoot>
+    <QueryClientProvider client={client}>
+      <App />
+    </QueryClientProvider>
+  </RecoilRoot>
 );
