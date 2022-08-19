@@ -1,14 +1,33 @@
 import { Link } from "react-router-dom";
 
 function RecruitCard({ id, date, contents, tag, teamName, title }) {
-  const dDay = Math.ceil(
-    (new Date(date.date.end) - new Date()) / (1000 * 60 * 60 * 24)
-  );
+  let dDay = null;
+  if (date?.date?.end) {
+    dDay = Math.ceil(
+      (new Date(date.date.end) - new Date()) / (1000 * 60 * 60 * 24)
+    );
+  }
 
   return (
     <Link to={`/recruit/${id}`} className="recruitCard">
-      <div className={dDay < 0 ? "recruitDDay end" : "recruitDDay"}>
-        {dDay < 0 ? `마감` : `D-${dDay}`}
+      <div
+        className={
+          dDay !== null
+            ? dDay < 0
+              ? "recruitDDay end"
+              : "recruitDDay"
+            : "recruitDDay"
+        }
+      >
+        {dDay !== null ? (
+          dDay < 0 ? (
+            `마감`
+          ) : (
+            `D-${dDay}`
+          )
+        ) : (
+          <div>{`상시 채용`}</div>
+        )}
       </div>
       <div className="recruitTeam">
         {teamName.results[0].rich_text.text.content}
@@ -24,7 +43,9 @@ function RecruitCard({ id, date, contents, tag, teamName, title }) {
           </div>
         ))}
       </div>
-      <div className="recruitPeriod">{`${date.date.start} ~ ${date.date.end}`}</div>
+      <div className="recruitPeriod">
+        {dDay !== null ? `${date.date.start} ~ ${date.date.end}` : "상시채용"}
+      </div>
     </Link>
   );
 }

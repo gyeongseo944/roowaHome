@@ -1,13 +1,11 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { useMatch, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { recruitDataAtom } from "../../../atom";
 import Loader from "../../common/Loader/Loader";
-import "./PayDetail.scss";
 
-function PayDetail() {
-  const recruitMatch = useMatch("/recruit/*");
+function RecruitDetail() {
   const navigate = useNavigate();
   const id = useParams().id;
   const [recruitData, setRecruitDataAtom] = useRecoilState(recruitDataAtom);
@@ -143,4 +141,4 @@ function PayDetail() {
   );
 }
 
-export default PayDetail;
+export default RecruitDetail;

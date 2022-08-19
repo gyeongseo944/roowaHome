@@ -18,12 +18,27 @@ function Recruit() {
     (async () => {
       if (!recruitData) {
         const data = await axios.get("/api/recruit/getList");
+        // 상시 모집 데이터 array
+        let alwaysData = [];
+        // 마감된 데이터 array
         let endData = [];
         const remainData = data?.data?.result
           ?.filter((v) => {
-            if (new Date(v.date.date.end) >= new Date()) {
+            // 기간 설정 없는 상시모집 데이터 push
+            if (v.date.date === null) {
+              alwaysData.push(v);
+              return false;
+            }
+            // d-day 값으로 마감된 데이터와 기간이 남은 데이터 분할
+            const dataDate = Math.ceil(
+              (new Date(v.date.date.end) - new Date()) / (1000 * 60 * 60 * 24)
+            );
+            console.log(dataDate);
+            // 기간 남은 데이터 filter
+            if (dataDate >= 0) {
               return true;
             } else {
+              // 마감된 데이터 array에 push
               endData.push(v);
               return false;
             }
@@ -34,6 +49,8 @@ function Recruit() {
           );
         setRecruitDataAtom([
           ...remainData,
+          // 마감된 데이터 마감 날짜 기준 정렬
+          ...alwaysData,
           ...endData.sort(
             (a, b) => new Date(a.date.date.end) - new Date(b.date.date.end)
           ),

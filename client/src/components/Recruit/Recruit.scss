@@ -38,6 +38,14 @@
       letter-spacing: -0.8px;
       font-weight: bold;
       font-family: "KoPubWorldDotum";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      div {
+        width: 40px;
+        line-height: 25px;
+        word-break: keep-all;
+      }
       &.end {
         background-color: $darkGray;
       }
@@ -67,6 +75,7 @@
       line-height: 24px;
       letter-spacing: -0.96px;
       margin-bottom: 27px;
+      min-height: 48px;
 
       p {
         margin: 0;
