@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./AnimatedLetters.scss";
 
-const AnimatedLetters = ({ parentClass, strArray }) => {
+const AnimatedLetters = ({ parentClass, strArray, changeIdx }) => {
+  const parentRef = useRef();
+  const changeRef = useRef([]);
   const shuffle = (array) => {
     let currentIndex = array.length;
     let temporaryValue;
@@ -40,8 +42,41 @@ const AnimatedLetters = ({ parentClass, strArray }) => {
       child.classList.add("state-3");
     }
   };
-  const animationLetters = (className) => {
-    const text = document.getElementsByClassName(className)[0];
+
+  const Remove = (child, id) => {
+    if (id === 3) {
+      child.classList.remove("state-3");
+      setTimeout(() => {
+        Remove(child, id - 1);
+      }, 100);
+    } else if (id === 2) {
+      child.classList.remove("state-2");
+      setTimeout(() => {
+        Remove(child, id - 1);
+      }, 100);
+    } else if (id === 1) {
+      child.classList.remove("state-1");
+      setTimeout(() => {
+        Remove(child, id - 1);
+      }, 100);
+    } else if (id === 0) {
+      if (child.innerText === "에") {
+        child.innerText = "의";
+        setTimeout(fristStages.bind(null, child), 400);
+      } else if (child.innerText === "I" || child.innerText === "O") {
+        child.innerText = " ";
+      } else if (child.innerText === "N") {
+        child.innerText = "O";
+        setTimeout(fristStages.bind(null, child), 400);
+      } else if (child.innerText === "T") {
+        child.innerText = "F";
+        setTimeout(fristStages.bind(null, child), 400);
+      }
+    }
+  };
+
+  const animationLetters = () => {
+    const text = parentRef.current;
     let state = [];
     for (let i = 0, j = strArray.length; i < j; i++) {
       text.children[i].classList.remove("state-1", "state-2", "state-3");
@@ -51,7 +86,7 @@ const AnimatedLetters = ({ parentClass, strArray }) => {
     for (let i = 0, j = shuffled.length; i < j; i++) {
       let child = text.children[shuffled[i]];
       let classes = child.classList;
-      let state1Time = Math.round(Math.random() * (2000 - 300)) + 500;
+      let state1Time = Math.round(Math.random() * (2000 - 300)) + 700;
       if (classes.contains("textAnimation")) {
         setTimeout(fristStages.bind(null, child), state1Time);
       }
@@ -59,14 +94,30 @@ const AnimatedLetters = ({ parentClass, strArray }) => {
   };
 
   useEffect(() => {
-    animationLetters(parentClass);
+    animationLetters();
+    for (let i of changeRef.current) {
+      let state1Time = Math.round(Math.random() * (1000 - 300)) + 2800;
+      setTimeout(() => {
+        Remove(i, 3);
+      }, state1Time);
+    }
   }, []);
 
   return (
-    <div className={`${parentClass} textBox`}>
+    <div className={`${parentClass} textBox`} ref={parentRef}>
       {strArray &&
         strArray.map((char, id) => (
-          <div className={char == "space" ? "space" : "textAnimation"} key={parentClass + id}>
+          <div
+            className={char == "space" ? "space" : "textAnimation"}
+            key={parentClass + id}
+            ref={
+              changeIdx.includes(id)
+                ? (el) => {
+                    changeRef.current.push(el);
+                  }
+                : null
+            }
+          >
             {char == "space" ? "" : char}
           </div>
         ))}
