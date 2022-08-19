@@ -43,7 +43,6 @@ const getInfo = async (id) => {
 };
 
 router.get("/getList", async (req, res) => {
-  console.log("help");
   const response = await notion.databases.query({
     database_id: process.env.NOTION_RECRUIT_ID,
   });

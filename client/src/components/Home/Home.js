@@ -1,5 +1,7 @@
 import "./Home.scss";
 import HomeBottom from "./HomeBottom/HomeBottom";
+import MainMindMap from "./MainMindMap/MainMindMap";
+import MainPoster from "./MainPoster/MainPoster";
 import MainVideo from "./MainVideo/MainVideo";
 import OurPortfolio from "./OurPortfolio/OurPortfolio";
 import WideImage from "./WideImage/WideImage";
@@ -8,17 +10,8 @@ function Home() {
   return (
     <main>
       <MainVideo />
-      <div className="homeBanner">
-        <h1 className="homeBannerText">
-          We
-          <br />
-          Create
-          <br />
-          Emotional
-          <br />
-          Content
-        </h1>
-      </div>
+      <MainMindMap />
+      <MainPoster />
       <OurPortfolio />
       <WideImage />
       <HomeBottom />

@@ -1,0 +1,13 @@
+@import "~/src/config";
+
+.mainPoster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark;
+  padding-bottom: 300px;
+
+  .mainPosterContainer {
+    width: 1150px;
+  }
+}

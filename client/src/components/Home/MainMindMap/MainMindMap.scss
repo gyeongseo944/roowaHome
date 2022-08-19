@@ -1,0 +1,152 @@
+@import "~/src/config";
+
+.mindMapSection {
+  height: 1729px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark;
+
+  .mindMapContainer {
+    width: 100%;
+    height: 100%;
+    max-width: 1560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .mindMapWrapper {
+      width: 465px;
+      height: 465px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .mindMapCircle {
+        width: 465px;
+        height: 465px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        span {
+          text-transform: uppercase;
+          font-size: 64px;
+          font-family: LeferiBase;
+          font-weight: bold;
+          color: $white;
+        }
+
+        .mindMapLine {
+          position: absolute;
+          border-left: 2px dotted $lightGray;
+        }
+        .mindMapText {
+          position: absolute;
+          font-size: 30px;
+          color: $white;
+          font-family: LeferiBase;
+        }
+
+        .mindMap1 {
+          left: 50%;
+          top: -182px;
+          height: 155px;
+        }
+        .mindMap1Text {
+          top: -296px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 80px;
+        }
+        .mindMap2 {
+          top: -50px;
+          right: -20px;
+          height: 120px;
+          rotate: 45deg;
+        }
+        .mindMap2Text {
+          top: -94px;
+          right: -173px;
+          font-size: 40px;
+        }
+        .mindMap3 {
+          top: 50%;
+          border-top: 2px dotted $lightGray;
+          border-left: none;
+          right: -204px;
+          width: 162px;
+        }
+        .mindMap3Text {
+          top: 50%;
+          transform: translateY(-50%);
+          right: -370px;
+          font-size: 31px;
+        }
+        .mindMap4 {
+          bottom: -50px;
+          right: -20px;
+          height: 120px;
+          rotate: 135deg;
+        }
+        .mindMap4Text {
+          bottom: -87px;
+          right: -165px;
+          font-size: 29px;
+        }
+        .mindMap5 {
+          left: 50%;
+          bottom: -182px;
+          height: 155px;
+        }
+        .mindMap5Text {
+          bottom: -264px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 44px;
+        }
+        .mindMap6 {
+          bottom: -50px;
+          left: -20px;
+          height: 120px;
+          rotate: -135deg;
+        }
+        .mindMap6Text {
+          bottom: -106px;
+          left: -159px;
+          font-size: 48px;
+        }
+        .mindMap7 {
+          top: 50%;
+          border-top: 2px dotted $lightGray;
+          border-left: none;
+          left: -204px;
+          width: 162px;
+        }
+        .mindMap7Text {
+          top: 50%;
+          transform: translateY(-50%);
+          left: -339px;
+          font-size: 33px;
+        }
+        .mindMap8 {
+          top: -50px;
+          left: -20px;
+          height: 120px;
+          rotate: -45deg;
+        }
+        .mindMap8Text {
+          top: -115px;
+          left: -209px;
+          font-size: 56px;
+        }
+      }
+    }
+  }
+}
