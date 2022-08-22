@@ -24,9 +24,8 @@ function Metaverse() {
         <MetaverseGIF />
         <MetarverseExpansion />
         <MetarverseMarketing />
-        <MetaversePortfolio />
         <MetaverseProcess />
-
+        <MetaversePortfolio />
         <MetaverseQR />
       </main>
     </>
