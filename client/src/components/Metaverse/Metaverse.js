@@ -23,8 +23,8 @@ function Metaverse() {
         <MetaverseGIF />
         <MetarverseExpansion />
         <MetarverseMarketing />
-        <MetaverseQR />
         <MetaverseProcess />
+        <MetaverseQR />
       </main>
     </>
   );
