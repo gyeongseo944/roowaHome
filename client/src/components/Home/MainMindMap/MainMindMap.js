@@ -1,9 +1,21 @@
 import "./MainMindMap.scss";
+import react, { useEffect, useRef } from "react";
+import { useInView } from "framer-motion";
 
 function MainMindMap() {
+  const ref = useRef();
+  const isInView = useInView(ref);
+  useEffect(() => {
+    if (isInView) {
+      if (!ref.current.classList.contains("mindMapContainer")) {
+        ref.current.classList.add("mindMapContainer");
+      }
+    }
+  }, [isInView]);
+
   return (
     <section className="mindMapSection">
-      <div className="mindMapContainer">
+      <div className="" ref={ref}>
         <div className="card">
           <div className="grid"></div>
           <div className="metaverse">
@@ -37,19 +49,6 @@ function MainMindMap() {
           </span>
         </div>
       </div>
-      {/* <svg>
-        <filter id="Gooey">
-          <feGaussianBlur in="SourceGraphic" />
-          <feColorMatrix
-            values="
-          1 0 0 0 0
-          0 1 0 0 0
-          0 0 1 0 0
-          0 0 0 30 -40
-          "
-          />
-        </filter>
-      </svg> */}
     </section>
   );
 }

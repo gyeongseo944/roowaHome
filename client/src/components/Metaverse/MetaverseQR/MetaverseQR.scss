@@ -1,0 +1,15 @@
+.metaverseQr {
+  width: 100%;
+  .qrContainer {
+    width: 80%;
+    height: 1400px;
+    margin: 0 auto;
+    position: relative;
+    .qrTitle {
+      img {
+        width: 447px;
+        height: 447px;
+      }
+    }
+  }
+}

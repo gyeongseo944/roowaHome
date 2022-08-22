@@ -15,6 +15,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
     .card {
       position: absolute;
       width: 430px;
@@ -61,29 +63,21 @@
           font-size: 60px;
         }
       }
-      .metaverse::before {
+      &::before {
         content: "";
         position: absolute;
         width: 430px;
         height: 430px;
         background-color: white;
         border-radius: 50%;
-        animation: hidden 1s ease-in-out 2.5s forwards;
+        animation: hidden 1s ease-in-out 1.8s forwards;
+        z-index: 999;
       }
     }
     .card:hover {
       .grid::before {
         inset: -20px 0;
       }
-      // & + .bubbles {
-      //   span {
-      //     p {
-      //       background: linear-gradient(315deg, #0088ff, rgb(218, 0, 163));
-      //       color: transparent;
-      //       -webkit-background-clip: text;
-      //     }
-      //   }
-      // }
     }
     .bubbles {
       position: relative;
@@ -101,12 +95,13 @@
         background-color: white;
         animation: animate 2.8s ease-in-out;
         animation-fill-mode: forwards;
-        animation-delay: calc(0.3s * var(--id));
+        animation-delay: calc(0.2s * var(--id));
         text-align: center;
         line-height: 270px;
         font-size: 48px;
         p {
           transform: rotate(calc(360deg / 8 * var(--idd)));
+          margin-top: 5px;
           transition: 1s;
         }
       }
@@ -118,7 +113,7 @@
         height: 100px;
         transform: translateX(-90px) translateY(90px) rotate(90deg);
         opacity: 0;
-        animation: fadeIn 2s ease 4s forwards;
+        animation: fadeIn 2s ease 3.5s forwards;
       }
     }
   }
