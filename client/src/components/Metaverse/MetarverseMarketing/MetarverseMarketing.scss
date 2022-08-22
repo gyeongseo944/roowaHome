@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 272px;
   .backgroundImage {
     position: absolute;
     z-index: 0;
@@ -49,6 +50,30 @@
         flex-direction: column;
         opacity: 0.9;
         color: $dark;
+        margin-right: 40px;
+        position: relative;
+        &:last-child {
+          margin-right: 0;
+        }
+        &:hover {
+          img {
+            display: block;
+            opacity: 1;
+          }
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          //   display: none;
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
 
         .title {
           font-weight: bold;
@@ -73,6 +98,10 @@
           font-size: 18px;
           letter-spacing: -0.72px;
           margin-bottom: 28px;
+
+          &::before {
+            content: "· ";
+          }
         }
       }
     }

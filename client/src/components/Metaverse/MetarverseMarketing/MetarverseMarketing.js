@@ -14,6 +14,11 @@ function MetarverseMarketing() {
         </div>
         <div className="cardBox">
           <div className="card">
+            <img
+              className="wrappImg"
+              src={require("../../../assets/metaverse/x11.png")}
+              alt="카드 이미지"
+            />
             <div className="title">{"메타버스\n비즈니스\n컨설팅"}</div>
             <div className="titleEng">Metarverse Business Consulting</div>
             <div className="br"></div>
@@ -24,6 +29,11 @@ function MetarverseMarketing() {
             </ul>
           </div>
           <div className="card">
+            <img
+              className="wrappImg"
+              src={require("../../../assets/metaverse/x11.png")}
+              alt="카드 이미지"
+            />
             <div className="title">{"메타버스\n비즈니스\n컨설팅"}</div>
             <div className="titleEng">Metarverse Business Consulting</div>
             <div className="br"></div>
@@ -34,6 +44,11 @@ function MetarverseMarketing() {
             </ul>
           </div>
           <div className="card">
+            <img
+              className="wrappImg"
+              src={require("../../../assets/metaverse/x11.png")}
+              alt="카드 이미지"
+            />
             <div className="title">
               {"메타버스\n이벤트 및\n크리에이터 교육"}
             </div>

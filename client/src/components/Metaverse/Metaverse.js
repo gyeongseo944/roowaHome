@@ -6,6 +6,7 @@ import MetaverseGIF from "./MetaverseGIF/MetaverseGIF";
 import MetarverseExpansion from "./MetarverseExpansion/MetarverseExpansion";
 import MetarverseMarketing from "./MetarverseMarketing/MetarverseMarketing";
 import MetaverseQR from "./MetaverseQR/MetaverseQR";
+import MetaverseProcess from "./MetaverseProcess/MetaverseProcess";
 
 function Metaverse() {
   return (
@@ -23,6 +24,7 @@ function Metaverse() {
         <MetarverseExpansion />
         <MetarverseMarketing />
         <MetaverseQR />
+        <MetaverseProcess />
       </main>
     </>
   );
