@@ -1,0 +1,9 @@
+@import "~/src/config";
+
+.metaverseMain {
+  background-color: $dark;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

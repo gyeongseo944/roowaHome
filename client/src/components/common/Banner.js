@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Banner.scss";
 
-function Banner({ title, subtitle, src }) {
+function Banner({ title, subtitle, src, navText }) {
   const titleAnimation = useAnimation();
   const subtitleAnimation = useAnimation();
   useEffect(() => {
@@ -30,7 +30,7 @@ function Banner({ title, subtitle, src }) {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }
-          : null
+          : { opacity: 0.8 }
       }
     >
       <div className="bannerContainer">
@@ -56,18 +56,26 @@ function Banner({ title, subtitle, src }) {
               className="homeBtn"
             />
           </Link>
-          <img
-            className="chev"
-            src={require("../../assets/navBtns/x59.png")}
-            alt="Chevron"
-          />
-          <span className="naviBtn">CONTACT</span>
-          <img
-            className="chev"
-            src={require("../../assets/navBtns/x59.png")}
-            alt="Chevron"
-          />
-          <span className="naviBtn">루와 상담문의</span>
+          {navText[0] && (
+            <>
+              <img
+                className="chev"
+                src={require("../../assets/navBtns/x59.png")}
+                alt="Chevron"
+              />
+              <span className="naviBtn">{navText[0]}</span>
+            </>
+          )}
+          {navText[1] && (
+            <>
+              <img
+                className="chev"
+                src={require("../../assets/navBtns/x59.png")}
+                alt="Chevron"
+              />
+              <span className="naviBtn">{navText[1]}</span>
+            </>
+          )}
         </div>
       </div>
     </section>
@@ -77,6 +85,7 @@ function Banner({ title, subtitle, src }) {
 Banner.defaultProps = {
   title: "루와 상담문의",
   subtitle: "상담 원하시는 내용은 빠르게 답변\n답변 드리겠습니다.",
+  navText: ["contact", "루와 상담문의"],
 };
 
 export default Banner;

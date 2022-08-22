@@ -1,0 +1,28 @@
+@import "~/src/config";
+
+.metarverseMarketing {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .backgroundImage {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    top: 110px;
+  }
+
+  .marketingContainer {
+    position: relative;
+    width: 100%;
+    max-width: 1560px;
+
+    .marketingTitle {
+    }
+  }
+
+  .cardBox {
+    position: relative;
+  }
+}

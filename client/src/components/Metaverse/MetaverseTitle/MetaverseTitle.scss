@@ -1,0 +1,17 @@
+@import "~/src/config";
+
+.metaverseTitleSection {
+  width: 100%;
+  max-width: 1560px;
+  margin: 115px 0;
+
+  .metaverseTitle {
+    text-transform: uppercase;
+    color: $dark;
+    -webkit-text-stroke: 2px $white;
+    font-family: KoPubWorldDotum;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 110px;
+  }
+}

@@ -165,6 +165,7 @@ function Header() {
         id="navBlurWrapper"
         animate={blurAnimation}
         initial={{ opacity: 0, display: "none" }}
+        onMouseEnter={() => toggleNav(false)}
       ></motion.div>
     </>
   );

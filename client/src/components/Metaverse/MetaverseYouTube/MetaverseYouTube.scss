@@ -1,0 +1,25 @@
+.metaverseYouTube {
+  width: 100%;
+  max-width: 1150px;
+
+  iframe {
+    height: 648px;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .metaverseExplanation {
+    margin-top: 186px;
+    margin-bottom: 103px;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 80px;
+    letter-spacing: -2px;
+    white-space: pre-wrap;
+    text-align: center;
+
+    strong {
+      font-weight: bold;
+    }
+  }
+}
