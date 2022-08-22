@@ -19,10 +19,62 @@
     max-width: 1560px;
 
     .marketingTitle {
+      font-size: 100px;
+      font-family: LeferiBase;
+      color: $dark;
+      font-weight: bold;
+      -webkit-text-stroke: 2px $white;
+      margin-bottom: 102px;
+      div {
+        -webkit-text-stroke: 0px;
+        color: $white;
+        margin-top: -54px;
+        font-weight: 800;
+      }
     }
-  }
+    .cardBox {
+      position: relative;
+      width: 100%;
+      height: 674px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-  .cardBox {
-    position: relative;
+      .card {
+        width: 493px;
+        height: 100%;
+        background-color: $white;
+        padding: 57px 38px 0px;
+        display: flex;
+        flex-direction: column;
+        opacity: 0.9;
+        color: $dark;
+
+        .title {
+          font-weight: bold;
+          font-size: 56px;
+          line-height: 59px;
+          letter-spacing: -2.24px;
+          white-space: pre-wrap;
+          margin-bottom: 30px;
+        }
+        .titleEng {
+          font-weight: bold;
+          font-size: 20px;
+          margin-bottom: 83px;
+          font-family: LeferiBase;
+        }
+        .br {
+          background-color: $dark;
+          height: 4px;
+          margin-bottom: 52px;
+        }
+        li {
+          font-size: 18px;
+          letter-spacing: -0.72px;
+          margin-bottom: 28px;
+        }
+      }
+    }
   }
 }
