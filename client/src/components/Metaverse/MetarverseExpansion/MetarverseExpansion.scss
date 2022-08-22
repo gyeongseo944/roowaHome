@@ -8,7 +8,7 @@
     font-weight: 300;
     font-size: 50px;
     line-height: 80px;
-    margin-bottom: 180px;
+    margin-bottom: 70px;
 
     div {
       text-align: center;
@@ -20,9 +20,11 @@
 
   .imgGrid {
     display: grid;
-    grid-template-columns: repeat(2, 620px);
-    grid-template-rows: repeat(2, 620px);
-    margin-bottom: 227px;
+    width: 600px;
+    height: 600px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 150px;
     .imgGridItem {
       display: flex;
       flex-direction: column;
@@ -35,7 +37,7 @@
       &:nth-child(2) {
         border-bottom: 1px dashed $white;
         img {
-          margin-left: -28px;
+          margin-left: -12px;
         }
       }
 
@@ -44,13 +46,13 @@
       }
 
       .imgBorder {
-        width: 307px;
-        height: 307px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 30px;
+        margin-bottom: 16px;
         border: 1px dashed $white;
         img {
           width: 50%;
@@ -58,7 +60,7 @@
       }
       .itemTitle {
         text-align: center;
-        font-size: 42px;
+        font-size: 27px;
         letter-spacing: -1.68px;
       }
     }
