@@ -1,14 +1,52 @@
 .metaverseQr {
   width: 100%;
+  margin-top: 300px;
   .qrContainer {
-    width: 80%;
-    height: 1400px;
+    width: 1560px;
+    height: 1100px;
     margin: 0 auto;
-    position: relative;
     .qrTitle {
+      position: relative;
+      height: 650px;
       img {
+        position: absolute;
         width: 447px;
         height: 447px;
+      }
+      h1 {
+        position: absolute;
+        left: 340px;
+        top: 250px;
+        text-align: center;
+        line-height: 90px;
+        span {
+          font-size: 100px;
+          font-family: LeferiBase;
+          color: #070707;
+          font-weight: bold;
+          -webkit-text-stroke: 2px #fff;
+        }
+        span.filled {
+          color: white;
+          -webkit-text-stroke: 0px;
+        }
+      }
+    }
+    .qrCode {
+      position: relative;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      img {
+        width: 176px;
+        height: 176px;
+        display: block;
+      }
+      p {
+        margin-top: 20px;
+        font-size: 34px;
       }
     }
   }
