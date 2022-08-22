@@ -1,44 +1,55 @@
-import { motion, useAnimation, useInView } from "framer-motion";
-import { useRef } from "react";
 import "./MainMindMap.scss";
 
 function MainMindMap() {
-  const ref = useRef();
-  const isInView = useInView(ref, { amount: 0.3 });
-
   return (
     <section className="mindMapSection">
       <div className="mindMapContainer">
-        <div
-          ref={ref}
-          className="mindMapWrapper"
-          style={{
-            width: isInView ? "100%" : "465px",
-            height: isInView ? "100%" : "465px",
-            transition: "all 0.9s ease",
-          }}
-        >
-          <div className="mindMapCircle">
-            <span>metarverse</span>
-            <div className="mindMap1 mindMapLine"></div>
-            <div className="mindMap1Text mindMapText">Contents</div>
-            <div className="mindMap2 mindMapLine"></div>
-            <div className="mindMap2Text mindMapText">Event</div>
-            <div className="mindMap3 mindMapLine"></div>
-            <div className="mindMap3Text mindMapText">Consulting</div>
-            <div className="mindMap4 mindMapLine"></div>
-            <div className="mindMap4Text mindMapText">Marketing</div>
-            <div className="mindMap5 mindMapLine"></div>
-            <div className="mindMap5Text mindMapText">Video</div>
-            <div className="mindMap6 mindMapLine"></div>
-            <div className="mindMap6Text mindMapText">Branding</div>
-            <div className="mindMap7 mindMapLine"></div>
-            <div className="mindMap7Text mindMapText">Creator</div>
-            <div className="mindMap8 mindMapLine"></div>
-            <div className="mindMap8Text mindMapText">World Map</div>
+        <div className="card">
+          <div className="grid"></div>
+          <div className="metaverse">
+            <h2 className="textGradient">METAVERSE</h2>
           </div>
         </div>
+        <div className="bubbles">
+          <span style={{ "--id": 0, "--idd": 0 }}>
+            <p>Consulting</p>
+          </span>
+          <span style={{ "--id": 1, "--idd": 7 }}>
+            <p>Marketing</p>
+          </span>
+          <span style={{ "--id": 2, "--idd": 6 }}>
+            <p>Video</p>
+          </span>
+          <span style={{ "--id": 3, "--idd": 5 }}>
+            <p>Branding</p>
+          </span>
+          <span style={{ "--id": 4, "--idd": 4 }}>
+            <p>Creator</p>
+          </span>
+          <span style={{ "--id": 5, "--idd": 3 }}>
+            <p>World Map</p>
+          </span>
+          <span style={{ "--id": 6, "--idd": 2 }}>
+            <p>Contents</p>
+          </span>
+          <span style={{ "--id": 7, "--idd": 1 }}>
+            <p>Event</p>
+          </span>
+        </div>
       </div>
+      {/* <svg>
+        <filter id="Gooey">
+          <feGaussianBlur in="SourceGraphic" />
+          <feColorMatrix
+            values="
+          1 0 0 0 0
+          0 1 0 0 0
+          0 0 1 0 0
+          0 0 0 30 -40
+          "
+          />
+        </filter>
+      </svg> */}
     </section>
   );
 }

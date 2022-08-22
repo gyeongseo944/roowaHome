@@ -1,7 +1,7 @@
 @import "~/src/config";
 
 .mindMapSection {
-  height: 1729px;
+  height: 1700px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -15,138 +15,150 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    .mindMapWrapper {
-      width: 465px;
-      height: 465px;
+    .card {
+      position: absolute;
+      width: 430px;
+      height: 430px;
       border-radius: 50%;
-      overflow: hidden;
+      background-color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-
-      .mindMapCircle {
-        width: 465px;
-        height: 465px;
+      overflow: hidden;
+      z-index: 99;
+      cursor: pointer;
+      .grid {
+        position: relative;
+        width: 410px;
+        height: 410px;
         border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: black;
+        overflow: hidden;
+      }
+      .grid::before {
+        content: "";
+        position: absolute;
+        inset: -10px 140px;
+        background: linear-gradient(315deg, #0057d1, rgb(184, 0, 138));
+        // background: linear-gradient(#812ef6, #ff0080);
+        transition: 0.5s;
+        animation: rotate 4s linear infinite;
+      }
+      .metaverse {
+        width: 395px;
+        height: 395px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: white;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
-
-        span {
-          text-transform: uppercase;
-          font-size: 64px;
-          font-family: LeferiBase;
+        .textGradient {
+          background: linear-gradient(315deg, #004f95, rgb(189, 0, 142));
+          color: transparent;
+          -webkit-background-clip: text;
           font-weight: bold;
-          color: $white;
-        }
-
-        .mindMapLine {
-          position: absolute;
-          border-left: 2px dotted $lightGray;
-        }
-        .mindMapText {
-          position: absolute;
-          font-size: 30px;
-          color: $white;
-          font-family: LeferiBase;
-        }
-
-        .mindMap1 {
-          left: 50%;
-          top: -182px;
-          height: 155px;
-        }
-        .mindMap1Text {
-          top: -296px;
-          left: 50%;
-          transform: translateX(-50%);
-          font-size: 80px;
-        }
-        .mindMap2 {
-          top: -50px;
-          right: -20px;
-          height: 120px;
-          rotate: 45deg;
-        }
-        .mindMap2Text {
-          top: -94px;
-          right: -173px;
-          font-size: 40px;
-        }
-        .mindMap3 {
-          top: 50%;
-          border-top: 2px dotted $lightGray;
-          border-left: none;
-          right: -204px;
-          width: 162px;
-        }
-        .mindMap3Text {
-          top: 50%;
-          transform: translateY(-50%);
-          right: -370px;
-          font-size: 31px;
-        }
-        .mindMap4 {
-          bottom: -50px;
-          right: -20px;
-          height: 120px;
-          rotate: 135deg;
-        }
-        .mindMap4Text {
-          bottom: -87px;
-          right: -165px;
-          font-size: 29px;
-        }
-        .mindMap5 {
-          left: 50%;
-          bottom: -182px;
-          height: 155px;
-        }
-        .mindMap5Text {
-          bottom: -264px;
-          left: 50%;
-          transform: translateX(-50%);
-          font-size: 44px;
-        }
-        .mindMap6 {
-          bottom: -50px;
-          left: -20px;
-          height: 120px;
-          rotate: -135deg;
-        }
-        .mindMap6Text {
-          bottom: -106px;
-          left: -159px;
-          font-size: 48px;
-        }
-        .mindMap7 {
-          top: 50%;
-          border-top: 2px dotted $lightGray;
-          border-left: none;
-          left: -204px;
-          width: 162px;
-        }
-        .mindMap7Text {
-          top: 50%;
-          transform: translateY(-50%);
-          left: -339px;
-          font-size: 33px;
-        }
-        .mindMap8 {
-          top: -50px;
-          left: -20px;
-          height: 120px;
-          rotate: -45deg;
-        }
-        .mindMap8Text {
-          top: -115px;
-          left: -209px;
-          font-size: 56px;
+          font-size: 60px;
         }
       }
+      .metaverse::before {
+        content: "";
+        position: absolute;
+        width: 430px;
+        height: 430px;
+        background-color: white;
+        border-radius: 50%;
+        animation: hidden 1s ease-in-out 2.5s forwards;
+      }
     }
+    .card:hover {
+      .grid::before {
+        inset: -20px 0;
+      }
+      // & + .bubbles {
+      //   span {
+      //     p {
+      //       background: linear-gradient(315deg, #0088ff, rgb(218, 0, 163));
+      //       color: transparent;
+      //       -webkit-background-clip: text;
+      //     }
+      //   }
+      // }
+    }
+    .bubbles {
+      position: relative;
+      width: 1600px;
+      height: 1500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        color: black;
+        border-radius: 50%;
+        background-color: white;
+        animation: animate 2.8s ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: calc(0.3s * var(--id));
+        text-align: center;
+        line-height: 270px;
+        font-size: 48px;
+        p {
+          transform: rotate(calc(360deg / 8 * var(--idd)));
+          transition: 1s;
+        }
+      }
+      span::before {
+        content: "";
+        position: absolute;
+        display: block;
+        border-left: 2px dotted #808080;
+        height: 100px;
+        transform: translateX(-90px) translateY(90px) rotate(90deg);
+        opacity: 0;
+        animation: fadeIn 2s ease 4s forwards;
+      }
+    }
+  }
+}
+
+@keyframes animate {
+  0%,
+  10% {
+    width: 400px;
+    height: 400px;
+    transform: rotate(0deg);
+  }
+  90%,
+  100% {
+    width: 280px;
+    height: 280px;
+    transform: rotate(calc(360deg / 8 * var(--id))) translateX(550px);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes hidden {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(290px) translateY(290px) scale(0.7);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

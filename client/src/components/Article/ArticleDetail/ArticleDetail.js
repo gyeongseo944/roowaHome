@@ -24,7 +24,6 @@ const ArticleDetail = () => {
     });
     setLoading(true);
     axios.post(`/api/article/get${location.state.pageType}`, variables).then((res) => {
-      console.log(res.data);
       setDetail(res.data);
       setLoading(false);
     });
