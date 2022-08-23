@@ -1,3 +1,4 @@
+@import "~/src/config";
 .metarverseGIF {
   width: 100%;
   max-width: 1350px;
@@ -18,6 +19,17 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      position: relative;
+
+      .imgWrapper {
+        background-color: $dark;
+        transform-origin: top center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+      }
 
       .GIFSub {
         font-size: 22px;
@@ -55,6 +67,10 @@
 
     .GIFBlock4 {
       width: 661px;
+
+      img {
+        border-radius: 30px;
+      }
     }
   }
 }

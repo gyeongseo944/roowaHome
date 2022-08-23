@@ -8,8 +8,12 @@ import MetarverseMarketing from "./MetarverseMarketing/MetarverseMarketing";
 import MetaverseQR from "./MetaverseQR/MetaverseQR";
 import MetaverseProcess from "./MetaverseProcess/MetaverseProcess";
 import MetaversePortfolio from "./MetaversePortfolio/MetaversePortfolio";
+import { useEffect } from "react";
 
 function Metaverse() {
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <>
       <Banner

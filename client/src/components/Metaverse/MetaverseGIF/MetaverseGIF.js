@@ -1,12 +1,25 @@
+import { motion } from "framer-motion";
 import "./MetaverseGIF.scss";
 
 function MetaverseGIF() {
+  const variants = {
+    initial: { height: "100%" },
+    animate: { height: "0%", transition: { duration: 1 } },
+  };
+
   return (
     <section className="metarverseGIF">
       <div className="metarverseGIFLine">
         <div className="metarverseGIFBlock GIFBlock1">
+          <motion.div
+            className="imgWrapper"
+            variants={variants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ amount: 0.4, once: true }}
+          ></motion.div>
           <img
-            src={require("../../../assets/metaverse/x1c103459.png")}
+            src={require("../../../assets/metaverse/메타버스1_임시.gif")}
             alt="GIF 이미지"
           />
         </div>
@@ -34,8 +47,15 @@ function MetaverseGIF() {
           </div>
         </div>
         <div className="metarverseGIFBlock GIFBlock4">
+          <motion.div
+            className="imgWrapper"
+            variants={variants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ amount: 0.4, once: true }}
+          ></motion.div>
           <img
-            src={require("../../../assets/metaverse/x8.png")}
+            src={require("../../../assets/metaverse/메타버스2_임시.gif")}
             alt="GIF 이미지"
           />
         </div>

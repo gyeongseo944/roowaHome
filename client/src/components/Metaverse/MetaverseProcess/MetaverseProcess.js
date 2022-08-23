@@ -4,46 +4,20 @@ import "./MetaverseProcess.scss";
 
 function MetaverseProcess() {
   const ref = useRef();
-  const inView = useInView(ref, { amount: 0.4 });
+  const inView = useInView(ref, { amount: "all", once: true });
   const iconAnimate = useAnimation();
   useEffect(() => {
-    iconAnimate.start({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-      },
-    });
+    if (inView) {
+      iconAnimate.start((i) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: i * 0.5 - 0.5,
+          duration: 1,
+        },
+      }));
+    }
   }, [inView]);
-
-  // const parentsVariants = {
-  //   start: {
-  //     opacity: 0,
-  //   },
-  //   end: {
-  //     opacity: 1,
-  //     transition: {
-  //       delay: 2,
-  //       duration: 1.5,
-  //       delayChildren: 1.5,
-  //       staggerChildren: 0.5,
-  //     },
-  //   },
-  // };
-
-  const variants = {
-    start: {
-      opacity: 0,
-      y: 20,
-    },
-    end: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
 
   return (
     <section className="metaverseProcess">
@@ -75,15 +49,12 @@ function MetaverseProcess() {
           />
         </div>
       </div>
-      <motion.div
-        className="stepLine"
-        initial={{ opacity: 1 }}
-        animate={iconAnimate}
-      >
+      <div className="stepLine">
         <motion.div
           className="stepBox"
           initial={{ opacity: 0, y: 20 }}
           animate={iconAnimate}
+          custom={1}
         >
           <div className="step">step 01</div>
           <div className="title">고객사 상담 미팅</div>
@@ -92,6 +63,7 @@ function MetaverseProcess() {
           className="stepBox"
           initial={{ opacity: 0, y: 20 }}
           animate={iconAnimate}
+          custom={2}
         >
           <div className="step">step 02</div>
           <div className="title">월드맵 기획 작업</div>
@@ -100,6 +72,7 @@ function MetaverseProcess() {
           className="stepBox"
           initial={{ opacity: 0, y: 20 }}
           animate={iconAnimate}
+          custom={3}
         >
           <div className="step">step 03</div>
           <div className="title">{"모델링 및 앱 상호작용 개발"}</div>
@@ -108,11 +81,12 @@ function MetaverseProcess() {
           className="stepBox"
           initial={{ opacity: 0, y: 20 }}
           animate={iconAnimate}
+          custom={4}
         >
           <div className="step">step 04</div>
           <div className="title">제작 완성</div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }
