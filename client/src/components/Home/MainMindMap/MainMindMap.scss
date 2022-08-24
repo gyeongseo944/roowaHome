@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   background-color: $dark;
-
+  padding: 100px 0;
   .mindMapContainer {
     width: 100%;
     height: 100%;
@@ -70,7 +70,7 @@
         height: 430px;
         background-color: white;
         border-radius: 50%;
-        animation: hidden 1s ease-in-out 1.8s forwards;
+        animation: hidden 1s ease-in-out 1.5s forwards;
         z-index: 999;
       }
     }
@@ -93,7 +93,7 @@
 
         border-radius: 50%;
         background-color: white;
-        animation: animate 2.8s ease-in-out;
+        animation: animate 2s ease-in-out;
         animation-fill-mode: forwards;
         animation-delay: calc(0.2s * var(--id));
         text-align: center;
@@ -101,7 +101,7 @@
         p {
           opacity: 0;
           transform: rotate(calc(360deg / 8 * var(--idd)));
-          animation: fadeIn 2s ease 3.5s forwards;
+          animation: fadeIn 1s ease 3s forwards;
         }
       }
       span::before {
@@ -112,7 +112,7 @@
         height: 120px;
         transform: translateX(-90px) translateY(calc(30px * var(--s) + 20px)) rotate(90deg);
         opacity: 0;
-        animation: fadeIn 2s ease 3.5s forwards;
+        animation: fadeIn 1s ease 3s forwards;
       }
     }
   }

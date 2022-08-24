@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useAnimationControls } from "framer-motion";
+import { motion, useAnimationControls, useInView } from "framer-motion";
 import "./PortfolioImgCard.scss";
-import { useInView } from "framer-motion";
 
 const PortfolioImgCard = ({ title, contents, img }) => {
   const hideDirection = [{ x: 1000 }, { x: -1000 }, { y: 1000 }, { y: -1000 }];

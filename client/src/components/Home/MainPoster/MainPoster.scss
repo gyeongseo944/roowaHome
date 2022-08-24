@@ -6,8 +6,40 @@
   align-items: center;
   background-color: $dark;
   padding-bottom: 300px;
-
-  .mainPosterContainer {
-    width: 1150px;
+  .posterContainer {
+    width: 1110px;
+    height: 1560px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mainPosterMono {
+    position: absolute;
+    width: 950px;
+    margin-top: 30px;
+  }
+  .posterScanner {
+    position: absolute;
+    width: 1110px;
+    height: 1px;
+    overflow: hidden;
+    border-bottom: 2px solid #39d140;
+    box-shadow: 0 0 15px 0 #3cdd43;
+    text-align: center;
+    // animation: open 7s ease-in-out forwards;
+  }
+  .mainPosterColored {
+    width: 1050px;
   }
 }
+
+// @keyframes open {
+//   0% {
+//     height: 1px;
+//   }
+//   100% {
+//     height: 1510px;
+//   }
+// }
