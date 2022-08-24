@@ -7,6 +7,7 @@ function Header() {
   const navigate = useNavigate();
   const [showNavigate, setShowNavigate] = useState(false);
   const navAnimation = useAnimation();
+  const ulAnimation = useAnimation();
   const listAnimation = useAnimation();
   const blurAnimation = useAnimation();
   const marketingMatch = useMatch("/marketing/*");
@@ -20,12 +21,24 @@ function Header() {
 
   const toggleNav = (state) => {
     if (showNavigate) {
-      navAnimation.start({ height: 227, transition: { duration: 0.2 } });
-      listAnimation.start({
-        opacity: 0,
-        y: -10,
+      // navAnimation.start({ height: 227, transition: { duration: 0.2 } });
+      // listAnimation.start({
+      //   opacity: 0,
+      //   y: -10,
+      //   transitionDelay: { display: "none" },
+      //   transition: { duration: 0.1, delay: 0.1 },
+      // });
+      ulAnimation.start({
+        height: 0,
+        paddingTop: 0,
         transition: { duration: 0.1 },
       });
+      // listAnimation.start({
+      //   opacity: 0,
+      //   y: -10,
+      //   transitionDelay: { display: "none" },
+      //   transition: { duration: 0.1, delay: 0.1 },
+      // });
 
       blurAnimation.start({
         display: "none",
@@ -33,15 +46,21 @@ function Header() {
         transform: { duration: 0.2 },
       });
     } else {
-      navAnimation.start({
-        height: 425,
-        transition: { duration: 0.1 },
+      // navAnimation.start({
+      //   height: 425,
+      //   transition: { duration: 0.1 },
+      // });
+      ulAnimation.start({
+        height: "fit-content",
+        paddingTop: 10,
+        transition: { duration: 0.2 },
       });
-      listAnimation.start({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.1, delay: 0.1 },
-      });
+      // listAnimation.start({
+      //   opacity: 1,
+      //   y: 0,
+      //   display: "block",
+      //   transition: { duration: 0.1, delay: 0.2 },
+      // });
       blurAnimation.start({
         display: "block",
         opacity: 1,
@@ -51,116 +70,88 @@ function Header() {
     setShowNavigate(state);
   };
 
-  const matchBorder = { paddingBottom: "3px", borderBottom: "3px solid #fff" };
-  const matchLink = { fontWeight: "bold", color: "#fff" };
-  const aboutMatchFunction = () => {
-    if (roowaMatch || articleMatch || noticeMatch || recruitMatch) {
-      return true;
-    } else {
-      return false;
-    }
+  const matchBorder = {
+    paddingBottom: "6px",
+    borderBottom: "3px solid #ff0080",
+    color: "#ff0080",
+    fontWeight: "bold",
   };
+  const matchLink = { fontWeight: "bold", color: "#ff0080" };
 
   return (
     <>
-      <motion.header
-        className="headerContainer"
-        animate={navAnimation}
-        initial={{ height: 227 }}
-      >
+      <header className="headerContainer">
         <div className="headerLogo" onClick={() => navigate("/")}>
           ROOWA
         </div>
-        <div className="headerNav">
-          <ul className="navWrapper">
-            <li
-              className="headerNavBtn"
-              onMouseEnter={() => toggleNav(true)}
-              onMouseLeave={() => toggleNav(false)}
-              style={aboutMatchFunction() ? matchBorder : null}
-            >
-              ABOUT
-              <ul className="aboutUl">
-                <motion.li
-                  animate={listAnimation}
-                  initial={{ opacity: 0, y: -10 }}
-                >
-                  <Link to="/roowa" style={roowaMatch ? matchLink : null}>
-                    루와소개
-                  </Link>
-                </motion.li>
-                <motion.li
-                  animate={listAnimation}
-                  initial={{ opacity: 0, y: -10 }}
-                >
-                  <Link to="/article" style={articleMatch ? matchLink : null}>
-                    언론보도
-                  </Link>
-                </motion.li>
-                <motion.li
-                  animate={listAnimation}
-                  initial={{ opacity: 0, y: -10 }}
-                >
-                  <Link to="/notice" style={noticeMatch ? matchLink : null}>
-                    공지사항
-                  </Link>
-                </motion.li>
-                <motion.li
-                  animate={listAnimation}
-                  initial={{ opacity: 0, y: -10 }}
-                >
-                  <Link to="/recruit" style={recruitMatch ? matchLink : null}>
-                    채용공고
-                  </Link>
-                </motion.li>
-              </ul>
-            </li>
-            <li className="headerNavBtn" onClick={() => navigate("/")}>
-              ORIGINAL CONTENTS
-            </li>
-            <li
-              className="headerNavBtn"
-              onClick={() => navigate("/marketing")}
-              style={marketingMatch ? matchBorder : null}
-            >
-              CONTENTS MARKETING
-            </li>
-            <li
-              className="headerNavBtn"
-              onClick={() => navigate("/metaverse")}
-              style={metaverseMatch ? matchBorder : null}
-            >
-              METAVERSE
-            </li>
-            <li
-              className="headerNavBtn"
-              onMouseEnter={() => toggleNav(true)}
-              onMouseLeave={() => toggleNav(false)}
-              style={contactMatch ? matchBorder : payMatch ? matchBorder : null}
+        <ul className="headerNav">
+          <li
+            className="headerNavBtn"
+            onMouseEnter={() => toggleNav(true)}
+            onMouseLeave={() => toggleNav(false)}
+          >
+            <span style={metaverseMatch ? matchBorder : null}>business</span>
+            <motion.ul className="depthUl" animate={ulAnimation}>
+              <li>
+                <Link to="/metaverse" style={metaverseMatch ? matchLink : null}>
+                  메타버스 마케팅
+                </Link>
+              </li>
+              <li>
+                <Link to="/roowa" style={undefined ? matchLink : null}>
+                  오리지널 콘텐츠
+                </Link>
+              </li>
+            </motion.ul>
+          </li>
+          <li
+            className="headerNavBtn"
+            onMouseEnter={() => toggleNav(true)}
+            onMouseLeave={() => toggleNav(false)}
+            onClick={() => navigate("/roowa")}
+          >
+            <span style={roowaMatch ? matchBorder : null}>company</span>
+          </li>
+          <li
+            className="headerNavBtn"
+            onMouseEnter={() => toggleNav(true)}
+            onMouseLeave={() => toggleNav(false)}
+            onClick={() => navigate("/recruit")}
+          >
+            <span style={recruitMatch ? matchBorder : null}>recruit</span>
+          </li>
+          <li
+            className="headerNavBtn"
+            onMouseEnter={() => toggleNav(true)}
+            onMouseLeave={() => toggleNav(false)}
+          >
+            <span
+              style={
+                contactMatch || payMatch || articleMatch ? matchBorder : null
+              }
             >
               CONTACT
-              <ul className="contactUl">
-                <motion.li
-                  animate={listAnimation}
-                  initial={{ opacity: 0, y: -10 }}
-                >
-                  <Link to="/contact" style={contactMatch ? matchLink : null}>
-                    루와 상담문의
-                  </Link>
-                </motion.li>
-                <motion.li
-                  animate={listAnimation}
-                  initial={{ opacity: 0, y: -10 }}
-                >
-                  <Link to="/pay" style={payMatch ? matchLink : null}>
-                    결제
-                  </Link>
-                </motion.li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </motion.header>
+            </span>
+            <motion.ul className="depthUl" animate={ulAnimation}>
+              <li>
+                <Link to="/contact" style={contactMatch ? matchLink : null}>
+                  문의하기
+                </Link>
+              </li>
+              <li>
+                <Link to="/article" style={articleMatch ? matchLink : null}>
+                  뉴스·알림
+                </Link>
+              </li>
+              <li>
+                <Link to="/pay" style={payMatch ? matchLink : null}>
+                  결제
+                </Link>
+              </li>
+            </motion.ul>
+          </li>
+        </ul>
+      </header>
       <motion.div
         id="navBlurWrapper"
         animate={blurAnimation}

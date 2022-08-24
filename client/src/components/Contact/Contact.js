@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Banner from "../common/Banner";
 import "./Contact.scss";
@@ -148,10 +149,20 @@ function Contact() {
           </div>
         </div>
       </main>
-      {pop ? (
+      {pop && (
         <>
           <div id="overlay"></div>
-          <div className="popupBox">
+          <motion.div
+            className="popupBox"
+            initial={{
+              scale: 0,
+              translateX: "-50%",
+              translateY: "-50%",
+            }}
+            animate={{
+              scale: 1,
+            }}
+          >
             <img
               onClick={() => setPop(false)}
               className="exitIcon"
@@ -168,9 +179,9 @@ function Contact() {
             <button className="buttonBox" onClick={() => setPop(false)}>
               확인
             </button>
-          </div>
+          </motion.div>
         </>
-      ) : null}
+      )}
     </>
   );
 }

@@ -2,8 +2,7 @@
 
 .metaverseProcess {
   width: 100%;
-  max-width: 1560px;
-  margin-bottom: 275px;
+  max-width: 1240px;
 
   > .title {
     font-family: LeferiBase;
@@ -31,8 +30,8 @@
     }
 
     .iconCircles {
-      width: 166px;
-      height: 166px;
+      width: 131px;
+      height: 131px;
       border: 1px solid $white;
       border-radius: 50%;
       position: relative;
@@ -56,16 +55,16 @@
       text-align: center;
 
       .step {
-        font-size: 22px;
+        font-size: 17px;
         font-family: LeferiBase;
         text-transform: uppercase;
       }
 
       .title {
-        font-size: 38px;
-        letter-spacing: -1.52px;
+        font-size: 34px;
+        letter-spacing: -1.36px;
         word-break: keep-all;
-        width: 318px;
+        width: 253px;
       }
     }
   }

@@ -2,19 +2,27 @@ import { motion } from "framer-motion";
 import "./MetarverseExpansion.scss";
 
 function MetarverseExpansion() {
-  const variants = {
-    offScreen: {
+  const father = {
+    initial: {},
+    inView: {
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const child = {
+    initial: {
       opacity: 0,
       y: 20,
     },
-    onScreen: (i) => ({
+    inView: {
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.3 + 0.1,
         duration: 1,
       },
-    }),
+    },
   };
 
   return (
@@ -26,15 +34,15 @@ function MetarverseExpansion() {
           <strong>비즈니스를 확장</strong>할 수 있습니다.
         </div>
       </div>
-      <div className="imgGrid">
+      <motion.div
+        className="imgGrid"
+        variants={father}
+        initial="initial"
+        whileInView="inView"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <div className="imgGridItem">
-          <motion.div
-            variants={variants}
-            initial="offScreen"
-            whileInView="onScreen"
-            viewport={{ once: true }}
-            custom={1}
-          >
+          <motion.div variants={child}>
             <div className="imgBorder">
               <img
                 src={require("../../../assets/metaverse/x307.png")}
@@ -45,13 +53,7 @@ function MetarverseExpansion() {
           </motion.div>
         </div>
         <div className="imgGridItem">
-          <motion.div
-            variants={variants}
-            initial="offScreen"
-            whileInView="onScreen"
-            viewport={{ once: true }}
-            custom={2}
-          >
+          <motion.div variants={child}>
             <div className="imgBorder">
               <img
                 src={require("../../../assets/metaverse/x305.png")}
@@ -62,13 +64,7 @@ function MetarverseExpansion() {
           </motion.div>
         </div>
         <div className="imgGridItem">
-          <motion.div
-            variants={variants}
-            initial="offScreen"
-            whileInView="onScreen"
-            viewport={{ once: true }}
-            custom={3}
-          >
+          <motion.div variants={child}>
             <div className="imgBorder">
               <img
                 src={require("../../../assets/metaverse/x303.png")}
@@ -79,13 +75,7 @@ function MetarverseExpansion() {
           </motion.div>
         </div>
         <div className="imgGridItem">
-          <motion.div
-            variants={variants}
-            initial="offScreen"
-            whileInView="onScreen"
-            viewport={{ once: true }}
-            custom={4}
-          >
+          <motion.div variants={child}>
             <div className="imgBorder">
               <img
                 src={require("../../../assets/metaverse/x287.png")}
@@ -95,7 +85,7 @@ function MetarverseExpansion() {
             <span className="itemTitle">메타버스 마케팅</span>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

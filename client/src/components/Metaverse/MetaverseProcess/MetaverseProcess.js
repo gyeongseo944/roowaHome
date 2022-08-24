@@ -1,28 +1,31 @@
-import { useInView, motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import "./MetaverseProcess.scss";
 
 function MetaverseProcess() {
-  const ref = useRef();
-  const inView = useInView(ref, { amount: "all", once: true });
-  const iconAnimate = useAnimation();
-  useEffect(() => {
-    if (inView) {
-      iconAnimate.start((i) => ({
-        opacity: 1,
-        y: 0,
-        transition: {
-          delay: i * 0.5 - 0.5,
-          duration: 1,
-        },
-      }));
-    }
-  }, [inView]);
+  const father = {
+    initial: {},
+    inView: {
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const child = {
+    initial: { opacity: 0, y: 20 },
+    inView: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
 
   return (
     <section className="metaverseProcess">
       <div className="title">process</div>
-      <div className="iconArea" ref={ref}>
+      <div className="iconArea">
         <div className="dashBox"></div>
         <div className="iconCircles">
           <img
@@ -49,44 +52,30 @@ function MetaverseProcess() {
           />
         </div>
       </div>
-      <div className="stepLine">
-        <motion.div
-          className="stepBox"
-          initial={{ opacity: 0, y: 20 }}
-          animate={iconAnimate}
-          custom={1}
-        >
+      <motion.div
+        className="stepLine"
+        variants={father}
+        initial="initial"
+        whileInView="inView"
+        viewport={{ once: true, amount: 0.4 }}
+      >
+        <motion.div className="stepBox" variants={child}>
           <div className="step">step 01</div>
           <div className="title">고객사 상담 미팅</div>
         </motion.div>
-        <motion.div
-          className="stepBox"
-          initial={{ opacity: 0, y: 20 }}
-          animate={iconAnimate}
-          custom={2}
-        >
+        <motion.div className="stepBox" variants={child}>
           <div className="step">step 02</div>
           <div className="title">월드맵 기획 작업</div>
         </motion.div>
-        <motion.div
-          className="stepBox"
-          initial={{ opacity: 0, y: 20 }}
-          animate={iconAnimate}
-          custom={3}
-        >
+        <motion.div className="stepBox" variants={child}>
           <div className="step">step 03</div>
           <div className="title">{"모델링 및 앱 상호작용 개발"}</div>
         </motion.div>
-        <motion.div
-          className="stepBox"
-          initial={{ opacity: 0, y: 20 }}
-          animate={iconAnimate}
-          custom={4}
-        >
+        <motion.div className="stepBox" variants={child}>
           <div className="step">step 04</div>
           <div className="title">제작 완성</div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

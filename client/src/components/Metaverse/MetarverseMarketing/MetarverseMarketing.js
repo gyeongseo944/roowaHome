@@ -21,7 +21,7 @@ function MetarverseMarketing() {
             />
             <div className="title">{"메타버스\n비즈니스\n컨설팅"}</div>
             <div className="titleEng">Metarverse Business Consulting</div>
-            <div className="br"></div>
+            <div className="hr"></div>
             <ul>
               <li>제페토 브랜디드 굿즈 제작 : 의상,헤어,액세서리</li>
               <li>NFT 디지털 리소스 제작 및 MINTING</li>
@@ -36,7 +36,7 @@ function MetarverseMarketing() {
             />
             <div className="title">{"메타버스\n비즈니스\n컨설팅"}</div>
             <div className="titleEng">Metarverse Business Consulting</div>
-            <div className="br"></div>
+            <div className="hr"></div>
             <ul>
               <li>제페토 브랜디드 굿즈 제작 : 의상,헤어,액세서리</li>
               <li>NFT 디지털 리소스 제작 및 MINTING</li>
@@ -55,7 +55,7 @@ function MetarverseMarketing() {
             <div className="titleEng">
               Metarverse Event and Educate Creators
             </div>
-            <div className="br"></div>
+            <div className="hr"></div>
             <ul>
               <li>라이브 이벤트 기획·운영 및 진행</li>
               <li>메타버스 공모전 등 이벤트 개최·운영</li>

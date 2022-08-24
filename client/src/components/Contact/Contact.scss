@@ -195,8 +195,7 @@
   position: fixed;
   z-index: 1001;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  top: 502px;
+  top: 50%;
 
   .exitIcon {
     transform: rotateZ(45deg);
