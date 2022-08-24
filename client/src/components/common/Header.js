@@ -21,24 +21,24 @@ function Header() {
 
   const toggleNav = (state) => {
     if (showNavigate) {
-      // navAnimation.start({ height: 227, transition: { duration: 0.2 } });
-      // listAnimation.start({
-      //   opacity: 0,
-      //   y: -10,
-      //   transitionDelay: { display: "none" },
-      //   transition: { duration: 0.1, delay: 0.1 },
-      // });
-      ulAnimation.start({
-        height: 0,
-        paddingTop: 0,
-        transition: { duration: 0.1 },
+      navAnimation.start({ height: 227, transition: { duration: 0.2 } });
+      listAnimation.start({
+        opacity: 0,
+        y: -10,
+        transitionDelay: { display: "none" },
+        transition: { duration: 0.1, delay: 0.1 },
       });
-      // listAnimation.start({
-      //   opacity: 0,
-      //   y: -10,
-      //   transitionDelay: { display: "none" },
-      //   transition: { duration: 0.1, delay: 0.1 },
+      // ulAnimation.start({
+      //   height: 0,
+      //   paddingTop: 0,
+      //   transition: { duration: 0.1 },
       // });
+      listAnimation.start({
+        opacity: 0,
+        y: -10,
+        transitionDelay: { display: "none" },
+        transition: { duration: 0.1, delay: 0.1 },
+      });
 
       blurAnimation.start({
         display: "none",
@@ -46,21 +46,21 @@ function Header() {
         transform: { duration: 0.2 },
       });
     } else {
-      // navAnimation.start({
-      //   height: 425,
-      //   transition: { duration: 0.1 },
-      // });
-      ulAnimation.start({
-        height: "fit-content",
-        paddingTop: 10,
-        transition: { duration: 0.2 },
+      navAnimation.start({
+        height: 330,
+        transition: { duration: 0.1 },
       });
-      // listAnimation.start({
-      //   opacity: 1,
-      //   y: 0,
-      //   display: "block",
-      //   transition: { duration: 0.1, delay: 0.2 },
+      // ulAnimation.start({
+      //   height: "fit-content",
+      //   paddingTop: 10,
+      //   transition: { duration: 0.2 },
       // });
+      listAnimation.start({
+        opacity: 1,
+        y: 0,
+        display: "block",
+        transition: { duration: 0.1, delay: 0.2 },
+      });
       blurAnimation.start({
         display: "block",
         opacity: 1,
@@ -73,14 +73,18 @@ function Header() {
   const matchBorder = {
     paddingBottom: "6px",
     borderBottom: "3px solid #ff0080",
-    color: "#ff0080",
+    // color: "#ff0080",
     fontWeight: "bold",
   };
   const matchLink = { fontWeight: "bold", color: "#ff0080" };
 
   return (
     <>
-      <header className="headerContainer">
+      <motion.header
+        className="headerContainer"
+        animate={navAnimation}
+        initial={{ height: 227 }}
+      >
         <div className="headerLogo" onClick={() => navigate("/")}>
           ROOWA
         </div>
@@ -91,18 +95,24 @@ function Header() {
             onMouseLeave={() => toggleNav(false)}
           >
             <span style={metaverseMatch ? matchBorder : null}>business</span>
-            <motion.ul className="depthUl" animate={ulAnimation}>
-              <li>
+            <ul className="depthUl">
+              <motion.li
+                animate={listAnimation}
+                initial={{ opacity: 0, y: -10 }}
+              >
                 <Link to="/metaverse" style={metaverseMatch ? matchLink : null}>
                   메타버스 마케팅
                 </Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                animate={listAnimation}
+                initial={{ opacity: 0, y: -10 }}
+              >
                 <Link to="/roowa" style={undefined ? matchLink : null}>
                   오리지널 콘텐츠
                 </Link>
-              </li>
-            </motion.ul>
+              </motion.li>
+            </ul>
           </li>
           <li
             className="headerNavBtn"
@@ -132,26 +142,35 @@ function Header() {
             >
               CONTACT
             </span>
-            <motion.ul className="depthUl" animate={ulAnimation}>
-              <li>
+            <ul className="depthUl">
+              <motion.li
+                animate={listAnimation}
+                initial={{ opacity: 0, y: -10 }}
+              >
                 <Link to="/contact" style={contactMatch ? matchLink : null}>
                   문의하기
                 </Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                animate={listAnimation}
+                initial={{ opacity: 0, y: -10 }}
+              >
                 <Link to="/article" style={articleMatch ? matchLink : null}>
                   뉴스·알림
                 </Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                animate={listAnimation}
+                initial={{ opacity: 0, y: -10 }}
+              >
                 <Link to="/pay" style={payMatch ? matchLink : null}>
                   결제
                 </Link>
-              </li>
-            </motion.ul>
+              </motion.li>
+            </ul>
           </li>
         </ul>
-      </header>
+      </motion.header>
       <motion.div
         id="navBlurWrapper"
         animate={blurAnimation}
