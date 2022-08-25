@@ -4,6 +4,8 @@ import OriginalPortfolio from "./OriginalPortfolio/OriginalPortfolio";
 import OriginalBottom from "./OriginalBottom/OriginalBottom";
 import MetaverseYouTube from "../Metaverse/MetaverseYouTube/MetaverseYouTube";
 import OriginalExplain from "./OriginalExplain/OriginalExplain";
+import OriginalCard from "./OriginalCard/OriginalCard";
+import OriginalProject from "./OriginalProject/OriginalProject";
 
 function Original() {
   return (
@@ -17,6 +19,8 @@ function Original() {
       <main className="originMain">
         <MetaverseYouTube title="original contents" src="cfzpznYQ-Tg" />
         <OriginalExplain />
+        <OriginalCard />
+        <OriginalProject />
         <OriginalPortfolio />
         <OriginalBottom />
       </main>

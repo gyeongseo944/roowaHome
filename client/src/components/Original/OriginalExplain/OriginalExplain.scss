@@ -1,0 +1,48 @@
+@import "~/src/config";
+
+.originalExplain {
+  width: 100%;
+  max-width: 1240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 180px;
+
+  .textBox {
+    white-space: pre-wrap;
+    text-align: center;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 80px;
+    letter-spacing: -2px;
+    margin: 180px 0;
+  }
+
+  .imgBox,
+  .bottomImg {
+    width: 100%;
+    height: 458px;
+    position: relative;
+    div {
+      right: 0;
+      background-color: $dark;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      transform-origin: right center;
+    }
+    img {
+      height: 100%;
+    }
+  }
+
+  .bottomImg {
+    height: 483px;
+    display: flex;
+    justify-content: flex-end;
+    div {
+      left: 0;
+      transform-origin: left center;
+    }
+  }
+}

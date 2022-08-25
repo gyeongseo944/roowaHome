@@ -52,10 +52,12 @@
         color: $dark;
         margin-right: 40px;
         position: relative;
+        transition: all 0.3s ease;
         &:last-child {
           margin-right: 0;
         }
         &:hover {
+          opacity: 1;
           img {
             display: block;
             opacity: 1;
