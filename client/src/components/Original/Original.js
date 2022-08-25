@@ -1,8 +1,9 @@
 import "./Original.scss";
 import Banner from "../common/Banner";
-import OriginalYoutube from "./OriginalYoutube/OriginalYoutube";
 import OriginalPortfolio from "./OriginalPortfolio/OriginalPortfolio";
 import OriginalBottom from "./OriginalBottom/OriginalBottom";
+import MetaverseYouTube from "../Metaverse/MetaverseYouTube/MetaverseYouTube";
+import OriginalExplain from "./OriginalExplain/OriginalExplain";
 
 function Original() {
   return (
@@ -14,7 +15,8 @@ function Original() {
         src={require("../../assets/metaverse/opacityBanner.png")}
       />
       <main className="originMain">
-        <OriginalYoutube />
+        <MetaverseYouTube title="original contents" src="cfzpznYQ-Tg" />
+        <OriginalExplain />
         <OriginalPortfolio />
         <OriginalBottom />
       </main>
