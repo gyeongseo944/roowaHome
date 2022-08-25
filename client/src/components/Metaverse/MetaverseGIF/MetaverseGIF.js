@@ -9,6 +9,15 @@ function MetaverseGIF() {
 
   return (
     <section className="metarverseGIF">
+      <div className="metaverseExplanation">
+        <span>
+          {"루와의 메타버스 마케팅은\n가장 클라이언트의 목적에 부합하는\n"}
+          <strong>메타버스 컨셉</strong>과{" "}
+          <strong>월드맵 기획, 제작, 브렌디드 굿즈</strong>
+          {"를 포함한\n모든 활용과 "}
+          <strong>홍보 서비스</strong>를 제공합니다
+        </span>
+      </div>
       <div className="metarverseGIFLine">
         <div className="metarverseGIFBlock GIFBlock1">
           <motion.div

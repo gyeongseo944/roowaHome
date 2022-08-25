@@ -1,5 +1,4 @@
 import Banner from "../common/Banner";
-import MetaverseTitle from "./MetaverseTitle/MetaverseTitle";
 import "./Metaverse.scss";
 import MetaverseYouTube from "./MetaverseYouTube/MetaverseYouTube";
 import MetaverseGIF from "./MetaverseGIF/MetaverseGIF";
@@ -23,8 +22,10 @@ function Metaverse() {
         src={require("../../assets/metaverse/opacityBanner.png")}
       />
       <main className="metaverseMain">
-        <MetaverseTitle />
-        <MetaverseYouTube />
+        <MetaverseYouTube
+          title="metaverse marketing contents"
+          src="iubVXEjw8lw"
+        />
         <MetaverseGIF />
         <MetarverseExpansion />
         <MetarverseMarketing />
