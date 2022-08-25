@@ -1,14 +1,17 @@
 .gridContainer {
   width: 100%;
-  height: 480px;
+  cursor: pointer;
   .dimmedImg {
     width: 100%;
-    height: 70%;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
     position: relative;
     overflow: hidden;
     .cardImg {
       width: 100%;
       height: 100%;
+      object-fit: contain;
       transition: 1s;
     }
   }
@@ -16,12 +19,11 @@
     color: black;
   }
   .gridTitle {
-    margin: 5% 0;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
+    margin-top: 20px;
   }
   .gridDate {
-    margin: 5% 0;
     font-size: 20px;
     color: #888888;
   }
@@ -33,9 +35,9 @@
     left: 0; /* 빈 값으로 넣어야 가상의 요소 생성; */
     content: "+";
     text-align: center;
-    font-weight: 200;
-    line-height: 400px;
-    font-size: 100px;
+    font-weight: 100;
+    line-height: 300px;
+    font-size: 80px;
     color: rgba(0, 0, 0, 0);
     background: rgba(0, 0, 0, 0);
     transition: 0.5s;
@@ -43,13 +45,12 @@
 }
 
 .gridContainer:hover {
-  cursor: pointer;
   a {
     color: black;
   }
   .dimmedImg {
     .cardImg {
-      transform: scale(1.3);
+      transform: scale(1.2);
     }
   }
   .dimmedImg::after {
