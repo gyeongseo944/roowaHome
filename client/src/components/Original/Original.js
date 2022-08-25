@@ -1,3 +1,4 @@
+import "./Original.scss";
 import Banner from "../common/Banner";
 import OriginalYoutube from "./OriginalYoutube/OriginalYoutube";
 
