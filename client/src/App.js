@@ -11,6 +11,7 @@ import PayDetail from "./components/Pay/PayDetail/PayDetail";
 import Recruit from "./components/Recruit/Recruit";
 import RecruitDetail from "./components/Recruit/RecruitDetail/RecruitDetail";
 import Metaverse from "./components/Metaverse/Metaverse";
+import Original from "./components/Original/Original";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/recruit" element={<Recruit />} />
         <Route path="/recruit/:id" element={<RecruitDetail />} />
         <Route path="/metaverse" element={<Metaverse />} />
+        <Route path="/original" element={<Original />} />
       </Routes>
       <Footer />
     </BrowserRouter>

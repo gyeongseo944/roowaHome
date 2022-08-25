@@ -7,17 +7,16 @@ function Header() {
   const navigate = useNavigate();
   const [showNavigate, setShowNavigate] = useState(false);
   const navAnimation = useAnimation();
-  const ulAnimation = useAnimation();
+  // const ulAnimation = useAnimation();
   const listAnimation = useAnimation();
   const blurAnimation = useAnimation();
-  const marketingMatch = useMatch("/marketing/*");
   const metaverseMatch = useMatch("/metaverse/*");
   const contactMatch = useMatch("/contact/*");
   const payMatch = useMatch("/pay/*");
   const roowaMatch = useMatch("/roowa/*");
   const articleMatch = useMatch("/article/*");
-  const noticeMatch = useMatch("/notice/*");
   const recruitMatch = useMatch("/recruit/*");
+  const originalMatch = useMatch("/original/*");
 
   const toggleNav = (state) => {
     if (showNavigate) {
@@ -108,7 +107,7 @@ function Header() {
                 animate={listAnimation}
                 initial={{ opacity: 0, y: -10 }}
               >
-                <Link to="/roowa" style={undefined ? matchLink : null}>
+                <Link to="/original" style={originalMatch ? matchLink : null}>
                   오리지널 콘텐츠
                 </Link>
               </motion.li>
