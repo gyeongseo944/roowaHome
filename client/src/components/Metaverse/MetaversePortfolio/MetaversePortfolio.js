@@ -1,12 +1,12 @@
 import React from "react";
 import "./MetaversePortfolio.scss";
-import PortfolioImgCard from "./PortfolioImgCard/PortfolioImgCard";
+import PortfolioImgCard from "../../common/PortfolioImgCard/PortfolioImgCard";
 import img1 from "../../../assets/metaverse/x8.png";
 import img2 from "../../../assets/metaverse/x9.png";
 import { useInView } from "framer-motion";
 
 const MetaversePortfolio = () => {
-  const portfoilo = [
+  const portfolio = [
     {
       title: "미륵사지",
       contents: "과거와 현재, 미래를 아우르는 \n미륵사 유적의 시간여행",
@@ -46,7 +46,7 @@ const MetaversePortfolio = () => {
           PORTFOLIO
         </h1>
         <div className="imgCardContainer">
-          {portfoilo && portfoilo.map((img, id) => <PortfolioImgCard key={id} title={img.title} contents={img.contents} img={img.img} />)}
+          {portfolio && portfolio.map((img, id) => <PortfolioImgCard key={id} title={img.title} contents={img.contents} img={img.img} />)}
         </div>
       </div>
     </section>
