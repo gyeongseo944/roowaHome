@@ -49,7 +49,7 @@ const Article = () => {
       {Loading ? (
         <Loader />
       ) : (
-        <div>
+        <div className="articleContainer">
           <div className="article_title">
             <h1>뉴스 &middot; 알림</h1>
             <div className="naviArticle">
@@ -83,22 +83,20 @@ const Article = () => {
           <div className="article_container">
             <div className="grid_container">
               {TapArticle ? (
-                <Row gutter={[32, 40]}>
-                  {Article &&
-                    Article.map((article, index) => (
-                      <React.Fragment key={index + article.id}>
-                        <GridCard
-                          page={"Article"}
-                          page_id={article.id}
-                          idArr={ArtIdArr}
-                          thisIndex={index}
-                          image={article.image.files[0].file}
-                          title={article.title.results[0].title.plain_text}
-                          date={article.date.date.start}
-                        />
-                      </React.Fragment>
-                    ))}
-                </Row>
+                Article &&
+                Article.map((article, index) => (
+                  <React.Fragment key={index + article.id}>
+                    <GridCard
+                      page={"Article"}
+                      page_id={article.id}
+                      idArr={ArtIdArr}
+                      thisIndex={index}
+                      image={article.image.files[0].file}
+                      title={article.title.results[0].title.plain_text}
+                      date={article.date.date.start}
+                    />
+                  </React.Fragment>
+                ))
               ) : (
                 <Row gutter={[32, 40]}>
                   {Notice &&

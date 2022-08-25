@@ -1,6 +1,8 @@
 import "./Original.scss";
 import Banner from "../common/Banner";
 import OriginalYoutube from "./OriginalYoutube/OriginalYoutube";
+import OriginalPortfolio from "./OriginalPortfolio/OriginalPortfolio";
+import OriginalBottom from "./OriginalBottom/OriginalBottom";
 
 function Original() {
   return (
@@ -13,6 +15,8 @@ function Original() {
       />
       <main className="originMain">
         <OriginalYoutube />
+        <OriginalPortfolio />
+        <OriginalBottom />
       </main>
     </>
   );
