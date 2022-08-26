@@ -1,7 +1,7 @@
-import { Link, useMatch, useNavigate } from "react-router-dom";
+import { Link, useLocation, useMatch, useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import "./Header.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Header() {
   const navigate = useNavigate();
@@ -17,6 +17,13 @@ function Header() {
   const articleMatch = useMatch("/article/*");
   const recruitMatch = useMatch("/recruit/*");
   const originalMatch = useMatch("/original/*");
+
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, [location]);
 
   const toggleNav = (state) => {
     if (showNavigate) {
