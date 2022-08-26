@@ -1,1 +1,37 @@
 @import "~/src/config";
+
+.OriginalProject {
+  width: 1240px;
+  h1 {
+    font-size: 100px;
+    font-family: LeferiBase;
+    margin-bottom: 70px;
+    color: #070707;
+    -webkit-text-stroke: 2px #fff;
+    font-weight: bold;
+  }
+  .logoContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 300px));
+    grid-template-rows: repeat(2, minmax(250px, 250px));
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    .logoItem {
+      text-align: center;
+    }
+    .logoItem:nth-child(1),
+    .logoItem:nth-child(2),
+    .logoItem:nth-child(5) {
+      img {
+        width: 300px;
+      }
+    }
+    .logoItem:nth-child(3),
+    .logoItem:nth-child(4),
+    .logoItem:nth-child(6) {
+      img {
+        width: 200px;
+      }
+    }
+  }
+}

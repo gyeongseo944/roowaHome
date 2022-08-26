@@ -79,7 +79,6 @@ router.post("/getArticle", async (req, res) => {
         return res.results[0].title.plain_text;
       });
   }
-  console.log(detail);
   res.send(detail);
 });
 
@@ -111,7 +110,6 @@ router.post("/getNotice", async (req, res) => {
         return res.results[0].title.plain_text;
       });
   }
-  console.log(detail);
   res.send(detail);
 });
 

@@ -53,7 +53,7 @@ const PortfolioImgCard = ({ title, contents, img, link }) => {
     <div className="imgItem" style={link ? { height: "600px" } : { height: "auto" }}>
       <div className="imgContainer" ref={imageRef}>
         {link ? (
-          <a href={link} target="_blank">
+          <a href={link} target="_blank" rel="noreferrer noopener">
             <motion.div className="hideImg" initial={firstRandom} animate={hideControls} style={Height > 0 ? { height: Height } : null} />
             <motion.div className="dimmedImg" style={Height > 0 ? { height: Height } : null}>
               +

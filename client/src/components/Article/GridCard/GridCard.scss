@@ -8,11 +8,16 @@
     max-height: 300px;
     position: relative;
     overflow: hidden;
+    text-align: center;
     .cardImg {
       width: 100%;
       height: 100%;
       object-fit: contain;
       transition: 1s;
+    }
+    .noticeImg {
+      width: 300px;
+      object-fit: cover;
     }
   }
   a {

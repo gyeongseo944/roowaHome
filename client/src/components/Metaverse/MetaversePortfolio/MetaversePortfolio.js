@@ -3,7 +3,6 @@ import "./MetaversePortfolio.scss";
 import PortfolioImgCard from "../../common/PortfolioImgCard/PortfolioImgCard";
 import img1 from "../../../assets/metaverse/x8.png";
 import img2 from "../../../assets/metaverse/x9.png";
-import { useInView } from "framer-motion";
 
 const MetaversePortfolio = () => {
   const portfolio = [

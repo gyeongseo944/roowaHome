@@ -82,39 +82,35 @@ const Article = () => {
           </div>
           <div className="article_container">
             <div className="grid_container">
-              {TapArticle ? (
-                Article &&
-                Article.map((article, index) => (
-                  <React.Fragment key={index + article.id}>
-                    <GridCard
-                      page={"Article"}
-                      page_id={article.id}
-                      idArr={ArtIdArr}
-                      thisIndex={index}
-                      image={article.image.files[0].file}
-                      title={article.title.results[0].title.plain_text}
-                      date={article.date.date.start}
-                    />
-                  </React.Fragment>
-                ))
-              ) : (
-                <Row gutter={[32, 40]}>
-                  {Notice &&
-                    Notice.map((notice, index) => (
-                      <React.Fragment key={index + notice.id}>
-                        <GridCard
-                          page={"Notice"}
-                          page_id={notice.id}
-                          idArr={NotIdArr}
-                          thisIndex={index}
-                          image={notice.image.files[0].file}
-                          title={notice.title.results[0].title.plain_text}
-                          date={notice.date.date.start}
-                        />
-                      </React.Fragment>
-                    ))}
-                </Row>
-              )}
+              {TapArticle
+                ? Article &&
+                  Article.map((article, index) => (
+                    <React.Fragment key={index + article.id}>
+                      <GridCard
+                        page={"Article"}
+                        page_id={article.id}
+                        idArr={ArtIdArr}
+                        thisIndex={index}
+                        image={article.image.files[0].file}
+                        title={article.title.results[0].title.plain_text}
+                        date={article.date.date.start}
+                      />
+                    </React.Fragment>
+                  ))
+                : Notice &&
+                  Notice.map((notice, index) => (
+                    <React.Fragment key={index + notice.id}>
+                      <GridCard
+                        page={"Notice"}
+                        page_id={notice.id}
+                        idArr={NotIdArr}
+                        thisIndex={index}
+                        image={notice.image.files[0].file}
+                        title={notice.title.results[0].title.plain_text}
+                        date={notice.date.date.start}
+                      />
+                    </React.Fragment>
+                  ))}
             </div>
           </div>
         </div>
