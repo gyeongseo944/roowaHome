@@ -15,31 +15,8 @@
   .footerContainer {
     display: flex;
     justify-content: space-between;
-    height: 96px;
+    min-height: 96px;
     width: 100%;
-    align-items: center;
-
-    // @media (max-width: 1170px) {
-    //   flex-direction: column;
-    //   height: fit-content;
-    //   .footerLogoBox {
-    //     margin: 50px 0;
-    //     justify-content: center;
-    //     .footerLogo {
-    //       margin: 0;
-    //     }
-    //   }
-
-    //   .footerInfoBox {
-    //     max-width: 768px;
-    //     padding: 0;
-    //     display: grid;
-    //     grid-template-columns: repeat(2, 1fr);
-    //   }
-
-    //   .footerLinkBox {
-    //   }
-    // }
 
     li {
       margin-bottom: 14px;
@@ -49,41 +26,53 @@
     .footerLogoBox {
       display: flex;
       align-items: center;
-      padding-top: 10px;
+      padding-top: 38px;
+      height: fit-content;
+
+      .footerLogo {
+        text-indent: -10000px;
+        background-image: url(../../assets/x151af1d9.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        min-width: 121px;
+        min-height: 24px;
+        margin-right: 57px;
+      }
     }
-    .footerLogo {
-      text-indent: -10000px;
-      background-image: url(../../assets/x151af1d9.png);
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      min-width: 121px;
-      min-height: 24px;
-      margin-right: 57px;
+    @media (max-width: 1100px) {
+      .footerInfoBox {
+        flex-wrap: wrap;
+      }
+      .footerLinkBox {
+        flex-wrap: wrap;
+      }
+    }
+
+    .footerInfoBox {
+      width: 1170px;
+      height: 100%;
+      padding-top: 30px;
+      padding-right: 40px;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid $lightGray;
     }
 
     .footerLinkBox {
       display: flex;
       color: $fontGray;
       justify-content: space-between;
-      align-items: center;
       border-top: 1px solid $lightGray;
       width: 384px;
       height: 100%;
       margin-left: 67px;
       padding: 0 5px;
       margin-bottom: 0;
+      padding-top: 30px;
     }
   }
-  .footerInfoBox {
-    width: 1170px;
-    height: 100%;
-    padding-top: 30px;
-    padding-right: 40px;
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid $lightGray;
-  }
+
   .snsBtns {
     height: 70px;
     width: 100%;

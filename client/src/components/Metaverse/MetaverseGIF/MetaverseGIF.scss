@@ -7,6 +7,9 @@
   align-items: center;
   margin-bottom: 180px;
 
+  @media (max-width: 1265px) {
+  }
+
   .metaverseExplanation {
     margin-top: 186px;
     margin-bottom: 103px;
@@ -35,6 +38,7 @@
       flex-direction: column;
       justify-content: flex-end;
       position: relative;
+      width: 100%;
 
       .imgWrapper {
         background-color: $dark;
@@ -64,26 +68,28 @@
     }
 
     .GIFBlock1 {
-      width: 644px;
+      max-width: 644px;
 
       img {
-        width: 600px;
+        width: 100%;
+        max-width: 600px;
       }
     }
 
     .GIFBlock2 {
-      width: 661px;
+      max-width: 661px;
     }
 
     .GIFBlock3 {
-      width: 644px;
+      max-width: 644px;
       padding-left: 70px;
     }
 
     .GIFBlock4 {
-      width: 661px;
+      max-width: 661px;
 
       img {
+        width: 100%;
         border-radius: 30px;
       }
     }

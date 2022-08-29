@@ -69,7 +69,7 @@ function MetaverseProcess() {
         </motion.div>
         <motion.div className="stepBox" variants={child}>
           <div className="step">step 03</div>
-          <div className="title">{"모델링 및 앱 상호작용 개발"}</div>
+          <div className="title">{"모델링 및 앱\n상호작용 개발"}</div>
         </motion.div>
         <motion.div className="stepBox" variants={child}>
           <div className="step">step 04</div>
