@@ -61,25 +61,26 @@ const Article = () => {
               <img className="naviArrow" src={naviArrow} alt="Chevron" />
               <span className="naviBtn">뉴스 &middot; 알림</span>
             </div>
-          </div>
-          <div className="tapMenu">
-            <div
-              className={TapArticle ? "articleTap active" : "articleTap"}
-              onClick={() => {
-                setTapArticle(true);
-              }}
-            >
-              언론보도
+            <div className="tapMenu">
+              <div
+                className={TapArticle ? "articleTap active" : "articleTap"}
+                onClick={() => {
+                  setTapArticle(true);
+                }}
+              >
+                언론보도
+              </div>
+              <div
+                className={TapArticle ? "noticeTap" : "noticeTap active"}
+                onClick={() => {
+                  setTapArticle(false);
+                }}
+              >
+                공지사항
+              </div>
             </div>
-            <div
-              className={TapArticle ? "noticeTap" : "noticeTap active"}
-              onClick={() => {
-                setTapArticle(false);
-              }}
-            >
-              공지사항
-            </div>
           </div>
+
           <div className="article_container">
             <div className="grid_container">
               {TapArticle

@@ -8,8 +8,8 @@
   margin-top: 50px;
 }
 .article_title {
-  width: 1400px;
-  height: 160px;
+  width: 70%;
+  height: 190px;
   text-align: center;
   position: relative;
   h1 {
@@ -38,26 +38,23 @@
   }
 }
 .tapMenu {
-  width: 1240px;
+  width: 50%;
   height: 70px;
-  position: relative;
-  margin-bottom: 50px;
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 10%;
   .articleTap {
     font-size: 1.6rem;
     text-align: center;
     line-height: 70px;
-    position: absolute;
-    left: 5%;
-    bottom: 0;
     cursor: pointer;
   }
   .noticeTap {
     font-size: 1.6rem;
     text-align: center;
     line-height: 70px;
-    position: absolute;
-    left: 20%;
-    bottom: 0;
+    margin-left: 40px;
     cursor: pointer;
   }
   .active {
@@ -72,14 +69,58 @@
   height: object-fit;
   display: flex;
   justify-content: center;
+  margin-top: 30px;
   margin-bottom: 10vh;
   .grid_container {
-    width: 1240px;
+    width: 80%;
     height: auto;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, minmax(400px, 400px));
+    grid-template-columns: repeat(3, minmax(auto, 400px));
     column-gap: 20px;
     grid-auto-rows: minmax(550px, 550px);
+    justify-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .article_title {
+    width: 80%;
+    height: 120px;
+    h1 {
+      font-size: 2rem;
+    }
+    .naviArticle {
+      right: 5%;
+      .naviHome {
+        width: 18px;
+        height: 16px;
+      }
+      .naviArrow {
+        width: 8px;
+        height: 14px;
+        margin: 0 5px;
+      }
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+  .tapMenu {
+    left: 5%;
+    .articleTap {
+      font-size: 1.2rem;
+    }
+    .noticeTap {
+      font-size: 1.2rem;
+      left: 25%;
+    }
+  }
+  .article_container {
+    .grid_container {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
