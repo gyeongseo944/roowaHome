@@ -38,26 +38,50 @@ function Footer() {
         </ul>
       </div>
       <div className="snsBtns">
-        <img
-          className="snsBtn"
-          src={require("../../assets/snsBtns/x7.png")}
-          alt=""
-        />
-        <img
-          className="snsBtn"
-          src={require("../../assets/snsBtns/x15.png")}
-          alt=""
-        />
-        <img
-          className="snsBtn"
-          src={require("../../assets/snsBtns/x11.png")}
-          alt=""
-        />
-        <img
-          className="snsBtn"
-          src={require("../../assets/snsBtns/x13.png")}
-          alt=""
-        />
+        <a
+          href={"https://www.facebook.com/roowa.official"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="snsBtn"
+            src={require("../../assets/snsBtns/x7.png")}
+            alt=""
+          />
+        </a>
+        <a
+          href={"https://www.instagram.com/roowa.official"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="snsBtn"
+            src={require("../../assets/snsBtns/x15.png")}
+            alt=""
+          />
+        </a>
+        <a
+          href={"https://www.youtube.com/channel/UCxw7yEYe192dESeJ5m88pOw"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="snsBtn"
+            src={require("../../assets/snsBtns/x11.png")}
+            alt=""
+          />
+        </a>
+        <a
+          href={"https://blog.naver.com/commerce_roowa"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="snsBtn"
+            src={require("../../assets/snsBtns/x13.png")}
+            alt=""
+          />
+        </a>
       </div>
       <div className="toTop">
         <img

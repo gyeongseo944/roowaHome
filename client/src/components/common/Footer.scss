@@ -1,9 +1,9 @@
 @import "~/src/config";
 
 .footer {
-  height: 424px;
+  min-height: 424px;
   padding: 56px;
-  font-size: 14px;
+  font-size: 0.875rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -19,6 +19,28 @@
     width: 100%;
     align-items: center;
 
+    // @media (max-width: 1170px) {
+    //   flex-direction: column;
+    //   height: fit-content;
+    //   .footerLogoBox {
+    //     margin: 50px 0;
+    //     justify-content: center;
+    //     .footerLogo {
+    //       margin: 0;
+    //     }
+    //   }
+
+    //   .footerInfoBox {
+    //     max-width: 768px;
+    //     padding: 0;
+    //     display: grid;
+    //     grid-template-columns: repeat(2, 1fr);
+    //   }
+
+    //   .footerLinkBox {
+    //   }
+    // }
+
     li {
       margin-bottom: 14px;
       padding-right: 5px;
@@ -28,27 +50,16 @@
       display: flex;
       align-items: center;
       padding-top: 10px;
-
-      .footerLogo {
-        text-indent: -10000px;
-        background-image: url(../../assets/x151af1d9.png);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        min-width: 121px;
-        min-height: 24px;
-        margin-right: 57px;
-      }
     }
-
-    .footerInfoBox {
-      width: 1170px;
-      height: 100%;
-      padding-top: 30px;
-      padding-right: 40px;
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid $lightGray;
+    .footerLogo {
+      text-indent: -10000px;
+      background-image: url(../../assets/x151af1d9.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      min-width: 121px;
+      min-height: 24px;
+      margin-right: 57px;
     }
 
     .footerLinkBox {
@@ -64,7 +75,15 @@
       margin-bottom: 0;
     }
   }
-
+  .footerInfoBox {
+    width: 1170px;
+    height: 100%;
+    padding-top: 30px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $lightGray;
+  }
   .snsBtns {
     height: 70px;
     width: 100%;

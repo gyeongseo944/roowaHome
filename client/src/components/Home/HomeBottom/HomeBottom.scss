@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   background-color: $dark;
+  padding-bottom: 76px;
 
   .toorWith {
     margin: 300px 0;
@@ -25,7 +26,6 @@
   .goToMetaverse {
     position: relative;
     height: fit-content;
-    margin-bottom: 76px;
 
     &:hover {
       .goToMetaverseBtn {

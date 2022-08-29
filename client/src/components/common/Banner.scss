@@ -2,6 +2,7 @@
 
 .banner {
   width: 100%;
+  min-width: fit-content;
   height: 580px;
   background: $dark;
   display: flex;

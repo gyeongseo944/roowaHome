@@ -6,9 +6,9 @@ function WideImage() {
   const ref = useRef();
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.7", "end 0.7"],
+    offset: ["start 0.7", "end 0.9"],
   });
-  const screenSize = useTransform(scrollYProgress, [0, 1], [1000, 1920]);
+  const screenSize = useTransform(scrollYProgress, [0, 1], ["30%", "100%"]);
   return (
     <section className="WideImageContainer" ref={ref}>
       <motion.div

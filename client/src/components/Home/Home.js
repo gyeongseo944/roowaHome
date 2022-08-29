@@ -1,4 +1,3 @@
-import "./Home.scss";
 import HomeBottom from "./HomeBottom/HomeBottom";
 import MainMindMap from "./MainMindMap/MainMindMap";
 import MainPoster from "./MainPoster/MainPoster";

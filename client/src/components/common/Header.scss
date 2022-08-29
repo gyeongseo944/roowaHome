@@ -27,7 +27,7 @@
   .headerNav {
     margin-top: 53px;
     margin-bottom: 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
     width: 744px;
     display: flex;
     justify-content: space-between;
@@ -65,8 +65,8 @@
 
         li {
           margin-bottom: 10px;
-          font-size: 16px;
-          letter-spacing: -0.64px;
+          font-size: 1rem;
+          letter-spacing: -0.04px;
           transform-origin: center top;
           cursor: pointer;
           width: 100%;
@@ -98,4 +98,15 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
+}
+
+@include desktop {
+  header {
+    display: block;
+  }
+}
+@include mobile {
+  header {
+    display: none;
+  }
 }

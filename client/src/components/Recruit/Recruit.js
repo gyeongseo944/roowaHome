@@ -33,7 +33,6 @@ function Recruit() {
             const dataDate = Math.ceil(
               (new Date(v.date.date.end) - new Date()) / (1000 * 60 * 60 * 24)
             );
-            console.log(dataDate);
             // 기간 남은 데이터 filter
             if (dataDate >= 0) {
               return true;
