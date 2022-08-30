@@ -1,7 +1,7 @@
 import React from "react";
 
 const CompanyMap = () => {
-  return <div>CompanyMap</div>;
+  return <div style={{ height: "800px" }}>CompanyMap</div>;
 };
 
 export default CompanyMap;

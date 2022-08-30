@@ -58,7 +58,7 @@
         .textGradient {
           background: linear-gradient(315deg, #004f95, rgb(189, 0, 142));
           color: transparent;
-          -webkit-background-clip: text;
+          background-clip: text;
           font-weight: bold;
           margin-top: 20px;
           font-size: 55px;
