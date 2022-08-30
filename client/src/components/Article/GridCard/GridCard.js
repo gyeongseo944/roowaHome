@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./GridCard.scss";
-import { Col } from "antd";
 import { Link } from "react-router-dom";
 const GridCard = (props) => {
   return (

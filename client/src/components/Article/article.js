@@ -2,7 +2,6 @@ import "./Article.scss";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
-import { Row } from "antd";
 import GridCard from "./GridCard/GridCard";
 import Loader from "../common/Loader/Loader";
 import naviHome from "../../assets/navBtns/articleBtns/x547c81c586.png";
