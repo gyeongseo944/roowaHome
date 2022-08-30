@@ -1,0 +1,71 @@
+@import "~/src/config";
+
+.companyBanner {
+  width: 100%;
+  height: calc(100vh - #{$headerHeight});
+  color: $white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $dark;
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+    background-image: url("~/src/assets/company/x852c4f2b.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    .box {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .title {
+        text-transform: uppercase;
+        word-break: keep-all;
+        width: 886px;
+        font-size: 80px;
+        line-height: 110px;
+        font-weight: bold;
+        margin-top: 22%;
+        margin-bottom: 2%;
+      }
+      .sub {
+        font-size: 30px;
+        line-height: 44px;
+        letter-spacing: -1.2px;
+      }
+      .absBtn {
+        width: 76px;
+        height: 76px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 43px;
+        border-radius: 50%;
+        border: 2px solid $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 26px;
+          height: 42px;
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}

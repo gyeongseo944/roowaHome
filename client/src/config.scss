@@ -7,16 +7,4 @@ $fontGray: #e4e4e4;
 $white: #fff;
 $dark: #070707;
 
-$mobile: 480px;
-
-@mixin desktop {
-  @media (min-width:#{$mobile}) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @media (max-width:#{$mobile - 1px}) {
-    @content;
-  }
-}
+$headerHeight: 227px;
