@@ -1,10 +1,16 @@
 @import "~/src/config";
 .companyContainer {
   background-color: $dark;
-  .companyMain {
+  .background {
+    z-index: 1;
+    position: relative;
+    width: 100%;
     background-color: $dark;
-    color: $white;
-    width: 60%;
-    margin: 0 auto;
+
+    .companyMain {
+      color: $white;
+      width: 60%;
+      margin: 0 auto;
+    }
   }
 }
