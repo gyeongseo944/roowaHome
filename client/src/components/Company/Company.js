@@ -4,6 +4,8 @@ import CompanyMap from "./CompanyMap/CompanyMap";
 import CompanyBanner from "./CompanyBanner/CompanyBanner";
 import CompanyExplain from "./CompanyExplain/CompanyExplain";
 import CompanyClients from "./CompanyClients/CompanyClients";
+import CompanyService from "./CompanyService/CompanyService";
+import CompanyTeam from "./CompanyTeam/CompanyTeam";
 
 const Company = () => {
   return (
@@ -13,6 +15,8 @@ const Company = () => {
         <main className="companyMain">
           <CompanyExplain />
           <p>---------구분선-----------</p>
+          <CompanyTeam />
+          <CompanyService />
           <CompanyClients />
           <CompanyMap />
         </main>
