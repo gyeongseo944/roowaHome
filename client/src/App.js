@@ -12,6 +12,7 @@ import Recruit from "./components/Recruit/Recruit";
 import RecruitDetail from "./components/Recruit/RecruitDetail/RecruitDetail";
 import Metaverse from "./components/Metaverse/Metaverse";
 import Original from "./components/Original/Original";
+import Company from "./components/Company/Company";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/recruit/:id" element={<RecruitDetail />} />
         <Route path="/metaverse" element={<Metaverse />} />
         <Route path="/original" element={<Original />} />
+        <Route path="/roowa" element={<Company />} />
       </Routes>
       <Footer />
     </BrowserRouter>

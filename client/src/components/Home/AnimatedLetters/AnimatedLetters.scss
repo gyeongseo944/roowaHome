@@ -6,51 +6,51 @@
   font-family: "LeferiBaseRegular";
   src: url("../../../assets/fonts/LeferiBaseRegular.otf") format("otf");
 }
-.textBox {
-  .textAnimation {
-    display: inline-block;
-    position: relative;
-    color: transparent;
-    font-size: 90px;
-    font-weight: bold;
 
+.textAnimation {
+  display: inline-block;
+  position: relative;
+  color: transparent;
+  font-size: 96px;
+  font-weight: bold;
+
+  &:before {
+    content: "";
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: white;
+    width: 0;
+    height: 1.2em;
+    -webkit-transform: translate(-50%, -55%);
+    -ms-transform: translate(-50%, -55%);
+    transform: translate(-50%, -55%);
+  }
+  &.state-1 {
     &:before {
-      content: "";
-      color: black;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      background: white;
-      width: 0;
-      height: 1.2em;
-      -webkit-transform: translate(-50%, -55%);
-      -ms-transform: translate(-50%, -55%);
-      transform: translate(-50%, -55%);
-    }
-    &.state-1 {
-      &:before {
-        width: 1px;
-      }
-    }
-    &.state-2 {
-      &:before {
-        width: 0.8em;
-      }
-    }
-    &.state-3 {
-      color: white;
-      &:before {
-        width: 0;
-      }
+      width: 1px;
     }
   }
-  .space {
-    display: inline-block;
-    width: 30px;
+  &.state-2 {
+    &:before {
+      width: 0.8em;
+    }
+  }
+  &.state-3 {
+    color: white;
+    &:before {
+      width: 0;
+    }
   }
 }
+.space {
+  display: inline-block;
+  width: 30px;
+}
+
 .firstTextBox {
-  margin-top: -60px;
+  margin-top: -30px;
 }
 .secondTextBox {
   margin-top: -20px;

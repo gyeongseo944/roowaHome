@@ -86,89 +86,46 @@ function Header() {
 
   return (
     <>
-      <motion.header
-        className="headerContainer"
-        animate={navAnimation}
-        initial={{ height: 227 }}
-      >
+      <motion.header className="headerContainer" animate={navAnimation} initial={{ height: 227 }}>
         <div className="headerLogo" onClick={() => navigate("/")}>
           ROOWA
         </div>
         <ul className="headerNav">
-          <li
-            className="headerNavBtn"
-            onMouseEnter={() => toggleNav(true)}
-            onMouseLeave={() => toggleNav(false)}
-          >
+          <li className="headerNavBtn" onMouseEnter={() => toggleNav(true)} onMouseLeave={() => toggleNav(false)}>
             <span style={metaverseMatch ? matchBorder : null}>business</span>
             <ul className="depthUl">
-              <motion.li
-                animate={listAnimation}
-                initial={{ opacity: 0, y: -10 }}
-              >
+              <motion.li animate={listAnimation} initial={{ opacity: 0, y: -10 }}>
                 <Link to="/metaverse" style={metaverseMatch ? matchLink : null}>
                   메타버스 마케팅
                 </Link>
               </motion.li>
-              <motion.li
-                animate={listAnimation}
-                initial={{ opacity: 0, y: -10 }}
-              >
+              <motion.li animate={listAnimation} initial={{ opacity: 0, y: -10 }}>
                 <Link to="/original" style={originalMatch ? matchLink : null}>
                   오리지널 콘텐츠
                 </Link>
               </motion.li>
             </ul>
           </li>
-          <li
-            className="headerNavBtn"
-            onMouseEnter={() => toggleNav(true)}
-            onMouseLeave={() => toggleNav(false)}
-            onClick={() => navigate("/roowa")}
-          >
+          <li className="headerNavBtn" onMouseEnter={() => toggleNav(true)} onMouseLeave={() => toggleNav(false)} onClick={() => navigate("/roowa")}>
             <span style={roowaMatch ? matchBorder : null}>company</span>
           </li>
-          <li
-            className="headerNavBtn"
-            onMouseEnter={() => toggleNav(true)}
-            onMouseLeave={() => toggleNav(false)}
-            onClick={() => navigate("/recruit")}
-          >
+          <li className="headerNavBtn" onMouseEnter={() => toggleNav(true)} onMouseLeave={() => toggleNav(false)} onClick={() => navigate("/recruit")}>
             <span style={recruitMatch ? matchBorder : null}>recruit</span>
           </li>
-          <li
-            className="headerNavBtn"
-            onMouseEnter={() => toggleNav(true)}
-            onMouseLeave={() => toggleNav(false)}
-          >
-            <span
-              style={
-                contactMatch || payMatch || articleMatch ? matchBorder : null
-              }
-            >
-              CONTACT
-            </span>
+          <li className="headerNavBtn" onMouseEnter={() => toggleNav(true)} onMouseLeave={() => toggleNav(false)}>
+            <span style={contactMatch || payMatch || articleMatch ? matchBorder : null}>CONTACT</span>
             <ul className="depthUl">
-              <motion.li
-                animate={listAnimation}
-                initial={{ opacity: 0, y: -10 }}
-              >
+              <motion.li animate={listAnimation} initial={{ opacity: 0, y: -10 }}>
                 <Link to="/contact" style={contactMatch ? matchLink : null}>
                   문의하기
                 </Link>
               </motion.li>
-              <motion.li
-                animate={listAnimation}
-                initial={{ opacity: 0, y: -10 }}
-              >
+              <motion.li animate={listAnimation} initial={{ opacity: 0, y: -10 }}>
                 <Link to="/article" style={articleMatch ? matchLink : null}>
                   뉴스·알림
                 </Link>
               </motion.li>
-              <motion.li
-                animate={listAnimation}
-                initial={{ opacity: 0, y: -10 }}
-              >
+              <motion.li animate={listAnimation} initial={{ opacity: 0, y: -10 }}>
                 <Link to="/pay" style={payMatch ? matchLink : null}>
                   결제
                 </Link>
@@ -177,12 +134,7 @@ function Header() {
           </li>
         </ul>
       </motion.header>
-      <motion.div
-        id="navBlurWrapper"
-        animate={blurAnimation}
-        initial={{ opacity: 0, display: "none" }}
-        onMouseEnter={() => toggleNav(false)}
-      ></motion.div>
+      <motion.div id="navBlurWrapper" animate={blurAnimation} initial={{ opacity: 0, display: "none" }} onMouseEnter={() => toggleNav(false)}></motion.div>
     </>
   );
 }

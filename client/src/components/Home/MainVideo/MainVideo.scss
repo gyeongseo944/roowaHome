@@ -13,10 +13,12 @@
     object-fit: cover;
   }
   .videoTextContainer {
-    width: 80%;
+    width: 100%;
     height: auto;
-    margin: 0 auto;
     z-index: 99;
+    display: flex;
+    flex-direction: column;
+    padding-left: 12%;
     .moreInfo {
       width: 280px;
       height: 60px;
@@ -47,5 +49,23 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1280px) {
+  .videoContainer {
+    .videoTextContainer {
+      padding-left: 6%;
+      .moreInfo {
+        width: 240px;
+        font-size: 20px;
+      }
+      .textAnimation {
+        font-size: 60px;
+      }
+      .secondTextBox {
+        margin-left: 5%;
+      }
+    }
   }
 }
