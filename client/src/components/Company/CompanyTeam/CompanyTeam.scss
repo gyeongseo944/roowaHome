@@ -1,0 +1,24 @@
+.companyTeamContainer {
+  width: 100%;
+  margin: 100px 0;
+  .teamTitle {
+    h1 {
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+    p {
+      font-size: 26px;
+      font-weight: 200;
+      line-height: 36px;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  img {
+    width: 80%;
+    display: block;
+    margin: 80px auto;
+  }
+}
