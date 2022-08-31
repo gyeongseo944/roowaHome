@@ -56,4 +56,8 @@ body {
   a {
     text-decoration: none;
   }
+
+  @include mobile {
+    padding-top: 13vh;
+  }
 }

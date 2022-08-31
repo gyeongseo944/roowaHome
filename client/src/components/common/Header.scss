@@ -21,7 +21,7 @@
     background-image: url(../../assets/x2022new.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     cursor: pointer;
   }
   .headerNav {
@@ -85,6 +85,30 @@
           }
         }
       }
+    }
+  }
+
+  @include mobile {
+    height: 6vh;
+    width: 100vw;
+    justify-content: center;
+    .headerLogo {
+      width: 17vw;
+      margin-top: 0;
+    }
+
+    .headerNav {
+      display: none;
+    }
+    // 66.4
+    .headerMenuBtn {
+      position: absolute;
+      width: 5.24vw;
+      right: 6.63vw;
+      // background-image: ;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
     }
   }
 }

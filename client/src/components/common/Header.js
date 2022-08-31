@@ -75,11 +75,7 @@ function Header() {
 
   return (
     <>
-      <motion.header
-        className="headerContainer"
-        animate={navAnimation}
-        initial={{ height: 227 }}
-      >
+      <motion.header className="headerContainer" animate={navAnimation}>
         <div className="headerLogo" onClick={() => navigate("/")}>
           ROOWA
         </div>
@@ -165,6 +161,7 @@ function Header() {
             </ul>
           </li>
         </ul>
+        <div className="headerMenuBtn"></div>
       </motion.header>
       <motion.div
         id="navBlurWrapper"

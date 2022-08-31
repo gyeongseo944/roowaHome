@@ -1,14 +1,16 @@
 import "./CompanyExplain.scss";
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 function CompanyExplain() {
   const ref = useRef();
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    console.log(isInView);
-  }, [isInView]);
+  const ref2 = useRef();
+  const isInView = useInView(ref, {
+    margin: "0px 0px -20% 0px",
+  });
+  const isInView2 = useInView(ref2, {
+    margin: "0px 0px -20% 0px",
+  });
 
   return (
     <section className="companyExplain">
@@ -16,18 +18,20 @@ function CompanyExplain() {
         <div className="imgBox">
           <motion.div
             className="imgWrapper"
-            whileInView={{
-              right: "-100%",
-              transition: { duration: 1 },
-            }}
-            viewport={{ margin: "0px 0px -20% 0px", once: true }}
+            animate={
+              isInView && {
+                right: "-100%",
+                transition: { duration: 1 },
+              }
+            }
           ></motion.div>
           <img
+            ref={ref}
             src={require("../../../assets/company/x15.png")}
             alt="이루어, 드림"
           />
         </div>
-        <div className="textBox" ref={ref}>
+        <div className="textBox">
           <div className="titleText">이루어, 드림.</div>
           <div className="subText">
             루와는 <strong>‘마음을 움직이는 콘텐츠’</strong> 를 만든다는 슬로건
@@ -46,13 +50,16 @@ function CompanyExplain() {
         <div className="imgBox">
           <motion.div
             className="imgWrapper"
-            whileInView={{
-              left: "-100%",
-              transition: { duration: 1 },
-            }}
-            viewport={{ margin: "0px 0px -20% 0px" }}
+            animate={
+              isInView2 && {
+                left: "-100%",
+                transition: { duration: 1 },
+              }
+            }
+            viewport={{ margin: "0px 0px -20% 0px", once: true }}
           ></motion.div>
           <img
+            ref={ref2}
             src={require("../../../assets/company/x20.png")}
             alt="이루어, 드림"
           />
