@@ -14,7 +14,6 @@ const Company = () => {
       <div className="background">
         <main className="companyMain">
           <CompanyExplain />
-          <p>---------구분선-----------</p>
           <CompanyTeam />
           <CompanyService />
           <CompanyClients />
