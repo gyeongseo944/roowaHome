@@ -45,7 +45,7 @@ function CompanyBanner() {
 
   /** absBtn 클릭 시 스크롤 이동 */
   const onClick = () => {
-    durationScrollTo(ref.current.offsetHeight, 500);
+    durationScrollTo(height, 500);
   };
 
   /***** motion variants *****/
@@ -164,7 +164,7 @@ function CompanyBanner() {
           </div>
         </div>
       </section>
-      <div style={{ paddingTop: `${height}px` }}></div>
+      <div style={{ marginTop: `${height}px` }}></div>
     </>
   );
 }
