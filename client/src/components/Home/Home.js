@@ -7,7 +7,7 @@ import WideImage from "./WideImage/WideImage";
 
 function Home() {
   return (
-    <main>
+    <main style={{ backgroundColor: "#070707" }}>
       <MainVideo />
       <MainMindMap />
       <MainPoster />
