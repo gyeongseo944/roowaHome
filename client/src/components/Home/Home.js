@@ -10,7 +10,7 @@ function Home() {
     <main>
       <MainVideo />
       <MainMindMap />
-      {/* <MainPoster /> */}
+      <MainPoster />
       <OurPortfolio />
       <WideImage />
       <HomeBottom />

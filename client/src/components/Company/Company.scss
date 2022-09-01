@@ -1,6 +1,7 @@
 @import "~/src/config";
 .companyContainer {
   background-color: $dark;
+  overflow: hidden;
   .background {
     z-index: 1;
     position: relative;

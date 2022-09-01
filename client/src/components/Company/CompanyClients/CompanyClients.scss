@@ -1,0 +1,39 @@
+.companyClientsContainer {
+  width: 100%;
+  margin-bottom: 150px;
+  .clientsTitle {
+    h1 {
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      line-height: 70px;
+    }
+    p {
+      font-size: 26px;
+      font-weight: 200;
+      line-height: 36px;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  .clientsLogoImg {
+    width: 180%;
+    height: 560px;
+    position: relative;
+    left: -40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    background-color: rgb(252, 252, 255);
+    // padding: 0 20%;
+    // box-sizing: content-box;
+    img {
+      //   width: 500px;
+      width: 50%;
+      //   height: 80%;
+      display: block;
+    }
+  }
+}

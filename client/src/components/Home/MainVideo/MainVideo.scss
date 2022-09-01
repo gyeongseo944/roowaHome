@@ -36,13 +36,17 @@
         width: 20px;
         height: 20px;
         margin-left: 10px;
-        margin-bottom: 4px;
       }
       cursor: pointer;
     }
   }
 }
-
+.mobileVideoContainer {
+  height: 750px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 30px;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -59,12 +63,6 @@
       .moreInfo {
         width: 240px;
         font-size: 20px;
-      }
-      .textAnimation {
-        font-size: 60px;
-      }
-      .secondTextBox {
-        margin-left: 5%;
       }
     }
   }

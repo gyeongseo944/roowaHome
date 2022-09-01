@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import "./AnimatedLetters.scss";
-
+import { useMediaQuery } from "react-responsive";
 const AnimatedLetters = ({ parentClass, strArray, changeIdx }) => {
+  const isMobile = useMediaQuery({
+    query: "(max-width:768px)",
+  });
   const parentRef = useRef();
   const changeRef = useRef([]);
   const shuffle = (array) => {
@@ -104,14 +107,14 @@ const AnimatedLetters = ({ parentClass, strArray, changeIdx }) => {
   }, []);
 
   return (
-    <div className={`${parentClass} textBox`} ref={parentRef}>
+    <div className={isMobile ? `${parentClass}Mobile` : `${parentClass}`} ref={parentRef}>
       {strArray &&
         strArray.map((char, id) => (
           <div
-            className={char == "space" ? "space" : "textAnimation"}
+            className={char == "space" ? (isMobile ? "spaceMobile" : "space") : isMobile ? `textAnimation textMobile ${parentClass}Text` : `textAnimation`}
             key={parentClass + id}
             ref={
-              changeIdx.includes(id)
+              changeIdx && changeIdx.includes(id)
                 ? (el) => {
                     changeRef.current.push(el);
                   }

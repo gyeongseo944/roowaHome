@@ -2,43 +2,43 @@ import "./MainPoster.scss";
 import mainPoster_mono from "../../../assets/home/homeBottom/mainPosterBlack.jpg";
 import mainPoster from "../../../assets/home/homeBottom/mainPoster.png";
 import { useRef, useState, useEffect } from "react";
-import { motion, useAnimationControls, useInView, useScroll } from "framer-motion";
+import { motion, useAnimationControls, useInView } from "framer-motion";
 
 function MainPoster() {
   const [ScannerOn, setScannerOn] = useState(false);
   const scannerRef = useRef();
-  const { scrollY } = useScroll();
+  const imgRef = useRef();
   const isInView = useInView(scannerRef);
   const heightControls = useAnimationControls();
-
-  // useEffect(() => {
-  //   if (isInView) {
-  //     let last = scrollY.current;
-  //     scrollY.onChange((current) => {
-  //       if (current > last && scannerRef.current.clientHeight < 1510) {
-  //         last = current;
-  //         let test = scannerRef.current.clientHeight + 1;
-  //         scannerRef.current.style.height = `${test + 5}px`;
-  //       }
-  //     });
-  //   }
-  // }, [isInView]);
+  const [ScannerHeight, setScannerHeight] = useState(0);
   useEffect(() => {
     if (isInView && !ScannerOn) {
+      setScannerHeight(imgRef.current.offsetHeight);
       setScannerOn(true);
       heightControls.start({
-        height: 1520,
+        height: imgRef.current.offsetHeight + 40,
         transition: { delay: 0.3, duration: 5 },
       });
     }
   }, [isInView]);
+  const scannerResize = () => {
+    heightControls.start({
+      height: imgRef.current.offsetHeight + 40,
+      transition: { delay: 0, duration: 1 },
+    });
+  };
 
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      scannerResize();
+    });
+  }, []);
   return (
     <section className="mainPoster">
       <div className="posterContainer">
         <img className="mainPosterMono" src={mainPoster_mono} alt="포럼 포스터" />
         <motion.div className="posterScanner" ref={scannerRef} animate={heightControls}>
-          <img className="mainPosterColored" src={mainPoster} alt="Main poster" />
+          <img className="mainPosterColored" src={mainPoster} alt="Main poster" ref={imgRef} />
         </motion.div>
       </div>
     </section>

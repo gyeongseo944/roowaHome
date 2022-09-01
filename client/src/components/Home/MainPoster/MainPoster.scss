@@ -5,9 +5,10 @@
   flex-direction: column;
   align-items: center;
   background-color: $dark;
-  padding-bottom: 300px;
+  padding-bottom: 100px;
   .posterContainer {
-    width: 1110px;
+    width: 60%;
+    max-width: 1110px;
     height: 1560px;
     position: relative;
     overflow: hidden;
@@ -17,29 +18,85 @@
   }
   .mainPosterMono {
     position: absolute;
-    width: 950px;
+    width: 90%;
     margin-top: 30px;
   }
   .posterScanner {
     position: absolute;
-    width: 1110px;
+    width: 105%;
     height: 1px;
     overflow: hidden;
     border-bottom: 2px solid #39d140;
     box-shadow: 0 0 15px 0 #3cdd43;
     text-align: center;
-    // animation: open 7s ease-in-out forwards;
   }
   .mainPosterColored {
-    width: 1050px;
+    width: 90%;
   }
 }
 
-// @keyframes open {
-//   0% {
-//     height: 1px;
-//   }
-//   100% {
-//     height: 1510px;
-//   }
-// }
+@media (max-width: 1600px) {
+  .mainPoster {
+    .posterContainer {
+      height: 1400px;
+    }
+  }
+}
+@media (max-width: 1400px) {
+  .mainPoster {
+    .posterContainer {
+      height: 1200px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .mainPoster {
+    .posterContainer {
+      height: 1000px;
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .mainPoster {
+    padding-bottom: 50px;
+    .posterContainer {
+      height: 900px;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .mainPoster {
+    padding-bottom: 50px;
+    .posterContainer {
+      width: 80%;
+      height: 900px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .mainPoster {
+    padding-bottom: 50px;
+    .posterContainer {
+      width: 90%;
+      height: 800px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .mainPoster {
+    padding-bottom: 50px;
+    .posterContainer {
+      width: 90%;
+      height: 700px;
+    }
+    .mainPosterMono {
+      width: 80%;
+    }
+    .posterScanner {
+      width: 110%;
+    }
+    .mainPosterColored {
+      width: 90%;
+    }
+  }
+}

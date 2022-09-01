@@ -48,12 +48,37 @@
   display: inline-block;
   width: 30px;
 }
-
-.firstTextBox {
-  margin-top: -30px;
-}
 .secondTextBox {
-  margin-top: -20px;
+  margin-top: 30px;
   margin-left: 10%;
   font-family: "LeferiBaseBold";
+}
+
+//---------------
+.textMobile {
+  font-size: 10vw !important;
+  font-weight: bold;
+}
+.spaceMobile {
+  display: inline-block;
+  width: 20px;
+}
+.secondTextBoxMobile {
+  font-family: "LeferiBaseBold";
+  margin-bottom: 50px;
+  margin-left: 5px;
+}
+.secondTextBoxText {
+  font-size: 6vw !important;
+}
+.firstTextBoxText {
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  .textAnimation {
+    font-size: 60px;
+  }
+  .secondTextBox {
+    margin-left: 5%;
+  }
 }
