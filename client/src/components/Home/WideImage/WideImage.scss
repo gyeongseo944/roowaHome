@@ -6,8 +6,14 @@
   .wideImage {
     height: 654px;
     background-image: url("../../../assets/WideImage/x591f2a819.png");
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+  }
+
+  @include mobile {
+    .wideImage {
+      height: 46.6vw;
+    }
   }
 }

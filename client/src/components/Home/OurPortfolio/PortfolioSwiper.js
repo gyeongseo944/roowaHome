@@ -33,29 +33,36 @@ function PortfolioSwiper() {
     <Swiper
       id="portfolioSwiper"
       slidesPerView={"auto"}
-      spaceBetween={40}
+      spaceBetween={15}
+      breakpoints={{
+        769: {
+          spaceBetween: 30,
+        },
+        1000: {
+          spaceBetween: 40,
+        },
+      }}
       freeMode={true}
       pagination={{
         clickable: true,
       }}
       centeredSlides={false}
       scrollbar={(true, { draggable: true })}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-      }}
+      // autoplay={{
+      //   delay: 2500,
+      //   disableOnInteraction: false,
+      // }}
       modules={[FreeMode, Scrollbar, Autoplay]}
     >
       {[...imgData, ...imgData].map((data, index) => {
         const img = require(`../../../assets/home/PortfolioSwiper/${data.imgName}`);
         return (
           <SwiperSlide className="portfolioSwiperSlide" key={index}>
-            <div
-              style={{
-                backgroundImage: `url(${img})`,
-              }}
+            <img
               className="portfolioSwiperSlideImg"
-            ></div>
+              src={img}
+              alt="포트폴리오 리스트"
+            />
             <div className="portfolioSlideTitle">{data.title}</div>
             <div className="portfolioSlideSub">{data.sub}</div>
           </SwiperSlide>
