@@ -14,11 +14,7 @@ const CompanyService = () => {
   const [Slide, setSlide] = useState(false);
   const ref = useRef();
   useEffect(() => {
-    console.log(isBigScreen ? "크네" : "작네");
     setSlide(isBigScreen);
-    if (!Slide) {
-      console.log("component size : " + ref.current.offsetWidth);
-    }
   }, [isBigScreen]);
 
   const serviceDetail = [

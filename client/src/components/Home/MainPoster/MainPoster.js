@@ -10,10 +10,8 @@ function MainPoster() {
   const imgRef = useRef();
   const isInView = useInView(scannerRef);
   const heightControls = useAnimationControls();
-  const [ScannerHeight, setScannerHeight] = useState(0);
   useEffect(() => {
     if (isInView && !ScannerOn) {
-      setScannerHeight(imgRef.current.offsetHeight);
       setScannerOn(true);
       heightControls.start({
         height: imgRef.current.offsetHeight + 40,
@@ -30,6 +28,11 @@ function MainPoster() {
 
   useEffect(() => {
     window.addEventListener("resize", () => {
+      if (imgRef.current) {
+        scannerResize();
+      }
+    });
+    return window.removeEventListener("resize", () => {
       scannerResize();
     });
   }, []);

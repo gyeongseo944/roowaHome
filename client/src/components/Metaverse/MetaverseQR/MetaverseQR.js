@@ -1,9 +1,13 @@
 import "./MetaverseQR.scss";
-
+import { useMediaQuery } from "react-responsive";
 import React from "react";
 import qrImg from "../../../assets/metaverse/qrImg.png";
 import qrCode from "../../../assets/metaverse/x14.png";
+import plus from "../../../assets/home/x65.png";
 const MetaverseQR = () => {
+  const isMobile = useMediaQuery({
+    query: "(max-width:768px)",
+  });
   return (
     <section className="metaverseQr">
       <div className="qrContainer">
@@ -17,10 +21,16 @@ const MetaverseQR = () => {
             <span className="empty">와 함께하세요.</span>
           </h1>
         </div>
-        <div className="qrCode">
-          <img src={qrCode} alt="QR code" />
-          <p>@_roowa</p>
-        </div>
+        {isMobile ? (
+          <div className="moreInfo">
+            소개서 다운로드 <img src={plus} alt="more information" />
+          </div>
+        ) : (
+          <div className="qrCode">
+            <img src={qrCode} alt="QR code" />
+            <p>@_roowa</p>
+          </div>
+        )}
       </div>
     </section>
   );

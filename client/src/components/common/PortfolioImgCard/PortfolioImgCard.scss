@@ -1,7 +1,7 @@
 .imgItem {
-  width: 605px;
+  width: 48%;
   h1 {
-    margin: 20px 0 0 0;
+    margin: 20px 0 10px 0;
     font-size: 46px;
     color: white;
     font-weight: bold;
@@ -63,4 +63,15 @@
 }
 .imgItem:nth-child(even) {
   float: right;
+}
+
+@media (max-width: 1300px) {
+  .imgItem {
+    h1 {
+      font-size: 36px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
 }
