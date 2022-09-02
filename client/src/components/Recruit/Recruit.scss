@@ -134,3 +134,88 @@
     cursor: pointer;
   }
 }
+
+@include mobile {
+  .recruitMain {
+    padding: 0 7vw;
+    .title {
+      font-size: 8vw;
+      -webkit-text-stroke: 1px $white;
+      text-transform: uppercase;
+      font-family: LeferiBase;
+      font-weight: bold;
+      width: 100%;
+      margin: 8.4vw 0;
+    }
+    .recruitContainer {
+      margin: 0;
+      width: 100%;
+      .recruitCard {
+        width: 100%;
+        padding: 5.2vw 3.5vw 3.9vw 3.5vw;
+        position: relative;
+        .recruitDDay {
+          right: 4vw;
+          width: 10vw;
+          height: 10vw;
+          font-size: 2.9vw;
+          line-height: 110%;
+        }
+        .recruitTeam {
+          letter-spacing: 0px;
+          line-height: 100%;
+          font-size: 3.1vw;
+          margin-bottom: 4.2vw;
+        }
+        .recruitTitle {
+          letter-spacing: -0.1vw;
+          line-height: 120%;
+          font-size: 7.5vw;
+          margin-bottom: 4.5vw;
+          width: 44vw;
+        }
+        .recruitTask {
+          letter-spacing: -0.05vw;
+          line-height: 160%;
+          font-size: 2.8vw;
+          margin-bottom: 4vw;
+          min-height: fit-content;
+        }
+        .recruitTagBox {
+          letter-spacing: 0px;
+          line-height: 100%;
+          font-size: 3.1vw;
+          margin-bottom: 0.5vw;
+          position: absolute;
+          right: 3.5vw;
+          top: 56%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          width: 50%;
+          gap: 1vw 0;
+
+          .recruitTag {
+            width: fit-content;
+            height: fit-content;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+              font-size: 2.9vw;
+              padding: 1.2vw 3.9vw;
+            }
+          }
+        }
+        .recruitPeriod {
+          line-height: 100%;
+          font-size: 2.9vw;
+          margin-bottom: 0.5vw;
+          padding-top: 2.3vw;
+        }
+      }
+    }
+  }
+}

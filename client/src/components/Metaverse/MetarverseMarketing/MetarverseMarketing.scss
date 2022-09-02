@@ -10,7 +10,7 @@
   .backgroundImage {
     position: absolute;
     z-index: 0;
-    width: 100%;
+    width: 100vw;
     top: 110px;
   }
 
@@ -104,6 +104,58 @@
 
           &::before {
             content: "· ";
+          }
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 16vw;
+    .backgroundImage {
+      top: 10vw;
+    }
+    .marketingContainer {
+      .marketingTitle {
+        font-size: 7vw;
+        line-height: 120%;
+        -webkit-text-stroke: 1px $white;
+      }
+      .cardBox {
+        flex-direction: column;
+        height: fit-content;
+
+        .card {
+          width: 57vw;
+          height: 67vw;
+          margin-right: 0;
+          margin-bottom: 6vw;
+          position: relative;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .title {
+            font-size: 5.7vw;
+            position: absolute;
+          }
+
+          .titleEng {
+            font-size: 2.9vw;
+            margin-top: 22vw;
+            margin-bottom: 4vw;
+          }
+
+          .hr {
+            margin-bottom: 5vw;
+          }
+
+          ul {
+            li {
+              font-size: 2vw;
+              margin-bottom: 4vw;
+            }
           }
         }
       }

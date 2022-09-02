@@ -1,5 +1,8 @@
+import { useMediaQuery } from "react-responsive";
+
 /** css는 MetarverseMarketing.scss 참고 */
 function OriginalCard() {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <section className="metarverseMarketing">
       <img
@@ -13,11 +16,30 @@ function OriginalCard() {
         </div>
         <div className="cardBox">
           <div className="card">
-            <img
-              className="wrappImg"
-              src={require("../../../assets/original/x11.png")}
-              alt="카드 이미지"
-            />
+            {!isMobile && (
+              <img
+                className="wrappImg"
+                src={require("../../../assets/original/x11.png")}
+                alt="카드 이미지"
+              />
+            )}
+            <div className="title">{"크리에이티브한\n사고력"}</div>
+            <div className="titleEng">Creative Thinking</div>
+            <div className="hr"></div>
+            <ul>
+              <li>트렌드 소재 발굴</li>
+              <li>컨슈머 니즈 파악</li>
+              <li>영상 콘텐츠 전문 작가진 보유</li>
+            </ul>
+          </div>
+          <div className="card">
+            {!isMobile && (
+              <img
+                className="wrappImg"
+                src={require("../../../assets/original/x11.png")}
+                alt="카드 이미지"
+              />
+            )}
             <div className="title">{"확실한\n데이터분석과\n콘텐츠 기획력"}</div>
             <div className="titleEng">Content Planning</div>
             <div className="hr"></div>
@@ -29,27 +51,13 @@ function OriginalCard() {
             </ul>
           </div>
           <div className="card">
-            <img
-              className="wrappImg"
-              src={require("../../../assets/original/x11.png")}
-              alt="카드 이미지"
-            />
-            <div className="title">{"확실한\n데이터분석과\n콘텐츠 기획력"}</div>
-            <div className="titleEng">Content Planning</div>
-            <div className="hr"></div>
-            <ul>
-              <li>데이터 기반 소구점 도출</li>
-              <li>타겟 맞춤형 스토리텔링</li>
-              <li>기획 매력적인 시그니처 개발</li>
-              <li>캠페인, 이벤트 기획</li>
-            </ul>
-          </div>
-          <div className="card">
-            <img
-              className="wrappImg"
-              src={require("../../../assets/original/x11.png")}
-              alt="카드 이미지"
-            />
+            {!isMobile && (
+              <img
+                className="wrappImg"
+                src={require("../../../assets/original/x11.png")}
+                alt="카드 이미지"
+              />
+            )}
             <div className="title">{"전반적인\n콘텐츠\n제작 능력"}</div>
             <div className="titleEng">Content Production</div>
             <div className="hr"></div>
