@@ -13,6 +13,11 @@
       width: 60%;
       min-width: 768px;
       margin: 0 auto;
+
+      @include mobile {
+        width: 86%;
+        min-width: 0;
+      }
     }
   }
 }

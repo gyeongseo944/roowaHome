@@ -17,7 +17,6 @@ function Header() {
   const blurAnimation = useAnimation();
   const depList1Animation = useAnimation();
   const depList2Animation = useAnimation();
-
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const metaverseMatch = useMatch("/metaverse/*");
   const contactMatch = useMatch("/contact/*");
@@ -91,6 +90,12 @@ function Header() {
           height: "0vw",
         });
   }, [depList2]);
+  useEffect(() => {
+    if (!mobileMenuVisible) {
+      setDepList1(false);
+      setDepList2(false);
+    }
+  }, [mobileMenuVisible]);
 
   /* motion variants */
   // desktop 헤더 밑줄

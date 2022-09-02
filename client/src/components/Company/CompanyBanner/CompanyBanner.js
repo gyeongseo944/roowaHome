@@ -1,11 +1,13 @@
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import "./CompanyBanner.scss";
 function CompanyBanner() {
   const ref = useRef();
   const [state, setState] = useState(false);
   const [height, setHeight] = useState(0);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const { scrollY } = useScroll();
 
   /**
@@ -113,8 +115,28 @@ function CompanyBanner() {
             )}
           </AnimatePresence>
           <div className="box">
-            <div className="title">{"we create emotional content"}</div>
-            <div className="sub">마음을 움직이는 콘텐츠를 만듭니다.</div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, delay: 0.3 },
+              }}
+              className="title"
+            >
+              {"we create emotional content"}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, delay: 0.7 },
+              }}
+              className="sub"
+            >
+              마음을 움직이는 콘텐츠를 만듭니다.
+            </motion.div>
             <AnimatePresence>
               {!state && (
                 <motion.div
@@ -140,31 +162,33 @@ function CompanyBanner() {
                 </motion.div>
               )}
             </AnimatePresence>
-            <div className="naviBox">
-              <Link to="/">
+            {!isMobile && (
+              <div className="naviBox">
+                <Link to="/">
+                  <img
+                    src={require("../../../assets/navBtns/x54f07279ca.png")}
+                    alt="home button"
+                    className="homeBtn"
+                  />
+                </Link>
                 <img
-                  src={require("../../../assets/navBtns/x54f07279ca.png")}
-                  alt="home button"
-                  className="homeBtn"
+                  className="chev"
+                  src={require("../../../assets/navBtns/x59.png")}
+                  alt="Chevron"
                 />
-              </Link>
-              <img
-                className="chev"
-                src={require("../../../assets/navBtns/x59.png")}
-                alt="Chevron"
-              />
-              <span className="naviBtn">company</span>
-              <img
-                className="chev"
-                src={require("../../../assets/navBtns/x59.png")}
-                alt="Chevron"
-              />
-              <span className="naviBtn">회사소개</span>
-            </div>
+                <span className="naviBtn">company</span>
+                <img
+                  className="chev"
+                  src={require("../../../assets/navBtns/x59.png")}
+                  alt="Chevron"
+                />
+                <span className="naviBtn">회사소개</span>
+              </div>
+            )}
           </div>
         </div>
       </section>
-      <div style={{ marginTop: `${height}px` }}></div>
+      <div id="companyBannerDivider"></div>
     </>
   );
 }

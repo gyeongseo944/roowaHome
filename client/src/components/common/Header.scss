@@ -89,7 +89,7 @@
   }
 
   @include mobile {
-    height: 6vh;
+    height: $mobileHeaderHeight;
     width: 100vw;
     justify-content: center;
     .headerLogo {
@@ -170,6 +170,7 @@
                 font-size: 2.2vw;
                 font-family: "Noto Sans KR", Arial;
                 margin-bottom: 2vw;
+                font-weight: normal;
 
                 &:first-child {
                   padding-top: 3vw;

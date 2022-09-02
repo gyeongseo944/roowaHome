@@ -105,4 +105,59 @@
       }
     }
   }
+
+  @include mobile {
+    padding-top: 15.9vw;
+
+    .block {
+      flex-direction: column;
+
+      &:first-child {
+        margin-bottom: 12vw;
+        .textBox {
+          max-width: none;
+        }
+      }
+      &:nth-child(2) {
+        margin-bottom: 8vw;
+        flex-flow: column-reverse;
+      }
+
+      .textBox {
+        .titleText {
+          line-height: 100%;
+          font-size: 7.8vw;
+          margin-top: 5vw;
+          margin-bottom: 3.3vw;
+          letter-spacing: -2.4px;
+        }
+        .subText {
+          font-size: 3.1vw;
+          line-height: 150%;
+          white-space: pre-wrap;
+        }
+      }
+      &.around {
+        .list {
+          margin-bottom: 6vw;
+          &:nth-child(1) {
+            max-width: none;
+          }
+          .number {
+            line-height: 100%;
+            opacity: 0.5;
+            font-size: 6.4vw;
+          }
+          .listTitle {
+            font-size: 5vw;
+            line-height: 100%;
+          }
+          .listSub {
+            font-size: 2.8vw;
+            line-height: 150%;
+          }
+        }
+      }
+    }
+  }
 }
