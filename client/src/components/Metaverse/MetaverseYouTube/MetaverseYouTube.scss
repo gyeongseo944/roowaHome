@@ -21,4 +21,21 @@
     overflow: hidden;
     border-radius: 20px;
   }
+
+  @include mobile {
+    margin-top: 16.2vw;
+
+    .metaverseTitle {
+      -webkit-text-stroke: 1px $white;
+      font-size: 5.8vw;
+      line-height: 120%;
+      white-space: pre-wrap;
+      margin-bottom: 4vw;
+    }
+
+    iframe {
+      height: 48vw;
+      border-radius: 18px;
+    }
+  }
 }

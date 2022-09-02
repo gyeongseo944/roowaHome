@@ -3,7 +3,17 @@
 .originMain {
   background-color: $dark;
   color: $white;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .originMainContainer {
+      width: 86%;
+    }
+  }
 }

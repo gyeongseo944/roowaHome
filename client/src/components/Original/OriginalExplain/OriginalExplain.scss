@@ -49,4 +49,24 @@
       transform-origin: left center;
     }
   }
+
+  @include mobile {
+    .textBox {
+      margin: 16vw 0;
+      font-size: 3.1vw;
+      line-height: 160%;
+      letter-spacing: 0px;
+      word-break: keep-all;
+    }
+
+    .imgBox,
+    .bottomImg {
+      height: min-content;
+      img {
+        width: 100%;
+        height: 51.5vw;
+        object-fit: cover;
+      }
+    }
+  }
 }

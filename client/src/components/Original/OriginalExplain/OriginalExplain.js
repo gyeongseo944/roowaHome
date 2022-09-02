@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 import "./OriginalExplain.scss";
 
 const variants = {
@@ -10,19 +11,33 @@ const variants = {
 };
 
 function OriginalExplain() {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <section className="originalExplain">
       <div className="textBox">
-        루와는 콘텐츠 이전에 시청자의 마음을 먼저 들여다봅니다.
-        <br />
-        그들의 마음을 사로잡기 위해
-        <br />
-        <strong>매력적인 스토리텔링</strong>을 기획합니다.
-        <br />
-        <br />
-        그들의
-        <strong>마음</strong>을 움직이기 위해 <strong>양질의 콘텐츠</strong>를
-        제작합니다.
+        {!isMobile ? (
+          <>
+            {
+              "루와는 콘텐츠 이전에 시청자의 마음을 먼저 들여다봅니다.\n그들의 마음을 사로잡기 위해\n"
+            }
+            <strong>매력적인 스토리텔링</strong>
+            {"을 기획합니다.\n\n그들의 "}
+            <strong>마음</strong>을 움직이기 위해 <strong>양질의 콘텐츠</strong>
+            를 제작합니다.
+          </>
+        ) : (
+          <>
+            {
+              "루와는 콘텐츠 이전에\n시청자의 마음을 먼저 들여다봅니다.\n그들의 마음을 사로잡기 위해\n"
+            }
+            <strong>매력적인 스토리텔링</strong>
+            {"을 기획합니다.\n\n그들의 "}
+            <strong>마음</strong>
+            {"을 움직이기 위해\n"}
+            <strong>양질의 콘텐츠</strong>
+            {"를 제작합니다."}
+          </>
+        )}
       </div>
 
       <div className="imgBox">
@@ -30,6 +45,7 @@ function OriginalExplain() {
           variants={variants}
           initial="initial"
           whileInView="whileInView"
+          viewport={{ once: true, amount: 0.5 }}
         ></motion.div>
         <img
           src={require("../../../assets/original/x15.png")}
@@ -56,6 +72,7 @@ function OriginalExplain() {
           variants={variants}
           initial="initial"
           whileInView="whileInView"
+          viewport={{ once: true, amount: 0.5 }}
         ></motion.div>
         <img
           src={require("../../../assets/original/x19.png")}

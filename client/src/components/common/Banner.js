@@ -1,11 +1,13 @@
 import { useAnimation, motion } from "framer-motion";
 import { useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import "./Banner.scss";
 
 function Banner({ title, subtitle, src, navText }) {
   const titleAnimation = useAnimation();
   const subtitleAnimation = useAnimation();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   useEffect(() => {
     titleAnimation.start({
       opacity: 1,
@@ -48,35 +50,37 @@ function Banner({ title, subtitle, src, navText }) {
         >
           {subtitle}
         </motion.h1>
-        <div className="naviBox">
-          <Link to="/">
-            <img
-              src={require("../../assets/navBtns/x54f07279ca.png")}
-              alt="home button"
-              className="homeBtn"
-            />
-          </Link>
-          {navText[0] && (
-            <>
+        {!isMobile && (
+          <div className="naviBox">
+            <Link to="/">
               <img
-                className="chev"
-                src={require("../../assets/navBtns/x59.png")}
-                alt="Chevron"
+                src={require("../../assets/navBtns/x54f07279ca.png")}
+                alt="home button"
+                className="homeBtn"
               />
-              <span className="naviBtn">{navText[0]}</span>
-            </>
-          )}
-          {navText[1] && (
-            <>
-              <img
-                className="chev"
-                src={require("../../assets/navBtns/x59.png")}
-                alt="Chevron"
-              />
-              <span className="naviBtn">{navText[1]}</span>
-            </>
-          )}
-        </div>
+            </Link>
+            {navText[0] && (
+              <>
+                <img
+                  className="chev"
+                  src={require("../../assets/navBtns/x59.png")}
+                  alt="Chevron"
+                />
+                <span className="naviBtn">{navText[0]}</span>
+              </>
+            )}
+            {navText[1] && (
+              <>
+                <img
+                  className="chev"
+                  src={require("../../assets/navBtns/x59.png")}
+                  alt="Chevron"
+                />
+                <span className="naviBtn">{navText[1]}</span>
+              </>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
