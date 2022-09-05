@@ -4,6 +4,72 @@
   display: flex;
   justify-content: center;
   background-color: $dark;
+
+  @include mobile {
+    padding: 0;
+    display: block;
+    .title {
+      font-size: 8vw;
+      -webkit-text-stroke: 1px $white;
+      text-transform: uppercase;
+      font-family: LeferiBase;
+      font-weight: bold;
+      width: 100%;
+      padding-top: 8.4vw;
+      padding-bottom: 5.2vw;
+      padding-left: 7vw;
+      white-space: pre-wrap;
+    }
+    #paySwiper {
+      width: 100%;
+      padding-left: 7vw;
+      padding-bottom: 40vw;
+      .paySwiperSlide {
+        width: fit-content;
+        .card {
+          img {
+            width: 57.3vw;
+            height: 57.3vw;
+          }
+          .cardTitle {
+            color: $white;
+            .cardSmallTitle {
+              font-size: 2.9vw;
+              margin-top: 4vw;
+              margin-bottom: 1.5vw;
+            }
+            .cardBigTitle {
+              font-size: 5.2vw;
+              font-weight: bold;
+              letter-spacing: -2px;
+              margin-bottom: 3vw;
+            }
+            .cardPrice {
+              font-size: 2.8vw;
+              padding: 1.4vw 2.2vw;
+              border-radius: 5vw;
+              background-color: $pointColor;
+              width: fit-content;
+            }
+          }
+        }
+      }
+
+      .swiper-scrollbar {
+        width: 30.7vw;
+        height: 0.5vw;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        bottom: 32vw;
+        .swiper-scrollbar-drag {
+          background-color: $white;
+        }
+      }
+    }
+  }
 }
 .payContainer {
   margin-top: 119px;

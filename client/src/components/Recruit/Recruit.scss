@@ -45,7 +45,7 @@
       text-align: center;
       letter-spacing: -0.8px;
       font-weight: bold;
-      font-family: "KoPubWorldDotum";
+      font-family: LeferiBase;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -111,7 +111,7 @@
       font-size: 1.25rem;
       letter-spacing: -0.05rem;
       color: $darkGray;
-      font-family: "KoPubWorldDotum";
+      font-family: LeferiBase;
     }
   }
 }
@@ -138,6 +138,7 @@
 @include mobile {
   .recruitMain {
     padding: 0 7vw;
+    padding-bottom: 10vw;
     .title {
       font-size: 8vw;
       -webkit-text-stroke: 1px $white;
