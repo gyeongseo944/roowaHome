@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import Banner from "../common/Banner";
 import "./Contact.scss";
 
 function Contact() {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const onChange = (e) => {
     e.target.parentNode.parentNode.childNodes.forEach((node) => {
       node.classList = "";
@@ -19,14 +21,22 @@ function Contact() {
 
   return (
     <>
-      <Banner />
+      <Banner
+        subtitle={
+          isMobile
+            ? "상담 원하시는\n내용은 빠르게 답변\n드리겠습니다."
+            : "상담 원하시는 내용은 빠르게\n답변 드리겠습니다."
+        }
+        src={isMobile ? require("../../assets/banner/bannerContact.png") : null}
+      />
       <main className="contactMain">
         <div className="contactContainer">
           <div className="box1">
             <div className="box1Img">이미지 영역</div>
             <div className="box1Text">
-              상담을 원하시는 기업 및 개인은 아래 양식으로 내용을 작성하여
-              의뢰해주시고, 루와와 함께 해보세요.
+              {!isMobile
+                ? "상담을 원하시는 기업 및 개인은 아래 양식으로 내용을 작성하여 의뢰해주시고, 루와와 함께 해보세요."
+                : "상담을 원하시는 기업 및 개인은\n아래 양식으로 내용을 작성하여 의뢰해주시고,\n루와와 함께 해보세요."}
             </div>
           </div>
           <div className="formContainer">

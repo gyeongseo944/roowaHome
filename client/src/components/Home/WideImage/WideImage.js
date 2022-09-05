@@ -8,7 +8,7 @@ function WideImage() {
   const ref = useRef();
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.7", isMobile ? "end 0.7" : "end 0.9"],
+    offset: ["start 0.7", isMobile ? "end 0.4" : "end 0.7"],
   });
   const screenSize = useTransform(scrollYProgress, [0, 1], ["50%", "100%"]);
   return (

@@ -93,7 +93,7 @@
     width: 100vw;
     justify-content: center;
     .headerLogo {
-      width: 17vw;
+      width: 13vw;
       margin-top: 0;
     }
 
@@ -110,6 +110,7 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-size: contain;
+      cursor: pointer;
     }
 
     .mobileMenuBlur {
@@ -148,6 +149,9 @@
           .menuLogo img {
             width: 15.3vw;
           }
+          .menuExitBtn {
+            cursor: pointer;
+          }
           .menuExitBtn img {
             width: 5vw;
             transform: rotate(45deg);
@@ -157,6 +161,9 @@
         .navigation {
           a {
             color: $darkGray;
+          }
+          li {
+            cursor: pointer;
           }
           > li {
             text-transform: uppercase;

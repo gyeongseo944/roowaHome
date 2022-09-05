@@ -175,6 +175,99 @@
       }
     }
   }
+
+  @include mobile {
+    .contactContainer {
+      .box1 {
+        border-bottom: none;
+        height: fit-content;
+        width: 86%;
+        margin: 0 auto;
+        .box1Img {
+          width: 100%;
+          border-bottom: 1px solid #707070;
+          margin-top: 10.4vw;
+          margin-bottom: 0px;
+          font-size: 9vw;
+        }
+        .box1Text {
+          margin-top: 8.9vw;
+          word-break: keep-all;
+          white-space: pre-wrap;
+          height: fit-content;
+          font-size: 3.1vw;
+          line-height: 170%;
+          font-weight: 300;
+          width: auto;
+        }
+      }
+      .formContainer {
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 20vw;
+        form {
+          max-width: none;
+          margin-top: 10.4vw;
+
+          .labelBox {
+            margin-bottom: 2.6vw;
+            .label {
+              font-size: 3.6vw;
+              display: block;
+            }
+            .labelSub {
+              display: block;
+              margin-left: 0;
+              margin-top: 1vw;
+              font-size: 2.8vw;
+            }
+          }
+          .inputBox {
+            margin-bottom: 5.2vw;
+            min-height: fit-content;
+            padding: 1vw 0;
+            input {
+              font-size: 3.6vw;
+            }
+
+            &.textarea {
+              height: 32.6vw;
+              textarea {
+                font-size: 3.6vw;
+              }
+            }
+          }
+          .radioBox {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            label {
+              font-size: 2.6vw;
+              line-height: 100%;
+
+              input {
+                width: 3.1vw;
+                height: 3.1vw;
+              }
+            }
+          }
+          .submitBtnBox {
+            padding-top: 9vw;
+
+            .submitBtn {
+              width: 32.3vw;
+              height: 8vw;
+
+              span {
+                font-size: 3.1vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 #overlay {
@@ -233,5 +326,32 @@
     font-size: 22px;
     letter-spacing: -0.88px;
     cursor: pointer;
+  }
+
+  @include mobile {
+    width: 80vw;
+    height: 55vw;
+    .exitIcon {
+      width: 5vw;
+      height: 5vw;
+      right: 3vw;
+      top: 3vw;
+    }
+    .msgBox {
+      height: fit-content;
+      margin-top: 16.4vw;
+      span {
+        width: fit-content;
+        height: fit-content;
+        font-size: 4.4vw;
+        line-height: 150%;
+      }
+    }
+    .buttonBox {
+      position: absolute;
+      bottom: 0;
+      font-size: 4.4vw;
+      height: 12.1vw;
+    }
   }
 }

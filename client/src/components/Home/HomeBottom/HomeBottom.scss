@@ -73,6 +73,7 @@
         font-size: 2.4vw;
         height: fit-content;
         padding: 2.4vw 4vw;
+        opacity: 1;
 
         img {
           width: 2.5vw;
@@ -96,6 +97,7 @@
       @include mobile {
         width: 86vw;
         height: 86vw;
+        opacity: 0.35;
       }
     }
   }
