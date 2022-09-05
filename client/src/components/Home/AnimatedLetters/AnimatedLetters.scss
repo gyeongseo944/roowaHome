@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "LeferiBaseBold";
-  src: url("../../../assets/fonts/LeferiBaseBold.otf") format("otf");
-}
-@font-face {
-  font-family: "LeferiBaseRegular";
-  src: url("../../../assets/fonts/LeferiBaseRegular.otf") format("otf");
-}
-
 .textAnimation {
   display: inline-block;
   position: relative;
@@ -51,7 +42,7 @@
 .secondTextBox {
   margin-top: 30px;
   margin-left: 10%;
-  font-family: "LeferiBaseBold";
+  font-family: "NanumSquareEB";
 }
 
 //---------------
@@ -64,7 +55,7 @@
   width: 20px;
 }
 .secondTextBoxMobile {
-  font-family: "LeferiBaseBold";
+  font-family: "NanumSquareEB";
   margin-bottom: 50px;
   margin-left: 5px;
 }
