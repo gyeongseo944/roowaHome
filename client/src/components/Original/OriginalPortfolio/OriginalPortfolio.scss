@@ -2,7 +2,7 @@
   width: 100%;
   margin-top: 150px;
   .portContainer {
-    width: 1240px;
+    width: 100%;
     max-width: 1240px;
     margin: 0 auto;
     .portfolioTitle {
@@ -13,6 +13,59 @@
       color: #070707;
       font-weight: bold;
       -webkit-text-stroke: 2px #fff;
+    }
+  }
+}
+
+#originalSwiper {
+  padding-bottom: 70px;
+  overflow: hidden;
+  .swiper-slide {
+    width: 47%;
+    min-width: 264px;
+  }
+  .originalPortMobile {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: 3.5vw;
+      margin: 20px 0 14px 0;
+      font-weight: bold;
+    }
+    p {
+      font-size: 2.4vw;
+      white-space: pre-wrap;
+      word-break: keep-all;
+    }
+  }
+  .swiper-scrollbar {
+    background-color: rgba(255, 255, 255, 0.2);
+    bottom: 0;
+    width: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+
+    .swiper-scrollbar-drag {
+      background-color: white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .originalPortfolio {
+    margin-top: 0;
+    .portContainer {
+      width: 94%;
+      .portfolioTitle {
+        font-size: 13vw;
+        line-height: 15vw;
+        font-family: LeferiBase;
+        margin-bottom: 10vw;
+        -webkit-text-stroke: 1px #fff;
+      }
     }
   }
 }

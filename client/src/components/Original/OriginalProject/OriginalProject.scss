@@ -1,7 +1,8 @@
 @import "~/src/config";
 
 .OriginalProject {
-  width: 1240px;
+  width: 100%;
+  max-width: 1240px;
   h1 {
     font-size: 100px;
     font-family: LeferiBase;
@@ -11,11 +12,16 @@
     font-weight: bold;
   }
   .logoContainer {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 300px));
+    grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(2, minmax(250px, 250px));
-    align-content: space-evenly;
-    justify-content: space-evenly;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
     .logoItem {
       text-align: center;
     }
@@ -31,6 +37,38 @@
     .logoItem:nth-child(6) {
       img {
         width: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .OriginalProject {
+    width: 94%;
+    margin: 20vw 0;
+    h1 {
+      font-size: 13vw;
+      margin-bottom: 5vw;
+      -webkit-text-stroke: 1px #fff;
+    }
+    .logoContainer {
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: repeat(2, minmax(20vw, 20vw));
+      .logoItem:nth-child(1),
+      .logoItem:nth-child(2),
+      .logoItem:nth-child(5) {
+        img {
+          width: 27vw;
+        }
+      }
+      .logoItem:nth-child(3),
+      .logoItem:nth-child(4),
+      .logoItem:nth-child(6) {
+        img {
+          width: 18vw;
+        }
       }
     }
   }

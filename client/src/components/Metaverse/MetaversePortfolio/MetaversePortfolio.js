@@ -57,15 +57,6 @@ const MetaversePortfolio = () => {
           <Swiper
             id="metaverseSwiper"
             speed={4000}
-            // breakpoints={{
-            //   1660: {
-            //     slidesPerView: 4,
-            //   },
-            //   760: {
-            //     slidesPerView: 3,
-            //   },
-            // }}
-
             slidesPerView="auto"
             spaceBetween={30}
             centeredSlides={false}

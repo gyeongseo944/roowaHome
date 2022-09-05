@@ -23,3 +23,22 @@
     color: white;
   }
 }
+
+@media (max-width: 768px) {
+  .originalBottom {
+    margin: 20vw 0;
+    line-height: 9vw;
+    img {
+      width: 60vw;
+      height: 60vw;
+    }
+    span {
+      margin-top: 10vw;
+      font-size: 8vw;
+      -webkit-text-stroke: 1px #fff;
+    }
+    .filled {
+      color: white;
+    }
+  }
+}

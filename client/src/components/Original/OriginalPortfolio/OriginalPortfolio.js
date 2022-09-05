@@ -5,8 +5,14 @@ import img2 from "../../../assets/original/maxresdefault.png";
 import img3 from "../../../assets/original/maxresdefault5.png";
 import img4 from "../../../assets/original/maxresdefault7.png";
 import PortfolioImgCard from "../../common/PortfolioImgCard/PortfolioImgCard";
+import { Autoplay, FreeMode, Scrollbar } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useMediaQuery } from "react-responsive";
 
+import "swiper/css";
+import "swiper/css/scrollbar";
 const OriginalPortfolio = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const portfolio = [
     {
       title: "찬또야 어디가",
@@ -40,9 +46,38 @@ const OriginalPortfolio = () => {
           OUR <br />
           PORTFOLIO
         </h1>
-        <div className="imgCardContainer">
-          {portfolio && portfolio.map((img, id) => <PortfolioImgCard key={id} title={img.title} contents={img.contents} img={img.img} link={img.link} />)}
-        </div>
+        {isMobile ? (
+          <Swiper
+            id="originalSwiper"
+            speed={4000}
+            slidesPerView="auto"
+            spaceBetween={30}
+            centeredSlides={false}
+            scrollbar={(true, { draggable: true })}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+              cancelable: false,
+            }}
+            slidesOffsetAfter={30}
+            modules={[FreeMode, Scrollbar, Autoplay]}
+          >
+            {portfolio &&
+              portfolio.map((img, id) => (
+                <SwiperSlide key={id}>
+                  <div className="originalPortMobile">
+                    <img src={img.img} alt="portfolio image" />
+                    <h1>{img.title}</h1>
+                    <p>{img.contents}</p>
+                  </div>
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        ) : (
+          <div className="imgCardContainer">
+            {portfolio && portfolio.map((img, id) => <PortfolioImgCard key={id} title={img.title} contents={img.contents} img={img.img} link={img.link} />)}
+          </div>
+        )}
       </div>
     </section>
   );
