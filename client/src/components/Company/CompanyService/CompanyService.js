@@ -8,9 +8,8 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 
 const CompanyService = () => {
-  const isBigScreen = useMediaQuery({
-    query: "(max-width:1800px)",
-  });
+  const isBigScreen = useMediaQuery({ maxWidth: 1800 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const [Slide, setSlide] = useState(false);
   const ref = useRef();
   useEffect(() => {
@@ -49,30 +48,30 @@ const CompanyService = () => {
     <div className="serviceContainer">
       <div className="serviceTitle">
         <h1>루와의 서비스</h1>
-        <p>
-          루와는 <span>콘텐츠 마케팅 서비스</span>를 통해 고객사의 목표를 이루어드립니다.
-        </p>
+        {isMobile ? (
+          <p>
+            루와는 콘텐츠 마케팅 서비스를 통해 고객사의 목표를 <br />
+            이루어드립니다.
+          </p>
+        ) : (
+          <p>
+            루와는 <span>콘텐츠 마케팅 서비스</span>를 통해 고객사의 목표를 이루어드립니다.
+          </p>
+        )}
       </div>
       {Slide ? (
         <Swiper
           id="serviceSwiper"
-          speed={5000}
-          breakpoints={{
-            1660: {
-              slidesPerView: 4,
-            },
-            760: {
-              slidesPerView: 3,
-            },
-          }}
-          spaceBetween={40}
+          speed={8000}
+          slidesPerView={"auto"}
+          spaceBetween={20}
           centeredSlides={false}
           scrollbar={(true, { draggable: true })}
           autoplay={{
-            delay: 1000,
+            delay: 1,
             disableOnInteraction: false,
-            reverseDirection: true,
           }}
+          freeMode={true}
           modules={[FreeMode, Scrollbar, Autoplay]}
         >
           {serviceDetail &&

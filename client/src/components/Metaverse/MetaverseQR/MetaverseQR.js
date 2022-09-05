@@ -23,7 +23,7 @@ const MetaverseQR = () => {
         </div>
         {isMobile ? (
           <div className="moreInfo">
-            소개서 다운로드 <img src={plus} alt="more information" />
+            더 알아보기 <img src={plus} alt="more information" />
           </div>
         ) : (
           <div className="qrCode">

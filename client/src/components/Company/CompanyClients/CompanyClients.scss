@@ -37,3 +37,29 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .companyClientsContainer {
+    .clientsTitle {
+      h1 {
+        font-size: 8vw;
+        margin-bottom: 4vw;
+        line-height: 9vw;
+      }
+      p {
+        font-size: 3vw;
+        line-height: 4vw;
+      }
+    }
+    .clientsLogoImg {
+      width: 180%;
+      height: 360px;
+      padding: 30px 0;
+      background-color: rgb(252, 252, 255);
+      img {
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+}

@@ -63,12 +63,18 @@
     }
   }
 }
-
 // Slide css
 #serviceSwiper {
   width: 100%;
   overflow: hidden;
   padding: 0 50px 100px 50px;
+  .swiper-slide {
+    width: 25%;
+    min-width: 220px;
+  }
+  .swiper-wrapper {
+    transition-timing-function: linear;
+  }
   .detailItem {
     .itemTitleWrap {
       width: 200px;
@@ -98,7 +104,7 @@
   .swiper-scrollbar {
     background-color: rgba(255, 255, 255, 0.2);
     bottom: 0;
-    width: 300px;
+    width: 40%;
     left: 50%;
     transform: translateX(-50%);
 
@@ -106,6 +112,22 @@
 
     .swiper-scrollbar-drag {
       background-color: white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceContainer {
+    .serviceTitle {
+      h1 {
+        font-size: 8vw;
+        margin-bottom: 4vw;
+      }
+      p {
+        font-size: 3vw;
+        line-height: 4vw;
+      }
+      margin-bottom: 7vw;
     }
   }
 }
