@@ -28,17 +28,18 @@ const Article = () => {
     if (!ListData) {
       axios.get("/api/article/getList").then((res) => {
         setListData(res.data);
-        setArtIdArr(res.data.articleIdArr);
-        setArticle(res.data.articleResult);
-        setNotIdArr(res.data.noticeIdArr);
-        setNotice(res.data.noticeResult);
+        setArticle(res.data.article);
+        setNotice(res.data.notice);
+        setArtIdArr(res.data.articleId);
+        setNotIdArr(res.data.noticeId);
         setLoading(false);
+        console.log(res.data);
       });
     } else {
-      setArtIdArr(ListData.articleIdArr);
-      setArticle(ListData.articleResult);
-      setNotIdArr(ListData.noticeIdArr);
-      setNotice(ListData.noticeResult);
+      setArticle(ListData.article);
+      setNotice(ListData.notice);
+      setArtIdArr(ListData.articleId);
+      setNotIdArr(ListData.noticeId);
       setLoading(false);
     }
   }, []);
@@ -91,9 +92,9 @@ const Article = () => {
                         page_id={article.id}
                         idArr={ArtIdArr}
                         thisIndex={index}
-                        image={article.image.files[0].file}
-                        title={article.title.results[0].title.plain_text}
-                        date={article.date.date.start}
+                        image={article.properties["Image*"].files[0].file}
+                        title={article.properties["Title*"].title[0].plain_text}
+                        date={article.properties["Date*"].date.start}
                       />
                     </React.Fragment>
                   ))
@@ -105,9 +106,9 @@ const Article = () => {
                         page_id={notice.id}
                         idArr={NotIdArr}
                         thisIndex={index}
-                        image={notice.image.files[0].file}
-                        title={notice.title.results[0].title.plain_text}
-                        date={notice.date.date.start}
+                        image={notice.properties["Image*"].files[0].file}
+                        title={notice.properties["Title*"].title[0].plain_text}
+                        date={notice.properties["Date*"].date.start}
                       />
                     </React.Fragment>
                   ))}

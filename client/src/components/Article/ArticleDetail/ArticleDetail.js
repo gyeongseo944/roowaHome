@@ -13,8 +13,8 @@ const ArticleDetail = () => {
   const location = useLocation();
   const variables = {
     pageId: param.id,
-    idArr: location.state.idArr,
-    thisIndex: location.state.thisIndex,
+    // idArr: location.state.idArr,
+    // thisIndex: location.state.thisIndex,
   };
 
   useEffect(() => {
@@ -22,10 +22,11 @@ const ArticleDetail = () => {
       top: 0,
       behavior: "smooth",
     });
-    setLoading(true);
-    axios.post(`/api/article/get${location.state.pageType}`, variables).then((res) => {
-      setDetail(res.data);
+    axios.post("/api/article/getDetail", variables).then((res) => {
+      setDetail(res.data.properties);
       setLoading(false);
+      console.log(res.data.properties);
+      console.log(location.state.idArr);
     });
   }, [param]);
 
@@ -35,50 +36,65 @@ const ArticleDetail = () => {
         <Loader />
       ) : (
         <div className="article_detail_container">
-          {Detail.title && (
+          {Detail["Title*"] && (
             <div>
-              <ArtDetail
-                title={Detail.title.results[0].title.plain_text}
-                image={Detail.image.files[0].file}
-                date={Detail.date.date.start}
-                contents={Detail.contents.results.length < 1 ? null : Detail.contents.results[0].rich_text.text.content}
-                source={Detail.source ? Detail.source : null}
-                link={Detail.link ? Detail.link : null}
-              />
+              <div className="article_detail">
+                <div className="detail_title_article">
+                  <h1>{Detail["Title*"].title[0].plain_text}</h1>
+                  <span>{Detail["Date*"].date.start}</span>
+                </div>
+                <div className="detail_contents_article">
+                  <img src={Detail["Image*"].files[0].file.url} alt="article image" />
+                  <div className="detail_contents_textzone">
+                    {Detail["Contents"].rich_text.length ? <p className="article_contents">{Detail["Contents"].rich_text[0].plain_text}</p> : null}
+                    {location.state.pageType === "Article" ? (
+                      <div>
+                        {Detail.Resource.url && Detail.Link.url && (
+                          <a href={Detail.Link.url} target="_blank">
+                            <p className="article_source">출처 : {Detail.Resource.url}</p>
+                          </a>
+                        )}
+                        {Detail.Resource.url && !Detail.Link.url && <p className="article_source">출처 : {Detail.Resource.url}</p>}
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+
               <div className="article_list">
-                {Detail.bfId && (
+                {location.state.thisIndex != 0 && (
                   <div className="beforeList">
                     <span>
                       이전
                       <img src={Arrow} />
                     </span>
                     <Link
-                      to={`/article/${Detail.bfId}`}
+                      to={`/article/${location.state.idArr[location.state.thisIndex - 1].id}`}
                       state={{
                         idArr: location.state.idArr,
                         thisIndex: location.state.thisIndex - 1,
                         pageType: location.state.pageType,
                       }}
                     >
-                      <span className="nextArticle">{Detail.bfTitle}</span>
+                      <span className="nextArticle">{location.state.idArr[location.state.thisIndex - 1].title}</span>
                     </Link>
                   </div>
                 )}
-                {Detail.afId && (
+                {location.state.thisIndex < location.state.idArr.length - 1 && (
                   <div className="afterList">
                     <span>
                       다음
                       <img src={Arrow} />
                     </span>
                     <Link
-                      to={`/article/${Detail.afId}`}
+                      to={`/article/${location.state.idArr[location.state.thisIndex + 1].id}`}
                       state={{
                         idArr: location.state.idArr,
                         thisIndex: location.state.thisIndex + 1,
                         pageType: location.state.pageType,
                       }}
                     >
-                      <span className="nextArticle">{Detail.afTitle}</span>
+                      <span className="nextArticle">{location.state.idArr[location.state.thisIndex + 1].title}</span>
                     </Link>
                   </div>
                 )}

@@ -62,7 +62,7 @@ const CompanyService = () => {
       {Slide ? (
         <Swiper
           id="serviceSwiper"
-          speed={8000}
+          speed={6000}
           slidesPerView={"auto"}
           spaceBetween={20}
           centeredSlides={false}

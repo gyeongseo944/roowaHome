@@ -67,7 +67,7 @@
 #serviceSwiper {
   width: 100%;
   overflow: hidden;
-  padding: 0 50px 100px 50px;
+  padding: 0 50px 60px 50px;
   .swiper-slide {
     width: 25%;
     min-width: 220px;
@@ -77,11 +77,11 @@
   }
   .detailItem {
     .itemTitleWrap {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       background-color: rgb(38, 37, 37);
       border-radius: 50%;
-      margin-bottom: 30px;
+      margin: 20px 0 30px 20px;
       display: flex;
       align-items: center;
       .itemTitle {
@@ -118,6 +118,7 @@
 
 @media (max-width: 768px) {
   .serviceContainer {
+    margin: 30vw 0;
     .serviceTitle {
       h1 {
         font-size: 8vw;
