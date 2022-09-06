@@ -5,28 +5,37 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import Arrow from "../../../assets/navBtns/articleBtns/x59.png";
 import Loader from "../../common/Loader/Loader";
 import { useMediaQuery } from "react-responsive";
+import { articleListAtom } from "../../../atom";
+import { useRecoilState } from "recoil";
 
 const ArticleDetail = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  const param = useParams();
+
   const [Detail, setDetail] = useState({});
   const [Loading, setLoading] = useState(true);
+
   const location = useLocation();
-  const variables = {
-    pageId: param.id,
-  };
+  const pageType = location.state.pageType;
+  const thisIndex = location.state.thisIndex;
+
+  const [ListData, setListData] = useRecoilState(articleListAtom);
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-    axios.post("/api/article/getDetail", variables).then((res) => {
-      setDetail(res.data.properties);
+    if (!ListData) {
+      axios.get("/api/article/getList").then((res) => {
+        setListData(res.data);
+        setDetail(res.data[pageType][thisIndex].properties);
+        setLoading(false);
+      });
+    } else {
+      setDetail(ListData[pageType][thisIndex].properties);
       setLoading(false);
-    });
-  }, [param]);
-
+    }
+  }, [location]);
   return (
     <>
       {Loading ? (
@@ -44,7 +53,7 @@ const ArticleDetail = () => {
                   <img src={Detail["Image*"].files[0].file.url} alt="article image" />
                   <div className="detail_contents_textzone">
                     {Detail["Contents"].rich_text.length ? <p className="article_contents">{Detail["Contents"].rich_text[0].plain_text}</p> : null}
-                    {location.state.pageType === "Article" ? (
+                    {pageType === "article" ? (
                       <div>
                         {Detail.Resource.url && Detail.Link.url && (
                           <a href={Detail.Link.url} target="_blank">
@@ -59,39 +68,37 @@ const ArticleDetail = () => {
               </div>
 
               <div className="article_list">
-                {location.state.thisIndex != 0 && (
+                {thisIndex != 0 && (
                   <div className="beforeList">
                     <span>
                       이전
                       <img src={Arrow} />
                     </span>
                     <Link
-                      to={`/article/${location.state.idArr[location.state.thisIndex - 1].id}`}
+                      to={`/article/${ListData[pageType][thisIndex - 1].id}`}
                       state={{
-                        idArr: location.state.idArr,
-                        thisIndex: location.state.thisIndex - 1,
-                        pageType: location.state.pageType,
+                        thisIndex: thisIndex - 1,
+                        pageType: pageType,
                       }}
                     >
-                      <span className="nextArticle">{location.state.idArr[location.state.thisIndex - 1].title}</span>
+                      <span className="nextArticle">{ListData[pageType][thisIndex - 1].properties["Title*"].title[0].plain_text}</span>
                     </Link>
                   </div>
                 )}
-                {location.state.thisIndex < location.state.idArr.length - 1 && (
+                {thisIndex < ListData[pageType].length - 1 && (
                   <div className="afterList">
                     <span>
                       다음
                       <img src={Arrow} />
                     </span>
                     <Link
-                      to={`/article/${location.state.idArr[location.state.thisIndex + 1].id}`}
+                      to={`/article/${ListData[pageType][thisIndex + 1].id}`}
                       state={{
-                        idArr: location.state.idArr,
-                        thisIndex: location.state.thisIndex + 1,
-                        pageType: location.state.pageType,
+                        thisIndex: thisIndex + 1,
+                        pageType: pageType,
                       }}
                     >
-                      <span className="nextArticle">{location.state.idArr[location.state.thisIndex + 1].title}</span>
+                      <span className="nextArticle">{ListData[pageType][thisIndex + 1].properties["Title*"].title[0].plain_text}</span>
                     </Link>
                   </div>
                 )}

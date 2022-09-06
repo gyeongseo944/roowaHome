@@ -15,8 +15,7 @@ const Article = () => {
   const [ListData, setListData] = useRecoilState(articleListAtom);
   const [Article, setArticle] = useState([]);
   const [Notice, setNotice] = useState([]);
-  const [ArtIdArr, setArtIdArr] = useState([]);
-  const [NotIdArr, setNotIdArr] = useState([]);
+
   const [TapArticle, setTapArticle] = useState(true);
   const [Loading, setLoading] = useState(false);
 
@@ -31,15 +30,13 @@ const Article = () => {
         setListData(res.data);
         setArticle(res.data.article);
         setNotice(res.data.notice);
-        setArtIdArr(res.data.articleId);
-        setNotIdArr(res.data.noticeId);
+
         setLoading(false);
       });
     } else {
       setArticle(ListData.article);
       setNotice(ListData.notice);
-      setArtIdArr(ListData.articleId);
-      setNotIdArr(ListData.noticeId);
+
       setLoading(false);
     }
   }, []);
@@ -93,9 +90,8 @@ const Article = () => {
                   Article.map((article, index) => (
                     <React.Fragment key={index + article.id}>
                       <GridCard
-                        page={"Article"}
+                        page={"article"}
                         page_id={article.id}
-                        idArr={ArtIdArr}
                         thisIndex={index}
                         image={article.properties["Image*"].files[0].file}
                         title={article.properties["Title*"].title[0].plain_text}
@@ -107,9 +103,8 @@ const Article = () => {
                   Notice.map((notice, index) => (
                     <React.Fragment key={index + notice.id}>
                       <GridCard
-                        page={"Notice"}
+                        page={"notice"}
                         page_id={notice.id}
-                        idArr={NotIdArr}
                         thisIndex={index}
                         image={notice.properties["Image*"].files[0].file}
                         title={notice.properties["Title*"].title[0].plain_text}

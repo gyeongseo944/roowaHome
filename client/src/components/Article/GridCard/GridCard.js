@@ -8,7 +8,6 @@ const GridCard = (props) => {
         to={`/article/${props.page_id}`}
         state={{
           pageType: props.page,
-          idArr: props.idArr,
           thisIndex: props.thisIndex,
         }}
       >
