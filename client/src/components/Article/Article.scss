@@ -1,126 +1,144 @@
 .articleContainer {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex-direction: column;
-  margin-top: 50px;
-}
-.article_title {
-  width: 70%;
-  height: 190px;
-  text-align: center;
-  position: relative;
-  h1 {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  .naviArticle {
-    position: absolute;
-    right: 10%;
-    .naviHome {
-      width: 22px;
-      height: 20px;
-      margin-bottom: 2px;
-      cursor: pointer;
-    }
-    .naviArrow {
-      width: 10px;
-      height: 16px;
-      margin: 0 10px;
-    }
-    span {
-      color: #888888;
-      font-size: 16px;
-      font-weight: 300;
-    }
-  }
-}
-.tapMenu {
-  width: 50%;
-  height: 70px;
-  position: absolute;
-  display: flex;
-  bottom: 0;
-  left: 10%;
-  .articleTap {
-    font-size: 1.6rem;
-    text-align: center;
-    line-height: 70px;
-    cursor: pointer;
-  }
-  .noticeTap {
-    font-size: 1.6rem;
-    text-align: center;
-    line-height: 70px;
-    margin-left: 40px;
-    cursor: pointer;
-  }
-  .active {
-    color: #ff0080;
-    font-weight: bold;
-    border-bottom: 4px solid #ff0080;
-    cursor: default;
-  }
-}
-.article_container {
-  width: 100%;
-  height: object-fit;
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 10vh;
-  .grid_container {
-    width: 80%;
-    height: auto;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(auto, 400px));
-    column-gap: 20px;
-    grid-auto-rows: minmax(550px, 550px);
-    justify-items: center;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
+  margin-top: 80px;
   .article_title {
-    width: 80%;
-    height: 120px;
+    width: 100%;
+    max-width: 1240px;
+    height: 230px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
     h1 {
-      font-size: 2rem;
+      font-size: 3rem;
+      font-weight: bold;
     }
     .naviArticle {
-      right: 5%;
+      position: absolute;
+      right: 0;
+      bottom: 100px;
       .naviHome {
-        width: 18px;
-        height: 16px;
+        width: 20px;
+        height: 18px;
+        margin-bottom: -2px;
+        cursor: pointer;
       }
       .naviArrow {
-        width: 8px;
-        height: 14px;
-        margin: 0 5px;
+        width: 10px;
+        height: 16px;
+        margin: 0 10px;
       }
       span {
-        font-size: 14px;
+        color: #888888;
+        font-size: 16px;
+        font-weight: 300;
       }
     }
-  }
-  .tapMenu {
-    left: 5%;
-    .articleTap {
-      font-size: 1.2rem;
-    }
-    .noticeTap {
-      font-size: 1.2rem;
-      left: 25%;
+    .tapMenu {
+      width: 50%;
+      height: 70px;
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      .articleTap {
+        font-size: 1.6rem;
+        text-align: center;
+        line-height: 70px;
+        cursor: pointer;
+      }
+      .noticeTap {
+        font-size: 1.6rem;
+        text-align: center;
+        line-height: 70px;
+        margin-left: 40px;
+        cursor: pointer;
+      }
+      .active {
+        color: #ff0080;
+        font-weight: bold;
+        border-bottom: 4px solid #ff0080;
+        cursor: default;
+      }
     }
   }
   .article_container {
+    width: 100%;
+    height: object-fit;
+    margin-top: 30px;
+    margin-bottom: 10vh;
     .grid_container {
-      display: flex;
-      flex-direction: column;
+      width: 100%;
+      max-width: 1240px;
+      overflow: hidden;
+      height: auto;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(200px, 30%));
+      column-gap: 20px;
+      grid-auto-rows: minmax(550px, 550px);
+      justify-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .articleContainer {
+    margin-top: 14vw;
+    .article_title {
+      height: auto;
+      margin: 0 auto;
+      text-align: left;
+      position: relative;
+      padding-left: 6vw;
+      h1 {
+        font-size: 6vw;
+      }
+      .tapMenu {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        margin-top: 5vw;
+        .articleTap {
+          width: 24vw;
+          height: 6vw;
+          font-size: 2.8vw;
+          font-weight: 200;
+          border: 1px solid #808080;
+          border-radius: 30px;
+          line-height: 6vw;
+          cursor: pointer;
+          box-sizing: unset;
+        }
+        .noticeTap {
+          width: 24vw;
+          height: 6vw;
+          margin-left: 20px;
+          font-size: 2.8vw;
+          font-weight: 200;
+          border: 1px solid #808080;
+          border-radius: 30px;
+          line-height: 6vw;
+          cursor: pointer;
+          box-sizing: unset;
+        }
+        .active {
+          font-weight: bold;
+          transform: scale(1.1);
+          color: black;
+          cursor: default;
+        }
+      }
+    }
+    .article_container {
+      margin-top: 8vw;
+      margin-bottom: 10vh;
+      .grid_container {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 }

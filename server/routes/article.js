@@ -104,7 +104,6 @@ router.get("/getList", async (req, res) => {
   const noticeId = noticeResult.results.map((notice, id) => {
     return { id: notice.id, title: notice.properties["Title*"].title[0].plain_text };
   });
-  console.log(articleId);
   res.send({ article: articleResult.results, notice: noticeResult.results, articleId: articleId, noticeId: noticeId });
 });
 

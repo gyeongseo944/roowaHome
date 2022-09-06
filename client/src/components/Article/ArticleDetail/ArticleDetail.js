@@ -2,19 +2,18 @@ import "./ArticleDetail.scss";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useLocation, useParams } from "react-router-dom";
-import ArtDetail from "./ArtDetail";
 import Arrow from "../../../assets/navBtns/articleBtns/x59.png";
 import Loader from "../../common/Loader/Loader";
+import { useMediaQuery } from "react-responsive";
 
 const ArticleDetail = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const param = useParams();
   const [Detail, setDetail] = useState({});
   const [Loading, setLoading] = useState(true);
   const location = useLocation();
   const variables = {
     pageId: param.id,
-    // idArr: location.state.idArr,
-    // thisIndex: location.state.thisIndex,
   };
 
   useEffect(() => {
@@ -25,8 +24,6 @@ const ArticleDetail = () => {
     axios.post("/api/article/getDetail", variables).then((res) => {
       setDetail(res.data.properties);
       setLoading(false);
-      console.log(res.data.properties);
-      console.log(location.state.idArr);
     });
   }, [param]);
 

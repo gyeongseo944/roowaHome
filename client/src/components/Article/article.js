@@ -1,6 +1,6 @@
 import "./Article.scss";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import GridCard from "./GridCard/GridCard";
 import Loader from "../common/Loader/Loader";
@@ -8,8 +8,10 @@ import naviHome from "../../assets/navBtns/articleBtns/x547c81c586.png";
 import naviArrow from "../../assets/navBtns/articleBtns/x59.png";
 import { useRecoilState } from "recoil";
 import { articleListAtom } from "../../atom";
+import { useMediaQuery } from "react-responsive";
 
 const Article = () => {
+  const isMobile = useMediaQuery({ maxWidth: 700 });
   const [ListData, setListData] = useRecoilState(articleListAtom);
   const [Article, setArticle] = useState([]);
   const [Notice, setNotice] = useState([]);
@@ -17,7 +19,6 @@ const Article = () => {
   const [NotIdArr, setNotIdArr] = useState([]);
   const [TapArticle, setTapArticle] = useState(true);
   const [Loading, setLoading] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     window.scrollTo({
@@ -33,7 +34,6 @@ const Article = () => {
         setArtIdArr(res.data.articleId);
         setNotIdArr(res.data.noticeId);
         setLoading(false);
-        console.log(res.data);
       });
     } else {
       setArticle(ListData.article);
@@ -52,15 +52,20 @@ const Article = () => {
         <div className="articleContainer">
           <div className="article_title">
             <h1>뉴스 &middot; 알림</h1>
-            <div className="naviArticle">
-              <Link to="/">
-                <img src={naviHome} alt="home button" className="naviHome" />
-              </Link>
-              <img className="naviArrow" src={naviArrow} alt="Chevron" />
-              <span className="naviBtn">ABOUT</span>
-              <img className="naviArrow" src={naviArrow} alt="Chevron" />
-              <span className="naviBtn">뉴스 &middot; 알림</span>
-            </div>
+            {isMobile ? (
+              <></>
+            ) : (
+              <div className="naviArticle">
+                <Link to="/">
+                  <img src={naviHome} alt="home button" className="naviHome" />
+                </Link>
+                <img className="naviArrow" src={naviArrow} alt="Chevron" />
+                <span className="naviBtn">ABOUT</span>
+                <img className="naviArrow" src={naviArrow} alt="Chevron" />
+                <span className="naviBtn">뉴스 &middot; 알림</span>
+              </div>
+            )}
+
             <div className="tapMenu">
               <div
                 className={TapArticle ? "articleTap active" : "articleTap"}

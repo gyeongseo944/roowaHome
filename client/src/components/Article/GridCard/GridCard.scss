@@ -22,11 +22,13 @@
   .gridTitle {
     font-size: 1.4rem;
     font-weight: bold;
+    line-height: 1.8rem;
     margin-top: 20px;
   }
   .gridDate {
     font-size: 20px;
     color: #888888;
+    margin-top: 14px;
   }
   .dimmedImg::after {
     position: absolute;
@@ -57,5 +59,38 @@
   .dimmedImg::after {
     color: rgb(255, 255, 255);
     background: rgba(0, 0, 0, 0.75);
+  }
+}
+
+@media (max-width: 700px) {
+  .gridContainer {
+    margin-bottom: 10vw;
+    .dimmedImg {
+      height: 54vw;
+    }
+    .gridTitle {
+      font-size: 4vw;
+      font-weight: bold;
+      margin: 2vw 0;
+    }
+    .gridDate {
+      font-size: 3.6vw;
+      color: #888888;
+    }
+    .dimmedImg::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; /* 빈 값으로 넣어야 가상의 요소 생성; */
+      content: "+";
+      text-align: center;
+      font-weight: 100;
+      line-height: 54vw;
+      font-size: 80px;
+      color: rgba(0, 0, 0, 0);
+      background: rgba(0, 0, 0, 0);
+      transition: 0.5s;
+    }
   }
 }
