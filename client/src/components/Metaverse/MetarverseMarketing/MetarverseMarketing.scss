@@ -84,12 +84,14 @@
           letter-spacing: -1.76px;
           white-space: pre-wrap;
           margin-bottom: 30px;
+          position: absolute;
         }
         .titleEng {
           font-weight: bold;
-          font-size: 22px;
+          font-size: 16px;
           margin-bottom: 58px;
           font-family: NanumSquareEB;
+          margin-top: 53%;
         }
         .hr {
           background-color: $dark;
@@ -120,6 +122,7 @@
         font-size: 7vw;
         line-height: 120%;
         -webkit-text-stroke: 1px $white;
+        margin-left: 7vw;
       }
       .cardBox {
         flex-direction: column;
@@ -131,6 +134,7 @@
           margin-right: 0;
           margin-bottom: 6vw;
           position: relative;
+          padding: 5vw 3.5vw 0;
 
           &:last-child {
             margin-bottom: 0;
@@ -139,10 +143,12 @@
           .title {
             font-size: 5.7vw;
             position: absolute;
+            line-height: 100%;
+            margin-bottom: 0;
           }
 
           .titleEng {
-            font-size: 2.9vw;
+            font-size: 2.6vw;
             margin-top: 22vw;
             margin-bottom: 4vw;
           }
@@ -154,7 +160,8 @@
           ul {
             li {
               font-size: 2vw;
-              margin-bottom: 4vw;
+              margin-bottom: 3vw;
+              line-height: 140%;
             }
           }
         }

@@ -38,4 +38,11 @@
       border-radius: 18px;
     }
   }
+
+  @include mobile {
+    width: 86vw;
+    margin-top: 16vw;
+    .metaverseTitle {
+    }
+  }
 }

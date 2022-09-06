@@ -24,7 +24,9 @@ function OriginalCard() {
               />
             )}
             <div className="title">{"크리에이티브한\n사고력"}</div>
-            <div className="titleEng">Creative Thinking</div>
+            <div className="titleEng" style={{ fontSize: "22px" }}>
+              Creative Thinking
+            </div>
             <div className="hr"></div>
             <ul>
               <li>트렌드 소재 발굴</li>
@@ -41,7 +43,9 @@ function OriginalCard() {
               />
             )}
             <div className="title">{"확실한\n데이터분석과\n콘텐츠 기획력"}</div>
-            <div className="titleEng">Content Planning</div>
+            <div className="titleEng" style={{ fontSize: "22px" }}>
+              Content Planning
+            </div>
             <div className="hr"></div>
             <ul>
               <li>데이터 기반 소구점 도출</li>
@@ -59,7 +63,9 @@ function OriginalCard() {
               />
             )}
             <div className="title">{"전반적인\n콘텐츠\n제작 능력"}</div>
-            <div className="titleEng">Content Production</div>
+            <div className="titleEng" style={{ fontSize: "22px" }}>
+              Content Production
+            </div>
             <div className="hr"></div>
             <ul>
               <li>촬영, 조명, 미술 등 전 과정 진행</li>

@@ -70,4 +70,33 @@
       }
     }
   }
+
+  @include mobile {
+    width: 86%;
+    > .title {
+      -webkit-text-stroke: 1px $white;
+      font-size: 7.8vw;
+      margin-bottom: 5.2vw;
+    }
+    .iconArea {
+      margin-bottom: 2.2vw;
+      .iconCircles {
+        width: 10.9vw;
+        height: 10.9vw;
+      }
+    }
+    .stepLine {
+      .stepBox {
+        .step {
+          font-size: 1vw;
+          margin-bottom: 0.8vw;
+        }
+        .title {
+          font-size: 2.6vw;
+          letter-spacing: -0.8px;
+          line-height: 140%;
+        }
+      }
+    }
+  }
 }

@@ -78,6 +78,13 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 42px 42px;
 
+  @media (max-width: 1404px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 922px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .card {
     display: flex;
     flex-direction: column;

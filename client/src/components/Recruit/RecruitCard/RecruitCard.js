@@ -1,6 +1,32 @@
 import { Link } from "react-router-dom";
+import "./RecruitCard.scss";
 
-function RecruitCard({ id, date, contents, tag, teamName, title }) {
+function RecruitCard({ id, properties }) {
+  const {
+    "Contents*": {
+      rich_text: [
+        {
+          text: { content: contents },
+        },
+      ],
+    },
+    StartEndDate: date,
+    "Tags*": { multi_select: tags },
+    "TeamName*": {
+      rich_text: [
+        {
+          text: { content: teamName },
+        },
+      ],
+    },
+    "Title*": {
+      title: [
+        {
+          text: { content: title },
+        },
+      ],
+    },
+  } = properties;
   let dDay = null;
   if (date?.date?.end) {
     dDay = Math.ceil(
@@ -10,38 +36,38 @@ function RecruitCard({ id, date, contents, tag, teamName, title }) {
 
   return (
     <Link to={`/recruit/${id}`} className="recruitCard">
-      <div
-        className={
-          dDay !== null
-            ? dDay < 0
-              ? "recruitDDay end"
+      <div className="cardContainer">
+        <div
+          className={
+            dDay !== null
+              ? dDay < 0
+                ? "recruitDDay end"
+                : "recruitDDay"
               : "recruitDDay"
-            : "recruitDDay"
-        }
-      >
-        {dDay !== null ? (
-          dDay < 0 ? (
-            `마감`
+          }
+        >
+          {dDay !== null ? (
+            dDay < 0 ? (
+              `마감`
+            ) : (
+              `D-${dDay}`
+            )
           ) : (
-            `D-${dDay}`
-          )
-        ) : (
-          <div>{`상시 채용`}</div>
-        )}
-      </div>
-      <div className="recruitTeam">
-        {teamName.results[0].rich_text.text.content}
-      </div>
-      <div className="recruitTitle">{title.results[0].title.text.content}</div>
-      <div className="recruitTask">
-        <p>{contents.results[0].rich_text.text.content}</p>
-      </div>
-      <div className="recruitTagBox">
-        {tag.multi_select.map((tagName) => (
-          <div className="recruitTag" key={tagName.id}>
-            <span>{tagName.name}</span>
-          </div>
-        ))}
+            <div>{`상시 채용`}</div>
+          )}
+        </div>
+        <div className="recruitTeam">{teamName}</div>
+        <div className="recruitTitle">{title}</div>
+        <div className="recruitTask">
+          <p>{contents}</p>
+        </div>
+        <div className="recruitTagBox">
+          {tags.map((tagName) => (
+            <div className="recruitTag" key={tagName.id}>
+              <span>{tagName.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="recruitPeriod">
         {dDay !== null ? `${date.date.start} ~ ${date.date.end}` : "상시채용"}

@@ -84,6 +84,7 @@ function CompanyExplain() {
         variants={mobileListVarians}
         initial="outView"
         whileInView="inView"
+        viewport={{ once: true }}
       >
         <motion.div className="list" variants={mobileListChild}>
           <div className="number">01</div>

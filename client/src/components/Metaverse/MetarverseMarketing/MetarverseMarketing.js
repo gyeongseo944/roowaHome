@@ -23,13 +23,18 @@ function MetarverseMarketing() {
                 alt="카드 이미지"
               />
             )}
-            <div className="title">{"메타버스\n비즈니스\n컨설팅"}</div>
-            <div className="titleEng">Metarverse Business Consulting</div>
+            <div className="title">{"메타버스\n플랫폼\n월드맵 제작"}</div>
+            <div className="titleEng">Creat Metaverse Platform World Map</div>
             <div className="hr"></div>
             <ul>
-              <li>제페토 브랜디드 굿즈 제작 : 의상,헤어,액세서리</li>
-              <li>NFT 디지털 리소스 제작 및 MINTING</li>
-              <li>메타버스 게이미피케이션 기획.제작 : 상호작용,UI,이펙트</li>
+              <li>2D 메타버스 월드맵 기획.제작 : 개더타운, ZEP</li>
+              <li>
+                3D 메타버스 월드맵 기획.제작 : 제페토, 로블록스, 마인크래프트
+              </li>
+              <li>
+                3D 실시간 다중 접속 VR 메타버스 플랫폼 연결 구축 작업 : 언리얼
+                엔진 기반 (Head Mount Device 지원)
+              </li>
             </ul>
           </div>
           <div className="card">

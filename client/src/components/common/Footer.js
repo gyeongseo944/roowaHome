@@ -129,17 +129,16 @@ function Footer() {
           />
         </a>
       </div>
-      <div className="toTop">
-        <img
-          src={require("../../assets/x70.png")}
-          alt="상단으로"
-          onClick={() =>
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            })
-          }
-        />
+      <div
+        className="toTop"
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }
+      >
+        <img src={require("../../assets/x70.png")} alt="상단으로" />
       </div>
     </footer>
   );

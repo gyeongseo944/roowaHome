@@ -166,10 +166,21 @@
           justify-content: center;
           background-color: $white;
           cursor: pointer;
+          transition: all 0.1s ease-in;
 
           span {
             font-size: 24px;
             color: $darkGray;
+            transition: all 0.1s ease-in;
+          }
+
+          &:hover {
+            background-color: $pointColor;
+            border-color: $white;
+
+            span {
+              color: $white;
+            }
           }
         }
       }

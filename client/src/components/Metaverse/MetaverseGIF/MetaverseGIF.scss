@@ -6,9 +6,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 180px;
-
-  @media (max-width: 1265px) {
-  }
+  word-break: keep-all;
 
   .metaverseExplanation {
     margin-top: 186px;
@@ -96,6 +94,58 @@
       img {
         width: 100%;
         border-radius: 30px;
+      }
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 0;
+    .metaverseExplanation {
+      margin-top: 16.3vw;
+      margin-bottom: 12.5vw;
+      font-size: 3.1vw;
+      line-height: 200%;
+      width: 50vw;
+      letter-spacing: 0;
+    }
+    .metarverseGIFLine {
+      height: fit-content;
+      flex-direction: column;
+
+      &:nth-child(3) {
+        flex-direction: column-reverse;
+      }
+      .metarverseGIFBlock {
+        text-align: center;
+
+        .GIFSub {
+          font-size: 2.3vw;
+          line-height: 100%;
+          margin-top: 7.8vw;
+          margin-bottom: 0;
+        }
+        .GIFTitle {
+          font-size: 6.5vw;
+          line-height: 100%;
+          letter-spacing: -2px;
+          margin: 3vw 0;
+        }
+        .GIFExplains {
+          width: fit-content;
+          font-size: 3.1vw;
+          line-height: 170%;
+          margin: 0 auto;
+          white-space: pre-wrap;
+          margin-bottom: 13vw;
+        }
+      }
+
+      .GIFBlock1,
+      .GIFBlock4 {
+        width: 46vw;
+      }
+      .GIFBlock3 {
+        padding: 0;
       }
     }
   }

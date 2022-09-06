@@ -23,16 +23,17 @@ function Recruit() {
         let alwaysData = [];
         // 마감된 데이터 array
         let endData = [];
-        const remainData = data?.data?.result
+        const remainData = data.data
           ?.filter((v) => {
             // 기간 설정 없는 상시모집 데이터 push
-            if (v.date.date === null) {
+            if (v.properties.StartEndDate.date === null) {
               alwaysData.push(v);
               return false;
             }
             // d-day 값으로 마감된 데이터와 기간이 남은 데이터 분할
             const dataDate = Math.ceil(
-              (new Date(v.date.date.end) - new Date()) / (1000 * 60 * 60 * 24)
+              (new Date(v.properties.StartEndDate.date.end) - new Date()) /
+                (1000 * 60 * 60 * 24)
             );
             // 기간 남은 데이터 filter
             if (dataDate >= 0) {
@@ -45,14 +46,18 @@ function Recruit() {
           })
           .sort(
             // 채용마감 날짜 기준 정렬
-            (a, b) => new Date(a.date.date.end) - new Date(b.date.date.end)
+            (a, b) =>
+              new Date(a.properties.StartEndDate.date.end) -
+              new Date(b.properties.StartEndDate.date.end)
           );
         setRecruitDataAtom([
           ...remainData,
           // 마감된 데이터 마감 날짜 기준 정렬
           ...alwaysData,
           ...endData.sort(
-            (a, b) => new Date(a.date.date.end) - new Date(b.date.date.end)
+            (a, b) =>
+              new Date(a.properties.StartEndDate.date.end) -
+              new Date(b.properties.StartEndDate.date.end)
           ),
         ]);
       }

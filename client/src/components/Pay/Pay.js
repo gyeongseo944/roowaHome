@@ -119,10 +119,10 @@ function Pay() {
               }}
               centeredSlides={false}
               scrollbar={(true, { draggable: true })}
-              // autoplay={{
-              //   delay: 2500,
-              //   disableOnInteraction: false,
-              // }}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
               modules={[FreeMode, Scrollbar, Autoplay]}
             >
               {sampleData.map((data, index) => {

@@ -5,7 +5,8 @@
   justify-content: center;
 
   .payDetailContainer {
-    width: 1404px;
+    width: 86%;
+    max-width: 1404px;
 
     .payDetailTitleBox {
       width: 100%;
@@ -33,9 +34,10 @@
       padding: 94px 0;
       margin-bottom: 32px;
       .payDetailContent {
-        width: 100%;
+        display: flex;
+        justify-content: center;
         img {
-          width: 100%;
+          width: 80%;
         }
       }
     }
@@ -82,6 +84,41 @@
         color: $darkGray;
         font-size: 24px;
         cursor: pointer;
+      }
+    }
+  }
+
+  @include mobile {
+    .payDetailContainer {
+      width: 86%;
+      .payDetailTitleBox {
+        padding-top: 10.4vw;
+        padding-bottom: 2.1vw;
+
+        .payDetailTitle {
+          font-size: 4.2vw;
+          line-height: 100%;
+          letter-spacing: -0.64px;
+          font-weight: bold;
+        }
+        .payDetailPrice {
+          font-weight: 300;
+          font-size: 3.1vw;
+          line-height: 100%;
+        }
+      }
+
+      .payDetailContentsBox {
+        padding: 5.5vw 0;
+        border-bottom: none;
+      }
+
+      .payDetailListBtnBox {
+        margin-bottom: 10vw;
+        .payDetailListBtn {
+          width: 27.3vw;
+          height: 8.4vw;
+        }
       }
     }
   }
