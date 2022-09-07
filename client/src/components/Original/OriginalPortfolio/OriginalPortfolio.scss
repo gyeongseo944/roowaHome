@@ -24,6 +24,9 @@
     width: 47%;
     min-width: 264px;
   }
+  .swiper-wrapper {
+    transition-timing-function: linear;
+  }
   .originalPortMobile {
     img {
       width: 100%;

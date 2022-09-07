@@ -22,9 +22,11 @@ const MetaverseQR = () => {
           </h1>
         </div>
         {isMobile ? (
-          <div className="moreInfo">
-            더 알아보기 <img src={plus} alt="more information" />
-          </div>
+          <a href="https://user.zepeto.me/_roowa?referrer=_roowa" target="_blank">
+            <div className="moreInfo">
+              더 알아보기 <img src={plus} alt="more information" />
+            </div>
+          </a>
         ) : (
           <div className="qrCode">
             <img src={qrCode} alt="QR code" />

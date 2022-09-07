@@ -56,47 +56,47 @@
     }
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .mainPoster {
     padding-bottom: 50px;
     .posterContainer {
-      height: 900px;
+      height: 90vw;
     }
   }
 }
-@media (max-width: 800px) {
+// @media (max-width: 800px) {
+//   .mainPoster {
+//     padding-bottom: 50px;
+//     .posterContainer {
+//       width: 80%;
+//       height: 900px;
+//     }
+//   }
+// }
+// @media (max-width: 600px) {
+//   .mainPoster {
+//     padding-bottom: 50px;
+//     .posterContainer {
+//       width: 90%;
+//       height: 800px;
+//     }
+//   }
+// }
+@media (max-width: 768px) {
   .mainPoster {
-    padding-bottom: 50px;
+    padding-bottom: 8vw;
     .posterContainer {
       width: 80%;
-      height: 900px;
-    }
-  }
-}
-@media (max-width: 600px) {
-  .mainPoster {
-    padding-bottom: 50px;
-    .posterContainer {
-      width: 90%;
-      height: 800px;
-    }
-  }
-}
-@media (max-width: 500px) {
-  .mainPoster {
-    padding-bottom: 50px;
-    .posterContainer {
-      width: 90%;
-      height: 700px;
+      height: 120vw;
     }
     .mainPosterMono {
       width: 80%;
     }
     .posterScanner {
-      width: 110%;
+      width: 120%;
     }
     .mainPosterColored {
-      width: 90%;
+      width: 80%;
     }
   }
 }

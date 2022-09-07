@@ -13,17 +13,31 @@ function MainPoster() {
   useEffect(() => {
     if (isInView && !ScannerOn) {
       setScannerOn(true);
-      heightControls.start({
-        height: imgRef.current.offsetHeight + 40,
-        transition: { delay: 0.3, duration: 5 },
-      });
+      if (imgRef.current.offsetWidth < 400) {
+        heightControls.start({
+          height: imgRef.current.offsetHeight + 20,
+          transition: { delay: 0, duration: 4 },
+        });
+      } else {
+        heightControls.start({
+          height: imgRef.current.offsetHeight + 40,
+          transition: { delay: 0, duration: 5 },
+        });
+      }
     }
   }, [isInView]);
   const scannerResize = () => {
-    heightControls.start({
-      height: imgRef.current.offsetHeight + 40,
-      transition: { delay: 0, duration: 1 },
-    });
+    if (imgRef.current.offsetWidth < 400) {
+      heightControls.start({
+        height: imgRef.current.offsetHeight + 20,
+        transition: { delay: 0, duration: 1 },
+      });
+    } else {
+      heightControls.start({
+        height: imgRef.current.offsetHeight + 40,
+        transition: { delay: 0, duration: 1 },
+      });
+    }
   };
 
   useEffect(() => {

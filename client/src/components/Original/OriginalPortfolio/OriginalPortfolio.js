@@ -59,7 +59,9 @@ const OriginalPortfolio = () => {
               disableOnInteraction: false,
               cancelable: false,
             }}
+            freeMode={true}
             slidesOffsetAfter={30}
+            slidesOffsetBefore={30}
             modules={[FreeMode, Scrollbar, Autoplay]}
           >
             {portfolio &&

@@ -56,7 +56,7 @@ const MetaversePortfolio = () => {
         {isMobile ? (
           <Swiper
             id="metaverseSwiper"
-            speed={4000}
+            speed={6000}
             slidesPerView="auto"
             spaceBetween={30}
             centeredSlides={false}
@@ -66,7 +66,9 @@ const MetaversePortfolio = () => {
               disableOnInteraction: false,
               cancelable: false,
             }}
+            freeMode={true}
             slidesOffsetAfter={30}
+            slidesOffsetBefore={30}
             modules={[FreeMode, Scrollbar, Autoplay]}
           >
             {portfolio &&

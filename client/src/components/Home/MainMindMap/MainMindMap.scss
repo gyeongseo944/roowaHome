@@ -1,7 +1,7 @@
 @import "~/src/config";
 
 .mindMapSection {
-  height: 1800px;
+  height: 1700px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -19,8 +19,8 @@
     animation: fadeIn 0.3s ease forwards;
     .card {
       position: absolute;
-      width: 400px;
-      height: 400px;
+      width: 340px;
+      height: 340px;
       border-radius: 50%;
       background-color: white;
       display: flex;
@@ -31,8 +31,8 @@
       cursor: pointer;
       .grid {
         position: relative;
-        width: 390px;
-        height: 390px;
+        width: 330px;
+        height: 330px;
         border-radius: 50%;
         background-color: black;
         overflow: hidden;
@@ -47,8 +47,8 @@
         animation: rotate 4s linear infinite;
       }
       .metaverse {
-        width: 375px;
-        height: 375px;
+        width: 315px;
+        height: 315px;
         border-radius: 50%;
         position: absolute;
         background-color: white;
@@ -60,7 +60,7 @@
           color: transparent;
           background-clip: text;
           font-weight: bold;
-          font-size: 55px;
+          font-size: 45px;
         }
       }
       &::before {
@@ -82,14 +82,14 @@
     .bubbles {
       position: relative;
       width: 1600px;
-      height: 1500px;
+      height: 1400px;
       display: flex;
       justify-content: center;
       align-items: center;
       span {
         position: absolute;
-        width: 400px;
-        height: 400px;
+        width: 340px;
+        height: 340px;
 
         border-radius: 50%;
         background-color: white;
@@ -109,8 +109,9 @@
         position: absolute;
         display: block;
         border-left: 2px dotted #808080;
-        height: 120px;
-        transform: translateX(-90px) translateY(calc(30px * var(--s) + 20px)) rotate(90deg);
+        height: 140px;
+        // transform: translateX(-50px) translateY(calc(30px * var(--s) + 20px)) rotate(90deg);
+        transform: translateX(calc(22px * var(--s) - 150px)) translateY(calc(25px * var(--s) - 10px)) rotate(90deg);
         opacity: 0;
         animation: fadeIn 1s ease 3s forwards;
       }
@@ -120,7 +121,7 @@
 
 @media (max-width: 1300px) {
   .mindMapSection {
-    height: 1200px;
+    height: 1100px;
     .mindMapContainer {
       width: 100%;
       scale: 0.6;
@@ -129,7 +130,7 @@
 }
 @media (min-width: 645px) and (max-width: 768px) {
   .mindMapSection {
-    height: 1000px;
+    height: 900px;
     .mindMapContainer {
       width: 100%;
       scale: 0.5;
@@ -138,7 +139,7 @@
 }
 @media (min-width: 520px) and (max-width: 644px) {
   .mindMapSection {
-    height: 870px;
+    height: 770px;
     .mindMapContainer {
       width: 100%;
       scale: 0.4;
@@ -147,30 +148,29 @@
 }
 @media (max-width: 519px) {
   .mindMapSection {
-    height: 680px;
+    height: 580px;
     .mindMapContainer {
       width: 100%;
-      scale: 0.27;
+      scale: 0.3;
     }
   }
 }
 @keyframes animate {
   0%,
   10% {
-    width: 400px;
-    height: 400px;
-    background-color: white;
+    width: 340px;
+    height: 340px;
+    background-color: rgba(255, 255, 255, 1);
     transform: rotate(0deg);
-    color: rgba(0, 0, 0, 0);
   }
   90%,
   100% {
-    width: calc(60px * var(--s) + 160px);
-    height: calc(60px * var(--s) + 160px);
-    line-height: calc(60px * var(--s) + 160px);
-    font-size: calc(10px * var(--s) + 24px);
-    color: rgba(0, 0, 0, 1);
-    transform: rotate(calc(360deg / 8 * var(--id))) translateX(550px);
+    width: calc(50px * var(--s) + 120px);
+    height: calc(50px * var(--s) + 120px);
+    line-height: calc(50px * var(--s) + 120px);
+    // background-color: rgba(255, 255, 255, 0.7);
+    font-size: calc(8px * var(--s) + 22px);
+    transform: rotate(calc(360deg / 8 * var(--id))) translateX(500px);
   }
 }
 @keyframes rotate {
