@@ -5,8 +5,8 @@ import "./MetaverseGIF.scss";
 function MetaverseGIF() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const variants = {
-    initial: { height: "100%" },
-    animate: { height: "0%", transition: { duration: 1 } },
+    initial: { left: "0vw" },
+    animate: { left: "100vw", transition: { duration: 1 } },
   };
 
   return (
@@ -21,14 +21,14 @@ function MetaverseGIF() {
         </span>
       </div>
       <div className="metarverseGIFLine">
+        <motion.div
+          className="imgWrapper"
+          variants={variants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ amount: 0.4, once: true }}
+        ></motion.div>
         <div className="metarverseGIFBlock GIFBlock1">
-          <motion.div
-            className="imgWrapper"
-            variants={variants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ amount: 0.4, once: true }}
-          ></motion.div>
           <img
             src={require("../../../assets/metaverse/메타버스1_임시.gif")}
             alt="GIF 이미지"
@@ -56,14 +56,14 @@ function MetaverseGIF() {
               : "박람회, 온라인 전시부터 실시간 행사까지.\n메타버스를 활용하면 공간의 제약을 받지 않고 온라인으로\n다양한 관계를 형성하고 니즈를 해결할 수 있습니다.\n화상대화와 영상 시청, OX 퀴즈와 같은 온라인 게임까지\n특별한 메타버스 경험을 만들어보세요"}
           </div>
         </div>
+        <motion.div
+          className="imgWrapper"
+          variants={variants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ amount: 0.4, once: true }}
+        ></motion.div>
         <div className="metarverseGIFBlock GIFBlock4">
-          <motion.div
-            className="imgWrapper"
-            variants={variants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ amount: 0.4, once: true }}
-          ></motion.div>
           <img
             src={require("../../../assets/metaverse/메타버스2_임시.gif")}
             alt="GIF 이미지"

@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import { useForm } from "react-hook-form";
 import Banner from "../common/Banner";
 import "./Contact.scss";
+import axios from "axios";
 
 function Contact() {
   // company, name, phone, email, content, path
@@ -37,6 +38,21 @@ function Contact() {
   const onValid = (data) => {
     data.phone = getValues(["phone1", "phone2", "phone3"]).join("-");
     console.log(data);
+    (async () => {
+      try {
+        const response = await axios.post("/api/send_mail", {
+          writer_name: "문태호",
+          writer_email: "mun05170@gmail.com",
+          receiver_name: data.name,
+          receiver_email: data.email,
+          phone: data.phone,
+          content: data.content,
+        });
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
     setPop(true);
   };
   const onInvalid = () => {

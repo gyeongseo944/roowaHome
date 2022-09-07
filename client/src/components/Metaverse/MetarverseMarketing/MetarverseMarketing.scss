@@ -99,6 +99,9 @@
           margin-bottom: 42px;
           width: 100%;
         }
+        > ul {
+          margin-bottom: 2vw;
+        }
         li {
           font-size: 14px;
           letter-spacing: -0.72px;
@@ -119,10 +122,9 @@
     }
     .marketingContainer {
       .marketingTitle {
-        font-size: 7vw;
+        font-size: 11vw;
         line-height: 120%;
         -webkit-text-stroke: 1px $white;
-        margin-left: 7vw;
       }
       .cardBox {
         flex-direction: column;
@@ -130,7 +132,6 @@
 
         .card {
           width: 57vw;
-          height: 67vw;
           margin-right: 0;
           margin-bottom: 6vw;
           position: relative;
