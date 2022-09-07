@@ -50,7 +50,10 @@ const ArticleDetail = () => {
                   <span>{Detail["Date*"].date.start}</span>
                 </div>
                 <div className="detail_contents_article">
-                  <img src={Detail["Image*"].files[0].file.url} alt="article image" />
+                  <img
+                    src={Detail["Image*"].files[0].external ? Detail["Image*"].files[0].external.url : Detail["Image*"].files[0].file.url}
+                    alt="article image"
+                  />
                   <div className="detail_contents_textzone">
                     {Detail["Contents"].rich_text.length ? <p className="article_contents">{Detail["Contents"].rich_text[0].plain_text}</p> : null}
                     {pageType === "article" ? (

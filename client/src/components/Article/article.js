@@ -30,7 +30,6 @@ const Article = () => {
         setListData(res.data);
         setArticle(res.data.article);
         setNotice(res.data.notice);
-
         setLoading(false);
       });
     } else {
@@ -93,7 +92,11 @@ const Article = () => {
                         page={"article"}
                         page_id={article.id}
                         thisIndex={index}
-                        image={article.properties["Image*"].files[0].file}
+                        image={
+                          article.properties["Image*"].files[0].external
+                            ? article.properties["Image*"].files[0].external.url
+                            : article.properties["Image*"].files[0].file.url
+                        }
                         title={article.properties["Title*"].title[0].plain_text}
                         date={article.properties["Date*"].date.start}
                       />

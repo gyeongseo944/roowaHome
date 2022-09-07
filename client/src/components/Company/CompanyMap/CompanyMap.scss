@@ -127,7 +127,8 @@
 @media (max-width: 768px) {
   .contactUsContainer {
     .companyContact {
-      font-size: 10vw;
+      font-size: 11vw;
+      -webkit-text-stroke: 1px #fff;
     }
     .contactTitle {
       font-size: 4vw;

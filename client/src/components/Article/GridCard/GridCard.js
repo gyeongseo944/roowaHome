@@ -12,7 +12,7 @@ const GridCard = (props) => {
         }}
       >
         <div className="dimmedImg">
-          <img className={props.page == "Notice" ? "cardImg noticeImg" : "cardImg"} src={props.image.url} />
+          <img className={props.page == "Notice" ? "cardImg noticeImg" : "cardImg"} src={props.image} />
         </div>
         <p className="gridTitle">{props.title}</p>
         <p className="gridDate">{props.date}</p>

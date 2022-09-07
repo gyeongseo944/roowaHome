@@ -1,6 +1,7 @@
 import React from "react";
 import "./CompanyTeam.scss";
 import team from "../../../assets/company/team.png";
+import teamMobile from "../../../assets/company/teamMobile.png";
 import { useMediaQuery } from "react-responsive";
 const CompanyTeam = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -22,7 +23,7 @@ const CompanyTeam = () => {
           </p>
         )}
       </div>
-      <img src={team} alt="roowa team" />
+      <img src={isMobile ? teamMobile : team} alt="roowa team" />
     </div>
   );
 };
