@@ -8,6 +8,7 @@
     display: flex;
     gap: 0 50px;
     justify-content: space-between;
+    position: relative;
 
     &:first-child {
       margin-bottom: 10.4vw;
@@ -30,7 +31,6 @@
 
     .imgBox {
       width: 100%;
-      position: relative;
       overflow: hidden;
       .imgWrapper {
         background-color: $dark;

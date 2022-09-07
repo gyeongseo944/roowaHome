@@ -38,7 +38,7 @@ function OriginalCard() {
             {!isMobile && (
               <img
                 className="wrappImg"
-                src={require("../../../assets/original/x11.png")}
+                src={require("../../../assets/original/마우스오버_(오리지널_확실한데이터분석).png")}
                 alt="카드 이미지"
               />
             )}
@@ -58,7 +58,7 @@ function OriginalCard() {
             {!isMobile && (
               <img
                 className="wrappImg"
-                src={require("../../../assets/original/x11.png")}
+                src={require("../../../assets/original/마우스오버_(오리지널_전반적인 콘텐츠).png")}
                 alt="카드 이미지"
               />
             )}

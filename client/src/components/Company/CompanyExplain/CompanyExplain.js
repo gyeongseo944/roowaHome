@@ -34,7 +34,7 @@ function CompanyExplain() {
             className="imgWrapper"
             animate={
               isInView && {
-                right: "-100%",
+                right: "-100vw",
                 transition: { duration: 1 },
               }
             }

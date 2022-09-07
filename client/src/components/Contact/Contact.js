@@ -68,12 +68,18 @@ function Contact() {
             ? "상담 원하시는\n내용은 빠르게 답변\n드리겠습니다."
             : "상담 원하시는 내용은 빠르게\n답변 드리겠습니다."
         }
-        src={isMobile ? require("../../assets/banner/bannerContact.png") : null}
+        src={require(!isMobile
+          ? "../../assets/banner/상단배너_루와상담문의.png"
+          : "../../assets/banner/bannerContact.png")}
       />
       <main className="contactMain">
         <div className="contactContainer">
           <div className="box1">
-            <div className="box1Img">이미지 영역</div>
+            <img
+              src={require("../../assets/contact/contactImg.png")}
+              alt="상담문의"
+              className="box1Img"
+            />
             <div className="box1Text">
               {!isMobile
                 ? "상담을 원하시는 기업 및 개인은 아래 양식으로 내용을 작성하여 의뢰해주시고, 루와와 함께 해보세요."

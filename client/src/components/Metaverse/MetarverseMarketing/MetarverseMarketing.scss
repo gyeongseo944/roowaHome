@@ -89,14 +89,14 @@
         .titleEng {
           font-weight: bold;
           font-size: 16px;
-          margin-bottom: 58px;
+          margin-bottom: 50px;
           font-family: NanumSquareEB;
           margin-top: 53%;
         }
         .hr {
           background-color: $dark;
-          height: 4px;
-          margin-bottom: 42px;
+          height: 1px;
+          margin-bottom: 26px;
           width: 100%;
         }
         > ul {
@@ -121,6 +121,8 @@
       top: 10vw;
     }
     .marketingContainer {
+      width: 86%;
+
       .marketingTitle {
         font-size: 11vw;
         line-height: 120%;

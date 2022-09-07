@@ -8,6 +8,10 @@ function MetaverseGIF() {
     initial: { left: "0vw" },
     animate: { left: "100vw", transition: { duration: 1 } },
   };
+  const variantsRight = {
+    initial: { right: "0vw" },
+    animate: { right: "100vw", transition: { duration: 1 } },
+  };
 
   return (
     <section className="metarverseGIF">
@@ -58,7 +62,7 @@ function MetaverseGIF() {
         </div>
         <motion.div
           className="imgWrapper"
-          variants={variants}
+          variants={variantsRight}
           initial="initial"
           whileInView="animate"
           viewport={{ amount: 0.4, once: true }}
