@@ -79,6 +79,7 @@ function RecruitDetail() {
       return true;
     }
   });
+
   const {
     "Contents*": {
       rich_text: [
@@ -103,15 +104,11 @@ function RecruitDetail() {
         },
       ],
     },
-    "Image*": {
-      files: [
-        {
-          file: { url: img },
-        },
-      ],
-    },
   } = data.properties;
-
+  /** 이미지 경로를 업로드 했을 경우와 이미지 자체를 업로드 했을 경우 두 가지로 나뉨. */
+  const img =
+    data.properties["Image*"].files[0].external.url ||
+    data.properties["Image*"].files[0].file.url;
   /**
    * 이미지클릭 시 팝업띄움
    * @param {string} url 이미지 소스
