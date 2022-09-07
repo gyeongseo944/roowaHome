@@ -61,8 +61,38 @@
     background: rgba(0, 0, 0, 0.75);
   }
 }
-
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+  .gridContainer {
+    .dimmedImg {
+      height: 200px;
+    }
+    .gridTitle {
+      font-size: 3vw;
+      font-weight: bold;
+      margin: 2vw 0;
+    }
+    .gridDate {
+      font-size: 2.4vw;
+      color: #888888;
+    }
+    .dimmedImg::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; /* 빈 값으로 넣어야 가상의 요소 생성; */
+      content: "+";
+      text-align: center;
+      font-weight: 100;
+      line-height: 200px;
+      font-size: 80px;
+      color: rgba(0, 0, 0, 0);
+      background: rgba(0, 0, 0, 0);
+      transition: 0.5s;
+    }
+  }
+}
+@media (max-width: 600px) {
   .gridContainer {
     margin-bottom: 10vw;
     .dimmedImg {

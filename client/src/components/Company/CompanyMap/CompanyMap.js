@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import "./CompanyMap.scss";
-import logo from "../../../assets/x2022new.png";
+import logo from "../../../assets/roowaBig.png";
 import { motion, useInView } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import check from "../../../assets/company/check.png";
@@ -66,7 +66,10 @@ const CompanyMap = () => {
       content: isMobile ? mapInfoMoblie : mapInfo,
       removable: true,
     });
-    mapIntoWindow.open(map, marker);
+    if (!isMobile) {
+      mapIntoWindow.open(map, marker);
+    }
+
     //마크 클릭하면 주소창 나오기
     kakao.maps.event.addListener(marker, "click", () => {
       mapIntoWindow.open(map, marker);

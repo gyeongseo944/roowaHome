@@ -11,7 +11,7 @@ import { articleListAtom } from "../../atom";
 import { useMediaQuery } from "react-responsive";
 
 const Article = () => {
-  const isMobile = useMediaQuery({ maxWidth: 700 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const [ListData, setListData] = useRecoilState(articleListAtom);
   const [Article, setArticle] = useState([]);
   const [Notice, setNotice] = useState([]);
