@@ -67,7 +67,21 @@
       }
 
       .portfolioShowMore {
-        margin: 5vw auto 11vw auto;
+        margin: 5vw auto 20vw auto;
+        width: 31.7vw;
+        height: 7.6vw;
+        a {
+          display: flex;
+          align-items: center;
+          span {
+            font-size: 3.1vw;
+          }
+        }
+        img {
+          margin-left: 4vw;
+          width: 3vw;
+          height: 3vw;
+        }
       }
     }
   }

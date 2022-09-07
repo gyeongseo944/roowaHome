@@ -78,7 +78,7 @@ function Header() {
 
   useEffect(() => {
     depList1
-      ? depList1Animation.start({ height: "10vw" })
+      ? depList1Animation.start({ height: "11vw" })
       : depList1Animation.start({
           height: "0vw",
         });

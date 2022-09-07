@@ -1,23 +1,48 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { useForm } from "react-hook-form";
 import Banner from "../common/Banner";
 import "./Contact.scss";
 
 function Contact() {
+  // company, name, phone, email, content, path
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      company: "123",
+      name: "123",
+      phone1: "111",
+      phone2: "222",
+      phone3: "333",
+      email: "123@naver.com",
+      content: "123",
+      path: "4",
+    },
+  });
   const isMobile = useMediaQuery({ maxWidth: 768 });
+  const [pop, setPop] = useState(false);
+  /** 라디오 버튼 체인지 이벤트. 글꼴 두께 active 클래스 적용 */
   const onChange = (e) => {
     e.target.parentNode.parentNode.childNodes.forEach((node) => {
       node.classList = "";
     });
     e.target.parentNode.classList = "active";
   };
-
-  const [pop, setPop] = useState(false);
-  const onSubmit = (e) => {
-    e.preventDefault();
+  /** 유효성 검사 통과시 실행 */
+  const onValid = (data) => {
+    data.phone = getValues(["phone1", "phone2", "phone3"]).join("-");
+    console.log(data);
     setPop(true);
   };
+  const onInvalid = () => {
+    console.log(errors);
+  };
+  console.log(errors);
 
   return (
     <>
@@ -40,14 +65,18 @@ function Contact() {
             </div>
           </div>
           <div className="formContainer">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit(onValid, onInvalid)}>
               <div className="labelBox">
                 <label className="label" htmlFor="company">
                   업체명
                 </label>
               </div>
               <div className="inputBox">
-                <input type="text" id="company" />
+                <input
+                  {...register("company", { required: "필 입력사항 입니다." })}
+                  type="text"
+                  id="company"
+                />
               </div>
 
               <div className="labelBox">
@@ -56,7 +85,11 @@ function Contact() {
                 </label>
               </div>
               <div className="inputBox">
-                <input type="text" id="name" />
+                <input
+                  {...register("name", { required: "필수 입력사항 입니다." })}
+                  type="text"
+                  id="name"
+                />
               </div>
 
               <div className="labelBox">
@@ -69,15 +102,33 @@ function Contact() {
               </div>
               <div className="phoneBoxArea">
                 <div className="inputBox phone">
-                  <input type="text" id="phone" />
+                  <input
+                    {...register("phone1", {
+                      required: "필수 입력사항 입니다.",
+                    })}
+                    type="text"
+                    id="phone"
+                  />
                 </div>
                 <div className="phoneDash"></div>
                 <div className="inputBox phone">
-                  <input type="text" id="phone" />
+                  <input
+                    {...register("phone2", {
+                      required: "필수 입력사항 입니다.",
+                    })}
+                    type="text"
+                    id="phone"
+                  />
                 </div>
                 <div className="phoneDash"></div>
                 <div className="inputBox phone">
-                  <input type="text" id="phone" />
+                  <input
+                    {...register("phone3", {
+                      required: "필수 입력사항 입니다.",
+                    })}
+                    type="text"
+                    id="phone"
+                  />
                 </div>
               </div>
 
@@ -90,7 +141,18 @@ function Contact() {
                 </span>
               </div>
               <div className="inputBox">
-                <input type="email" id="email" />
+                <input
+                  {...register("email", {
+                    required: "필수 입력사항 입니다.",
+                    pattern: {
+                      value:
+                        /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
+                      message: "정확한 이메일 주소를 입력해주시기 바랍니다.",
+                    },
+                  })}
+                  type="email"
+                  id="email"
+                />
               </div>
 
               <div className="labelBox ">
@@ -102,7 +164,13 @@ function Contact() {
                 </span>
               </div>
               <div className="inputBox textarea">
-                <textarea type="textarea" id="consult" />
+                <textarea
+                  {...register("content", {
+                    required: "필수 입력사항 입니다.",
+                  })}
+                  type="textarea"
+                  id="consult"
+                />
               </div>
 
               <div className="labelBox">
@@ -114,37 +182,45 @@ function Contact() {
               <div className="radioBox">
                 <label>
                   <input
-                    onChange={onChange}
+                    {...register("path", {
+                      required: "필수 입력사항 입니다.",
+                    })}
                     value={1}
                     type="radio"
-                    name="root"
+                    onChange={onChange}
                   />
                   네이버검색
                 </label>
                 <label>
                   <input
-                    onChange={onChange}
+                    {...register("path", {
+                      required: "필수 입력사항 입니다.",
+                    })}
                     value={2}
                     type="radio"
-                    name="root"
+                    onChange={onChange}
                   />
                   네이버검색
                 </label>
                 <label>
                   <input
-                    onChange={onChange}
+                    {...register("path", {
+                      required: "필수 입력사항 입니다.",
+                    })}
                     value={3}
                     type="radio"
-                    name="root"
+                    onChange={onChange}
                   />
                   네이버검색
                 </label>
                 <label>
                   <input
-                    onChange={onChange}
+                    {...register("path", {
+                      required: "필수 입력사항 입니다.",
+                    })}
                     value={4}
                     type="radio"
-                    name="root"
+                    onChange={onChange}
                   />
                   네이버검색
                 </label>
