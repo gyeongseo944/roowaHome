@@ -41,24 +41,33 @@ function Contact() {
     (async () => {
       try {
         const response = await axios.post("/api/send_mail", {
-          writer_name: "문태호",
-          writer_email: "mun05170@gmail.com",
-          receiver_name: data.name,
-          receiver_email: data.email,
-          phone: data.phone,
-          content: data.content,
+          subject: `${data.company} / ${data.name} 상담요청`,
+          content: `<p style="font-size: 20px">상담 요청 접수 내용</P>
+          <br></br>
+          <p style="font-size: 20px">업체명 : ${data.company}</p>
+          <br></br>
+          <p style="font-size: 20px">성함 / 직책 : ${data.name}</p>
+          <br></br>
+          <p style="font-size: 20px">연락처 : ${data.phone}</p>
+          <br></br>
+          <p style="font-size: 20px">이메일 주소 : ${data.email}</p>
+          <br></br>
+          <p style="font-size: 20px">루와를 알게된 경로 : ${data.path}</p>
+          <br></br>
+          <p style="font-size: 20px">상담 내용 : ${data.content}</p>
+          `,
         });
         console.log(response);
       } catch (error) {
         console.log(error);
       }
     })();
+
     setPop(true);
   };
   const onInvalid = () => {
     console.log(errors);
   };
-  console.log(errors);
 
   return (
     <>
@@ -69,7 +78,7 @@ function Contact() {
             : "상담 원하시는 내용은 빠르게\n답변 드리겠습니다."
         }
         src={require(!isMobile
-          ? "../../assets/banner/상단배너_루와상담문의.png"
+          ? "../../assets/banner/daskBannerContact.png"
           : "../../assets/banner/bannerContact.png")}
       />
       <main className="contactMain">

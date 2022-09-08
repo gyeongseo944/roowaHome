@@ -43,7 +43,7 @@ function PayDetail() {
                 alt="다음 글"
               />
 
-              <span className="contentNavTitle">오리지널 컨텐츠</span>
+              <span className="contentNavTitle">오리지널 콘텐츠</span>
             </div>
           </div>
         )}

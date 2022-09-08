@@ -18,6 +18,6 @@ app.use(bodyParser.json());
 
 app.use("/article", require("./routes/article"));
 app.use("/recruit", require("./routes/recruit"));
-// app.use(require("./routes/sendMail")(app));
+app.use(require("./routes/sendMail")(app));
 
 app.listen(6000);

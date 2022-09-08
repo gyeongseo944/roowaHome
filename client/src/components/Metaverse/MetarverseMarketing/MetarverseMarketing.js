@@ -41,7 +41,7 @@ function MetarverseMarketing() {
             {!isMobile && (
               <img
                 className="wrappImg"
-                src={require("../../../assets/metaverse/마우스오버_(메타버스 비즈니스).png")}
+                src={require("../../../assets/metaverse/metaBusiness.png")}
                 alt="카드 이미지"
               />
             )}
@@ -58,7 +58,7 @@ function MetarverseMarketing() {
             {!isMobile && (
               <img
                 className="wrappImg"
-                src={require("../../../assets/metaverse/마우스오버_(메타버스 이벤트 및 크리~).png")}
+                src={require("../../../assets/metaverse/metaCreator.png")}
                 alt="카드 이미지"
               />
             )}

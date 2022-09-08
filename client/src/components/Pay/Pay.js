@@ -85,7 +85,7 @@ function Pay() {
               <div className="cardImage"></div>
               <div className="cardTitle">
                 <div className="cardSmallTitle">Original Cotents</div>
-                <div className="cardBigTitle">오리지널 컨텐츠</div>
+                <div className="cardBigTitle">오리지널 콘텐츠</div>
                 <div className="cardPrice">별도 협의</div>
               </div>
             </Link>
@@ -93,7 +93,7 @@ function Pay() {
               <div className="cardImage"></div>
               <div className="cardTitle">
                 <div className="cardSmallTitle">Original Cotents</div>
-                <div className="cardBigTitle">오리지널 컨텐츠</div>
+                <div className="cardBigTitle">오리지널 콘텐츠</div>
                 <div className="cardPrice">별도 협의</div>
               </div>
             </Link>
@@ -101,7 +101,7 @@ function Pay() {
               <div className="cardImage"></div>
               <div className="cardTitle">
                 <div className="cardSmallTitle">Original Cotents</div>
-                <div className="cardBigTitle">오리지널 컨텐츠</div>
+                <div className="cardBigTitle">오리지널 콘텐츠</div>
                 <div className="cardPrice">별도 협의</div>
               </div>
             </Link>

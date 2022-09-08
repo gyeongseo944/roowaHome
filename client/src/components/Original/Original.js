@@ -21,7 +21,7 @@ function Original() {
         }
         navText={["business", "오리지널 콘텐츠"]}
         src={require(!isMobile
-          ? "../../assets/banner/상단배너_오리지널컨텐츠.png"
+          ? "../../assets/banner/daskBannerOrigin.png"
           : "../../assets/original/bannerOriginal.png")}
       />
       <main className="originMain">
