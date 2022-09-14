@@ -1,27 +1,15 @@
 import "./OriginalProject.scss";
-
+import logoZip from "../../../assets/original/logoZip.gif";
+import logoZipMo from "../../../assets/original/logoZipMo.gif";
+import { useMediaQuery } from "react-responsive";
 function OriginalProject() {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <section className="OriginalProject">
       <h1>PROJECT</h1>
       <div className="logoContainer">
         <div className="logoItem">
-          <img src={require("../../../assets/original/logo1.png")} alt="Project logos" />
-        </div>
-        <div className="logoItem">
-          <img src={require("../../../assets/original/logo2.png")} alt="Project logos" />
-        </div>
-        <div className="logoItem">
-          <img src={require("../../../assets/original/logo3.png")} alt="Project logos" />
-        </div>
-        <div className="logoItem">
-          <img src={require("../../../assets/original/logo4.png")} alt="Project logos" />
-        </div>
-        <div className="logoItem">
-          <img src={require("../../../assets/original/logo5.png")} alt="Project logos" />
-        </div>
-        <div className="logoItem">
-          <img src={require("../../../assets/original/logo6.png")} alt="Project logos" />
+          <img src={isMobile ? logoZipMo : logoZip} alt="Project logos" />
         </div>
       </div>
     </section>

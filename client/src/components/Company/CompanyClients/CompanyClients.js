@@ -1,8 +1,11 @@
 import React from "react";
 import "./CompanyClients.scss";
 import logo from "../../../assets/company/logoZip.gif";
+import logoMo from "../../../assets/company/logoZipMo.gif";
+import { useMediaQuery } from "react-responsive";
 
 const CompanyClients = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="companyClientsContainer">
       <div className="clientsTitle">
@@ -16,7 +19,7 @@ const CompanyClients = () => {
         </p>
       </div>
       <div className="clientsLogoImg">
-        <img src={logo} alt="clients logo image" />
+        <img src={isMobile ? logoMo : logo} alt="clients logo image" />
       </div>
     </div>
   );
