@@ -15,14 +15,14 @@ function Contact() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      company: "123",
-      name: "123",
-      phone1: "111",
-      phone2: "222",
-      phone3: "333",
-      email: "123@naver.com",
-      content: "123",
-      path: "4",
+      company: "",
+      name: "",
+      phone1: "",
+      phone2: "",
+      phone3: "",
+      email: "",
+      content: "",
+      path: "",
     },
   });
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -65,9 +65,6 @@ function Contact() {
 
     setPop(true);
   };
-  const onInvalid = () => {
-    console.log(errors);
-  };
 
   return (
     <>
@@ -96,15 +93,20 @@ function Contact() {
             </div>
           </div>
           <div className="formContainer">
-            <form onSubmit={handleSubmit(onValid, onInvalid)}>
+            <form onSubmit={handleSubmit(onValid)}>
               <div className="labelBox">
                 <label className="label" htmlFor="company">
                   업체명
                 </label>
+                {errors?.company && (
+                  <div className="errorMessage">{errors.company.message}</div>
+                )}
               </div>
               <div className="inputBox">
                 <input
-                  {...register("company", { required: "필 입력사항 입니다." })}
+                  {...register("company", {
+                    required: "필수 입력사항 입니다.",
+                  })}
                   type="text"
                   id="company"
                 />
@@ -114,6 +116,9 @@ function Contact() {
                 <label className="label" htmlFor="name">
                   성함/직책
                 </label>
+                {errors?.name && (
+                  <div className="errorMessage">{errors.name.message}</div>
+                )}
               </div>
               <div className="inputBox">
                 <input
@@ -130,6 +135,9 @@ function Contact() {
                 <span className="labelSub">
                   상세한 견적 안내를 위해 전화 상담을 진행하고 있습니다.
                 </span>
+                {(errors?.phone1 || errors?.phone2 || errors?.phone3) && (
+                  <div className="errorMessage">{"필수 입력사항 입니다."}</div>
+                )}
               </div>
               <div className="phoneBoxArea">
                 <div className="inputBox phone">
@@ -170,6 +178,9 @@ function Contact() {
                 <span className="labelSub">
                   서비스 소개서, 견적서 등을 이메일 주소로 전달드립니다.
                 </span>
+                {errors?.email && (
+                  <div className="errorMessage">{errors.email.message}</div>
+                )}
               </div>
               <div className="inputBox">
                 <input
@@ -193,6 +204,9 @@ function Contact() {
                 <span className="labelSub">
                   예산/ 내용/ 기간 등을 작성해주세요.
                 </span>
+                {errors?.content && (
+                  <div className="errorMessage">{errors.content.message}</div>
+                )}
               </div>
               <div className="inputBox textarea">
                 <textarea
@@ -209,6 +223,9 @@ function Contact() {
                 <span className="labelSub">
                   좋은 서비스를 제공해드리기 위해 방문 경로를 수집하고 있습니다.
                 </span>
+                {errors?.path && (
+                  <div className="errorMessage">{errors.path.message}</div>
+                )}
               </div>
               <div className="radioBox">
                 <label>

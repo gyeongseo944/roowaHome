@@ -13,28 +13,28 @@ function OurPortfolio() {
           <div className="portfolioTitleBox">
             <h1 className="portfolioTitle">{"Our\nPortfolio"}</h1>
             {!isMobile && (
-              <div className="portfolioShowMore">
-                <Link to="/metaverse">
+              <Link to="/metaverse">
+                <div className="portfolioShowMore">
                   <span>더 알아보기</span>
-                </Link>
+                  <img
+                    src={require("../../../assets/home/x65.png")}
+                    alt="더 알아보기"
+                  />
+                </div>
+              </Link>
+            )}
+          </div>
+          <PortfolioSwiper />
+          {isMobile && (
+            <Link to="/metaverse">
+              <div className="portfolioShowMore">
+                <span>더 알아보기</span>
                 <img
                   src={require("../../../assets/home/x65.png")}
                   alt="더 알아보기"
                 />
               </div>
-            )}
-          </div>
-          <PortfolioSwiper />
-          {isMobile && (
-            <div className="portfolioShowMore">
-              <Link to="/metaverse">
-                <span>더 알아보기</span>
-              </Link>
-              <img
-                src={require("../../../assets/home/x65.png")}
-                alt="더 알아보기"
-              />
-            </div>
+            </Link>
           )}
         </div>
       </section>
