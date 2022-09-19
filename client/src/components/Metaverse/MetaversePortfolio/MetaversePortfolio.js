@@ -1,8 +1,15 @@
 import React from "react";
 import "./MetaversePortfolio.scss";
 import PortfolioImgCard from "../../common/PortfolioImgCard/PortfolioImgCard";
-import img1 from "../../../assets/metaverse/x8.png";
-import img2 from "../../../assets/metaverse/x9.png";
+import img1 from "../../../assets/metaverse/p1.png";
+import img2 from "../../../assets/metaverse/p2.png";
+import img3 from "../../../assets/metaverse/p3.png";
+import img4 from "../../../assets/metaverse/p4.png";
+import img5 from "../../../assets/metaverse/p5.png";
+import img6 from "../../../assets/metaverse/p6.png";
+import img7 from "../../../assets/metaverse/p7.png";
+import img8 from "../../../assets/metaverse/p8.png";
+
 import { Autoplay, FreeMode, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useMediaQuery } from "react-responsive";
@@ -16,18 +23,18 @@ const MetaversePortfolio = () => {
   });
   const portfolio = [
     {
-      title: "미륵사지",
-      contents: "과거와 현재, 미래를 아우르는 \n미륵사 유적의 시간여행",
+      title: "학교안전체험교육",
+      contents: "즐겁게 즐길 수 있는 게임과 같은 형태의 안전 체험 교육 맵",
+      img: img8,
+    },
+    {
+      title: "광한루원",
+      contents: "신선사상이 담겨 있는 춘향전의 무대",
       img: img1,
     },
     {
-      title: "미륵사지",
-      contents: "과거와 현재, 미래를 아우르는 \n미륵사 유적의 시간여행",
-      img: img2,
-    },
-    {
-      title: "미륵사지",
-      contents: "과거와 현재, 미래를 아우르는 \n미륵사 유적의 시간여행",
+      title: "서울국제어린이 창작영화제",
+      contents: "Unity기반 월드 멀티 플랫폼 게임 VR CHAT을 활용한 실시간 시상식",
       img: img2,
     },
     {
