@@ -9,8 +9,8 @@ import "swiper/css/scrollbar";
 import "swiper/css/free-mode";
 
 function Pay() {
-  const subtitle = "루와에서 함께\n_____ _____ 해보세요";
-  const mobileSubtitle = "루와에서\n함께__\n해보세요";
+  const subtitle = "루와가 이루어 드립니다.";
+  const mobileSubtitle = "루와가\n이루어 드립니다.";
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const sampleData = [
     {

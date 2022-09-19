@@ -23,7 +23,7 @@ function RecruitDetail() {
     // atom에 데이터가 없으면 axios 실행
     (async () => {
       if (!recruitData) {
-        const data = await axios.get("/api/recruit/getList");
+        const data = await axios.get("http://roowa.kr/recruit/getList");
         // 상시 모집 데이터 array
         let alwaysData = [];
         // 마감된 데이터 array

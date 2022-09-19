@@ -27,6 +27,7 @@ function Contact() {
   });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const [pop, setPop] = useState(false);
+  const radioOption = ["네이버검색", "구글검색", "지인추천", "SNS 및 기타"];
   /** 라디오 버튼 체인지 이벤트. 글꼴 두께 active 클래스 적용 */
   const onChange = (e) => {
     e.target.parentNode.parentNode.childNodes.forEach((node) => {
@@ -40,7 +41,7 @@ function Contact() {
     console.log(data);
     (async () => {
       try {
-        const response = await axios.post("/api/send_mail", {
+        const response = await axios.post("http://roowa.kr/send_mail", {
           subject: `${data.company} / ${data.name} 상담요청`,
           content: `<p style="font-size: 20px">상담 요청 접수 내용</P>
           <br></br>
@@ -228,52 +229,20 @@ function Contact() {
                 )}
               </div>
               <div className="radioBox">
-                <label>
-                  <input
-                    {...register("path", {
-                      required: "필수 입력사항 입니다.",
-                    })}
-                    value={1}
-                    type="radio"
-                    onChange={onChange}
-                  />
-                  네이버검색
-                </label>
-                <label>
-                  <input
-                    {...register("path", {
-                      required: "필수 입력사항 입니다.",
-                    })}
-                    value={2}
-                    type="radio"
-                    onChange={onChange}
-                  />
-                  네이버검색
-                </label>
-                <label>
-                  <input
-                    {...register("path", {
-                      required: "필수 입력사항 입니다.",
-                    })}
-                    value={3}
-                    type="radio"
-                    onChange={onChange}
-                  />
-                  네이버검색
-                </label>
-                <label>
-                  <input
-                    {...register("path", {
-                      required: "필수 입력사항 입니다.",
-                    })}
-                    value={4}
-                    type="radio"
-                    onChange={onChange}
-                  />
-                  네이버검색
-                </label>
+                {radioOption.map((v, i) => (
+                  <label key={i}>
+                    <input
+                      {...register("path", {
+                        required: "필수 입력사항 입니다.",
+                      })}
+                      value={v}
+                      type="radio"
+                      onChange={onChange}
+                    />
+                    {v}
+                  </label>
+                ))}
               </div>
-
               <div className="submitBtnBox">
                 <button className="submitBtn">
                   <span>상담 요청하기</span>

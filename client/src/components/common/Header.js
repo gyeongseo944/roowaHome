@@ -194,14 +194,14 @@ function Header() {
                     뉴스·알림
                   </Link>
                 </motion.li>
-                <motion.li
+                {/* <motion.li
                   animate={listAnimation}
                   initial={{ opacity: 0, y: -10 }}
                 >
                   <Link to="/pay" style={payMatch ? matchLink : null}>
                     결제
                   </Link>
-                </motion.li>
+                </motion.li> */}
               </ul>
             </li>
           </ul>
@@ -325,14 +325,14 @@ function Header() {
                               뉴스·알림
                             </Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link
                               style={payMatch ? mobileMatchFont : null}
                               to="/pay"
                             >
                               결제
                             </Link>
-                          </li>
+                          </li> */}
                         </motion.ul>
                       </li>
                     </ul>

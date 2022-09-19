@@ -26,7 +26,7 @@ const ArticleDetail = () => {
       behavior: "smooth",
     });
     if (!ListData) {
-      axios.get("/api/article/getList").then((res) => {
+      axios.get("http://roowa.kr/article/getList").then((res) => {
         setListData(res.data);
         setDetail(res.data[pageType][thisIndex].properties);
         setLoading(false);
@@ -51,19 +51,33 @@ const ArticleDetail = () => {
                 </div>
                 <div className="detail_contents_article">
                   <img
-                    src={Detail["Image*"].files[0].external ? Detail["Image*"].files[0].external.url : Detail["Image*"].files[0].file.url}
+                    src={
+                      Detail["Image*"].files[0].external
+                        ? Detail["Image*"].files[0].external.url
+                        : Detail["Image*"].files[0].file.url
+                    }
                     alt="article image"
                   />
                   <div className="detail_contents_textzone">
-                    {Detail["Contents"].rich_text.length ? <p className="article_contents">{Detail["Contents"].rich_text[0].plain_text}</p> : null}
+                    {Detail["Contents"].rich_text.length ? (
+                      <p className="article_contents">
+                        {Detail["Contents"].rich_text[0].plain_text}
+                      </p>
+                    ) : null}
                     {pageType === "article" ? (
                       <div>
                         {Detail.Resource.url && Detail.Link.url && (
                           <a href={Detail.Link.url} target="_blank">
-                            <p className="article_source">출처 : {Detail.Resource.url}</p>
+                            <p className="article_source">
+                              출처 : {Detail.Resource.url}
+                            </p>
                           </a>
                         )}
-                        {Detail.Resource.url && !Detail.Link.url && <p className="article_source">출처 : {Detail.Resource.url}</p>}
+                        {Detail.Resource.url && !Detail.Link.url && (
+                          <p className="article_source">
+                            출처 : {Detail.Resource.url}
+                          </p>
+                        )}
                       </div>
                     ) : null}
                   </div>
@@ -84,7 +98,12 @@ const ArticleDetail = () => {
                         pageType: pageType,
                       }}
                     >
-                      <span className="nextArticle">{ListData[pageType][thisIndex - 1].properties["Title*"].title[0].plain_text}</span>
+                      <span className="nextArticle">
+                        {
+                          ListData[pageType][thisIndex - 1].properties["Title*"]
+                            .title[0].plain_text
+                        }
+                      </span>
                     </Link>
                   </div>
                 )}
@@ -101,7 +120,12 @@ const ArticleDetail = () => {
                         pageType: pageType,
                       }}
                     >
-                      <span className="nextArticle">{ListData[pageType][thisIndex + 1].properties["Title*"].title[0].plain_text}</span>
+                      <span className="nextArticle">
+                        {
+                          ListData[pageType][thisIndex + 1].properties["Title*"]
+                            .title[0].plain_text
+                        }
+                      </span>
                     </Link>
                   </div>
                 )}

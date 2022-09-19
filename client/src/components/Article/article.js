@@ -26,7 +26,7 @@ const Article = () => {
     });
     setLoading(true);
     if (!ListData) {
-      axios.get("/api/article/getList").then((res) => {
+      axios.get("http://roowa.kr/article/getList").then((res) => {
         setListData(res.data);
         setArticle(res.data.article);
         setNotice(res.data.notice);
