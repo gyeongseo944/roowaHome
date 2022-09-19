@@ -9,45 +9,30 @@ import "swiper/css/scrollbar";
 import "swiper/css/free-mode";
 
 function Pay() {
-  const subtitle = "루와가 이루어 드립니다.";
-  const mobileSubtitle = "루와가\n이루어 드립니다.";
+  const subtitle = "루와가\n이루어 드립니다";
+  const mobileSubtitle = "루와가\n이루어\n드립니다";
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const sampleData = [
     {
       url: 1,
       smallTitle: "Metaverse Contents Marketing",
       bigTitle: "메타버스 콘텐츠 마케팅",
-      Price: "별도 협의",
+      price: "별도 협의",
+      imgSrc: "1.png",
     },
     {
-      url: 1,
+      url: 2,
       smallTitle: "Contents Marketing Service ",
       bigTitle: "콘텐츠 마케팅 서비스",
-      Price: "별도 협의",
+      price: "별도 협의",
+      imgSrc: "2.png",
     },
     {
-      url: 1,
-      smallTitle: "Metaverse Contents Marketing",
-      bigTitle: "메타버스 콘텐츠 마케팅",
-      Price: "별도 협의",
-    },
-    {
-      url: 1,
-      smallTitle: "Contents Marketing Service ",
-      bigTitle: "콘텐츠 마케팅 서비스",
-      Price: "별도 협의",
-    },
-    {
-      url: 1,
-      smallTitle: "Metaverse Contents Marketing",
-      bigTitle: "메타버스 콘텐츠 마케팅",
-      Price: "별도 협의",
-    },
-    {
-      url: 1,
-      smallTitle: "Contents Marketing Service ",
-      bigTitle: "콘텐츠 마케팅 서비스",
-      Price: "별도 협의",
+      url: 3,
+      smallTitle: "Original Cotents",
+      bigTitle: "오리지널 컨텐츠",
+      price: "별도 협의",
+      imgSrc: "3.png",
     },
   ];
 
@@ -63,48 +48,20 @@ function Pay() {
       <main className="payMain">
         {!isMobile ? (
           <div className="payContainer">
-            <Link to={`/pay/${1}`} className="card">
-              <div className="cardImage"></div>
-              <div className="cardTitle">
-                <div className="cardSmallTitle">
-                  Metaverse Cotents Marketing
+            {sampleData.map((data, index) => (
+              <Link to={`/pay/${data.url}`} className="card" key={index}>
+                <img
+                  className="cardImage"
+                  src={require(`../../assets/pay/${data.imgSrc}`)}
+                  alt={data.bigTitle}
+                />
+                <div className="cardTitle">
+                  <div className="cardSmallTitle">{data.smallTitle}</div>
+                  <div className="cardBigTitle">{data.bigTitle}</div>
+                  <div className="cardPrice">{data.price}</div>
                 </div>
-                <div className="cardBigTitle">메타버스 콘텐츠 마케팅</div>
-                <div className="cardPrice">별도 협의</div>
-              </div>
-            </Link>
-            <Link to={`/pay/${1}`} className="card">
-              <div className="cardImage"></div>
-              <div className="cardTitle">
-                <div className="cardSmallTitle">Cotents Marketing Service</div>
-                <div className="cardBigTitle">콘텐츠 마케팅 서비스</div>
-                <div className="cardPrice">별도 협의</div>
-              </div>
-            </Link>
-            <Link to={`/pay/${1}`} className="card">
-              <div className="cardImage"></div>
-              <div className="cardTitle">
-                <div className="cardSmallTitle">Original Cotents</div>
-                <div className="cardBigTitle">오리지널 콘텐츠</div>
-                <div className="cardPrice">별도 협의</div>
-              </div>
-            </Link>
-            <Link to={`/pay/${1}`} className="card">
-              <div className="cardImage"></div>
-              <div className="cardTitle">
-                <div className="cardSmallTitle">Original Cotents</div>
-                <div className="cardBigTitle">오리지널 콘텐츠</div>
-                <div className="cardPrice">별도 협의</div>
-              </div>
-            </Link>
-            <Link to={`/pay/${1}`} className="card">
-              <div className="cardImage"></div>
-              <div className="cardTitle">
-                <div className="cardSmallTitle">Original Cotents</div>
-                <div className="cardBigTitle">오리지널 콘텐츠</div>
-                <div className="cardPrice">별도 협의</div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
         ) : (
           <>
@@ -126,15 +83,17 @@ function Pay() {
               modules={[FreeMode, Scrollbar, Autoplay]}
             >
               {sampleData.map((data, index) => {
-                const img = require(`../../assets/pay/payCard.png`);
                 return (
                   <SwiperSlide className="paySwiperSlide" key={index}>
-                    <Link to={`/pay`} className="card">
-                      <img src={img} alt={data.bigTitle} />
+                    <Link to={`/pay/${data.url}`} className="card">
+                      <img
+                        src={require(`../../assets/pay/${data.imgSrc}`)}
+                        alt={data.bigTitle}
+                      />
                       <div className="cardTitle">
                         <div className="cardSmallTitle">{data.smallTitle}</div>
                         <div className="cardBigTitle">{data.bigTitle}</div>
-                        <div className="cardPrice">{data.Price}</div>
+                        <div className="cardPrice">{data.price}</div>
                       </div>
                     </Link>
                   </SwiperSlide>
