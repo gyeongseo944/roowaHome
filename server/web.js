@@ -15,24 +15,25 @@ models.sequelize
     console.log(err);
   });
 
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.use(bodyParser.json());
-app.all("/*", function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
-});
 app.use("/article", require("./routes/article"));
 app.use("/recruit", require("./routes/recruit"));
 app.use(require("./routes/sendMail")(app));
 
-app.use("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build/index.html"));
-});
-
 app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build/index.html"));
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
-app.listen(8001);
+app.listen(8001, () => {
+  console.log("-------------------------------------");
+  console.log(`${new Date().toLocaleDateString()} server open`);
+  console.log("-------------------------------------");
+});
+
+// https.createServer(secureOption, app).listen(8001, (req, res) => {
+//   console.log("-------------------------------------");
+//   console.log(`${new Date().toLocaleDateString()} server open`);
+//   console.log("-------------------------------------");
+// });
