@@ -41,9 +41,11 @@ function Contact() {
     console.log(data);
     (async () => {
       try {
-        const response = await axios.post("http://roowa.kr/send_mail", {
-          subject: `${data.company} / ${data.name} 상담요청`,
-          content: `<p style="font-size: 20px">상담 요청 접수 내용</P>
+        const response = await axios.post(
+          "https://daldalfr1.gabia.io/send_mail",
+          {
+            subject: `${data.company} / ${data.name} 상담요청`,
+            content: `<p style="font-size: 20px">상담 요청 접수 내용</P>
           <br></br>
           <p style="font-size: 20px">업체명 : ${data.company}</p>
           <br></br>
@@ -57,7 +59,8 @@ function Contact() {
           <br></br>
           <p style="font-size: 20px">상담 내용 : ${data.content}</p>
           `,
-        });
+          }
+        );
         console.log(response);
       } catch (error) {
         console.log(error);

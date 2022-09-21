@@ -18,7 +18,9 @@ function Recruit() {
     });
     (async () => {
       if (!recruitData) {
-        const data = await axios.get("http://roowa.kr/recruit/getList");
+        const data = await axios.get(
+          "https://daldalfr1.gabia.io/recruit/getList"
+        );
         // 상시 모집 데이터 array
         let alwaysData = [];
         // 마감된 데이터 array

@@ -26,7 +26,7 @@ const ArticleDetail = () => {
       behavior: "smooth",
     });
     if (!ListData) {
-      axios.get("http://roowa.kr/article/getList").then((res) => {
+      axios.get("https://daldalfr1.gabia.io/article/getList").then((res) => {
         setListData(res.data);
         setDetail(res.data[pageType][thisIndex].properties);
         setLoading(false);
