@@ -75,3 +75,49 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .agreementContainer {
+    width: 86vw;
+    .agreementTap {
+      padding-bottom: 30px;
+      margin: 30px 0;
+      .tapMenuContainer {
+        div {
+          width: 33.3%;
+          font-size: 14px;
+        }
+      }
+    }
+    .agreementContentsContainer {
+      div {
+        p {
+          line-height: 22px;
+          font-size: 14px;
+          word-break: keep-all;
+        }
+        strong {
+          line-height: 36px;
+        }
+      }
+      .tableContainer {
+        table {
+          tr {
+            height: 60px;
+            line-height: normal;
+            th {
+              font-size: 16px;
+              line-height: 20px;
+              vertical-align: middle;
+            }
+            td {
+              padding-left: 10px;
+              font-size: 14px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}

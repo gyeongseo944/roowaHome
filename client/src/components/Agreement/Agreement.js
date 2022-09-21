@@ -1,8 +1,10 @@
 import "./Agreement.scss";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 
 const Agreement = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const type = useParams().type;
   const [NowTap, setNowTap] = useState(type);
   useEffect(() => {
@@ -1373,64 +1375,136 @@ const Agreement = () => {
         )}
         {NowTap === "businessInfo" && (
           <div className="tableContainer">
-            <table>
-              <tbody>
-                <tr>
-                  <th scope="row">통신판매번호</th>
-                  <td>2021-서울구로-1207</td>
-                  <th scope="row">사업자등록번호</th>
-                  <td>748-86-00751</td>
-                </tr>
-                <tr>
-                  <th scope="row">신고현황</th>
-                  <td>통신판매업 신고</td>
-                  <th scope="row">법인여부</th>
-                  <td>법인</td>
-                </tr>
-                <tr>
-                  <th scope="row">상호</th>
-                  <td>주식회사 달달프렌즈</td>
-                  <th scope="row">대표 전화번호</th>
-                  <td>070-4410-5015</td>
-                </tr>
-                <tr>
-                  <th scope="row">대표자명</th>
-                  <td>모상우</td>
-                  <th scope="row">취급품목</th>
-                  <td>종합몰</td>
-                </tr>
-                <tr>
-                  <th scope="row">판매방식</th>
-                  <td>인터넷</td>
-                  <th scope="row">신고일자</th>
-                  <td>20171019</td>
-                </tr>
-                <tr>
-                  <th scope="row">전자우편(E-mail)</th>
-                  <td colSpan="3">manager@roowa.co.kr</td>
-                </tr>
-                <tr>
-                  <th scope="row">사업장소재지</th>
-                  <td colSpan="3">서울특별시 구로구 구로동 197-7 에이스테크노타워Ⅱ</td>
-                </tr>
-                <tr>
-                  <th scope="row">사업장소재지(도로명)</th>
-                  <td colSpan="3">서울특별시 구로구 디지털로31길 19, 에이스테크노타워Ⅱ 1002호 (구로동)</td>
-                </tr>
-                <tr>
-                  <th scope="row">인터넷도메인</th>
-                  <td colSpan="3">https://roowa.kr</td>
-                </tr>
-                <tr>
-                  <th scope="row">호스트서버소재지</th>
-                  <td colSpan="3"> 경기도 성남시 분당구 대왕판교로 660, B동 4층(삼평동)</td>
-                </tr>
-                <tr>
-                  <th scope="row">통신판매업 신고기관명</th>
-                  <td colSpan="3">서울특별시 구로구청&nbsp;&nbsp;(02-860-2851)</td>
-                </tr>
-              </tbody>
-            </table>
+            {isMobile ? (
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">통신판매번호</th>
+                    <td>2021-서울구로-1207</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">신고현황</th>
+                    <td>통신판매업 신고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">상호</th>
+                    <td>주식회사 달달프렌즈</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">대표자명</th>
+                    <td>모상우</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">판매방식</th>
+                    <td>인터넷</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">전자우편(E-mail)</th>
+                    <td>manager@roowa.co.kr</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">사업장소재지</th>
+                    <td>서울특별시 구로구 구로동 197-7 에이스테크노타워Ⅱ</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">사업장소재지(도로명)</th>
+                    <td>서울특별시 구로구 디지털로31길 19, 에이스테크노타워Ⅱ 1002호 (구로동)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">인터넷도메인</th>
+                    <td>https://roowa.kr</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">호스트서버소재지</th>
+                    <td> 경기도 성남시 분당구 대왕판교로 660, B동 4층(삼평동)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">통신판매업 신고기관명</th>
+                    <td>서울특별시 구로구청&nbsp;&nbsp;(02-860-2851)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">사업자등록번호</th>
+                    <td>748-86-00751</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">법인여부</th>
+                    <td>법인</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">대표 전화번호</th>
+                    <td>070-4410-5015</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">취급품목</th>
+                    <td>종합몰</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">신고일자</th>
+                    <td>20171019</td>
+                  </tr>
+                </tbody>
+              </table>
+            ) : (
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">통신판매번호</th>
+                    <td>2021-서울구로-1207</td>
+                    <th scope="row">사업자등록번호</th>
+                    <td>748-86-00751</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">신고현황</th>
+                    <td>통신판매업 신고</td>
+                    <th scope="row">법인여부</th>
+                    <td>법인</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">상호</th>
+                    <td>주식회사 달달프렌즈</td>
+                    <th scope="row">대표 전화번호</th>
+                    <td>070-4410-5015</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">대표자명</th>
+                    <td>모상우</td>
+                    <th scope="row">취급품목</th>
+                    <td>종합몰</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">판매방식</th>
+                    <td>인터넷</td>
+                    <th scope="row">신고일자</th>
+                    <td>20171019</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">전자우편(E-mail)</th>
+                    <td colSpan="3">manager@roowa.co.kr</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">사업장소재지</th>
+                    <td colSpan="3">서울특별시 구로구 구로동 197-7 에이스테크노타워Ⅱ</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">사업장소재지(도로명)</th>
+                    <td colSpan="3">서울특별시 구로구 디지털로31길 19, 에이스테크노타워Ⅱ 1002호 (구로동)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">인터넷도메인</th>
+                    <td colSpan="3">https://roowa.kr</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">호스트서버소재지</th>
+                    <td colSpan="3"> 경기도 성남시 분당구 대왕판교로 660, B동 4층(삼평동)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">통신판매업 신고기관명</th>
+                    <td colSpan="3">서울특별시 구로구청&nbsp;&nbsp;(02-860-2851)</td>
+                  </tr>
+                </tbody>
+              </table>
+            )}
+
             <div>
               <p>
                 본자료는 전자상거래시장에서 소비자가 정확한 사업자 정보를 가지고 안전한 거래를 할 수 있도록 전국 시,군,구에 신고된 통신판매업자의 신원정보를

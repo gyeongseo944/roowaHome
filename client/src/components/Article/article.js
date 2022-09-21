@@ -9,7 +9,7 @@ import naviArrow from "../../assets/navBtns/articleBtns/x59.png";
 import { useRecoilState } from "recoil";
 import { articleListAtom } from "../../atom";
 import { useMediaQuery } from "react-responsive";
-//test
+
 const Article = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const [ListData, setListData] = useRecoilState(articleListAtom);
