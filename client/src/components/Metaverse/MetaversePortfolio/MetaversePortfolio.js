@@ -39,18 +39,28 @@ const MetaversePortfolio = () => {
     },
     {
       title: "미륵사지",
-      contents: "과거와 현재, 미래를 아우르는 \n미륵사 유적의 시간여행",
-      img: img1,
+      contents: "과거와 현재, 미래를 아우르는 미륵사 유적의 시간여행",
+      img: img3,
     },
     {
-      title: "미륵사지",
-      contents: "과거와 현재, 미래를 아우르는 \n미륵사 유적의 시간여행",
-      img: img1,
+      title: "루와 메타버스 포럼",
+      contents: "가상공간 '루와 컨퍼런스홀'에서 전문가 3인과 함께 실시간 포럼 개최",
+      img: img4,
     },
     {
-      title: "미륵사지",
-      contents: "과거와 현재, 미래를 아우르는 \n미륵사 유적의 시간여행",
-      img: img1,
+      title: "루와 메타버스 포럼맵",
+      contents: "'메타버스 콘텐츠의 활용과 미래'를 주제로 진행된 메타버스 포럼",
+      img: img5,
+    },
+    {
+      title: "욱크래프트",
+      contents: "농업에 대한 관심도 증대 및 실제 체험이 가능한 맵",
+      img: img6,
+    },
+    {
+      title: "루와 메타버스 사옥",
+      contents: "상담문의, 회의참여 등 누구나 방문가능한 루와 메타버스 사옥",
+      img: img7,
     },
   ];
   return (

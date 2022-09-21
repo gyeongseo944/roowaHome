@@ -13,6 +13,7 @@ import RecruitDetail from "./components/Recruit/RecruitDetail/RecruitDetail";
 import Metaverse from "./components/Metaverse/Metaverse";
 import Original from "./components/Original/Original";
 import Company from "./components/Company/Company";
+import Agreement from "./components/Agreement/Agreement";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/metaverse" element={<Metaverse />} />
         <Route path="/original" element={<Original />} />
         <Route path="/roowa" element={<Company />} />
+        <Route path="/agreement/:type" element={<Agreement />} />
       </Routes>
       <Footer />
     </BrowserRouter>

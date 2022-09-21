@@ -50,7 +50,7 @@ const PortfolioImgCard = ({ title, contents, img, link }) => {
   }, [isInView]);
 
   return (
-    <div className="imgItem" style={link ? { height: "600px" } : { height: "auto" }}>
+    <div className="imgItem" style={link ? { maxHeight: "600px" } : { maxHeight: "700px" }}>
       <div className="imgContainer" ref={imageRef}>
         {link ? (
           <a href={link} target="_blank" rel="noreferrer noopener">
